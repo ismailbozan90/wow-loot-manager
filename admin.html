@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW Loot Manager - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Admin panel specific styles */
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .admin-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .edit-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .edit-form.dynamic-position {
+            position: absolute;
+            z-index: 1001;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 90vw;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        /* New styles for popup */
+        .edit-form-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            color: #b8c5d6;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+        }
+        
+        .spec-filter {
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .spec-filter:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+        }
+        
+        .spec-filter::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .spec-checkboxes {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .spec-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .spec-checkbox:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .spec-checkbox input[type="checkbox"] {
+            margin: 0;
+        }
+        
+        .spec-checkbox label {
+            font-size: 0.9rem;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+                 .btn-small {
+             padding: 8px 12px;
+             font-size: 1rem;
+             min-width: 40px;
+             height: 40px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+        
+        .btn-danger {
+            background: linear-gradient(45deg, #ff4757, #ff3742);
+            color: #ffffff;
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(45deg, #2ed573, #1e90ff);
+            color: #ffffff;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 213, 115, 0.3);
+        }
+        
+        .boss-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .boss-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .boss-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .boss-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffd700;
+        }
+        
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .item-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 15px;
+        }
+        
+        .item-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            flex-shrink: 0;
+        }
+        
+        .item-icon-fallback {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .item-details {
+            color: #b8c5d6;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .bis-specs-display {
+            margin-top: 8px;
+        }
+        
+        .bis-specs-display .specs-header {
+            font-weight: 600;
+            color: #ffd700;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .bis-specs-display .bis-spec {
+            display: inline-block;
+            padding: 3px 6px;
+            margin: 2px;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: #ffd700;
+        }
+        
+        .goods-for-display {
+            margin-top: 8px;
+        }
+        
+        .goods-for-display .specs-header {
+            font-weight: 600;
+            color: #2ed573;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .goods-for-display .goods-spec {
+            display: inline-block;
+            padding: 3px 6px;
+            margin: 2px;
+            background: rgba(46, 213, 115, 0.15);
+            border: 1px solid rgba(46, 213, 115, 0.2);
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: #2ed573;
+        }
+
+        /* New styles for popup */
+        .edit-form-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        /* Item Search Styles */
+        .item-search-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .search-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .item-search-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .item-search-input:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+        }
+        
+        .item-search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Highlighted search results */
+        .item-card.highlighted {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+        
+        .boss-card.highlighted {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Panel</h1>
+        </div>
+        
+        <!-- Admin Controls -->
+        <div class="admin-controls">
+            <button onclick="loadFromJSON()" class="btn btn-primary">📂 Load from JSON</button>
+            <button onclick="exportToFile()" class="btn btn-success">💾 Export to File</button>
+            <button onclick="addNewBoss()" class="btn btn-secondary">➕ Add New Boss</button>
+        </div>
+        
+        <!-- Item Search -->
+        <div class="item-search-section">
+            <div class="search-container">
+                <input type="text" id="itemSearchInput" placeholder="Search for items across all bosses..." class="item-search-input">
+                <button onclick="clearItemSearch()" class="btn btn-secondary btn-small">🗑️</button>
+            </div>
+        </div>
+        
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div style="text-align: center;">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Updating loot-data.json file...</div>
+            </div>
+        </div>
+
+        <!-- Edit Form Backdrop -->
+        <div id="editFormBackdrop" class="edit-form-backdrop" style="display: none;"></div>
+
+        <!-- Edit Form -->
+        <div id="editForm" class="edit-form" style="display: none;">
+            <h3 id="editFormTitle">Edit Item</h3>
+            
+            <!-- Boss Fields (only shown when editing boss) -->
+            <div id="bossFields" class="form-row" style="display: none;">
+                <div class="form-group">
+                    <label>Boss ID:</label>
+                    <input type="text" id="editBossId" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Boss Name:</label>
+                    <input type="text" id="editBossName">
+                </div>
+            </div>
+
+            <!-- Item Fields -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Item Name:</label>
+                    <input type="text" id="editItemName">
+                </div>
+                <div class="form-group">
+                    <label>Item Icon URL:</label>
+                    <input type="text" id="editItemIconUrl" placeholder="https://wow.zamimg.com/images/wow/icons/tiny/...">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Item Slot:</label>
+                    <select id="editItemSlot">
+                        <option value="">Select slot...</option>
+                        <option value="head">Head</option>
+                        <option value="neck">Neck</option>
+                        <option value="shoulder">Shoulder</option>
+                        <option value="back">Back</option>
+                        <option value="chest">Chest</option>
+                        <option value="wrist">Wrist</option>
+                        <option value="hand">Hand</option>
+                        <option value="waist">Waist</option>
+                        <option value="legs">Legs</option>
+                        <option value="feet">Feet</option>
+                        <option value="finger">Finger</option>
+                        <option value="trinket">Trinket</option>
+                        <option value="main-hand">Main Hand</option>
+                        <option value="off-hand">Off Hand</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>BIS Specs:</label>
+                    <input type="text" id="bisSpecsFilter" placeholder="Search specs..." class="spec-filter">
+                    <div class="spec-checkboxes" id="editBisSpecs">
+                        <!-- Spec checkboxes will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Goods For:</label>
+                    <input type="text" id="goodsForFilter" placeholder="Search specs..." class="spec-filter">
+                    <div class="spec-checkboxes" id="editGoodsFor">
+                        <!-- Spec checkboxes will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button onclick="saveEdit()" class="btn btn-primary">💾</button>
+                <button onclick="cancelEdit()" class="btn btn-secondary">❌</button>
+                <button id="deleteButton" onclick="deleteItem()" class="btn btn-danger" style="display: none;">🗑️</button>
+            </div>
+        </div>
+
+        <div class="boss-list" id="bossList">
+            <!-- Boss cards will be added here -->
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script>
+        // Admin panel boş başlasın, localStorage kullanacak
+        console.log('Admin panel başlatılıyor...');
+        
+        // localStorage'dan veri yükle veya boş veri oluştur
+        const savedData = localStorage.getItem('lootData');
+        if (savedData) {
+            window.lootData = JSON.parse(savedData);
+            
+            // Migrate old 'icon' field to 'iconUrl' if needed
+            Object.values(window.lootData.bosses).forEach(boss => {
+                if (boss.items) {
+                    boss.items.forEach(item => {
+                        if (item.icon && !item.iconUrl) {
+                            item.iconUrl = item.icon;
+                            delete item.icon;
+                            console.log('🔄 Migrated icon field to iconUrl for item:', item.name);
+                        }
+                    });
+                }
+            });
+            
+            console.log('localStorage\'dan veri yüklendi:', window.lootData);
+        } else {
+            // Boş veri oluştur
+            window.lootData = {
+                "raidName": "Omega Manaforge 11.2",
+                "bosses": {}
+            };
+            console.log('Boş veri oluşturuldu');
+        }
+        
+        // Admin paneli başlat
+        displayBosses();
+        populateSpecCheckboxes();
+        populateGoodsForCheckboxes();
+        
+        // Auto-open first boss menu if data is loaded
+        setTimeout(() => {
+            const bossIds = Object.keys(window.lootData.bosses);
+            if (bossIds.length > 0) {
+                const firstBossId = bossIds[0];
+                const firstBossCard = document.querySelector(`[data-boss-id="${firstBossId}"]`);
+                if (firstBossCard) {
+                    const itemList = firstBossCard.querySelector('.item-list');
+                    const toggleIcon = document.getElementById(`toggle-${firstBossId}`);
+                    
+                    if (itemList && itemList.style.display === 'none') {
+                        itemList.style.display = 'grid';
+                        if (toggleIcon) {
+                            toggleIcon.textContent = '🔽';
+                        }
+                        console.log(`📂 First boss menu opened: ${firstBossId}`);
+                    }
+                }
+            }
+        }, 100); // Small delay to ensure DOM is ready
+    </script>
+</body>
+</html> 

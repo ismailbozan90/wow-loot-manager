@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW Loot Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>WoW Loot Manager</h1>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="bossFilter">Select Boss:</label>
+                <select id="bossFilter">
+                    <option value="all">All Bosses</option>
+                    <!-- Boss options will be added dynamically -->
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="specFilter">Select Spec:</label>
+                <div class="custom-dropdown">
+                    <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
+                    <div id="specDropdown" class="spec-dropdown">
+                        <div class="dropdown-content">
+                            <!-- Spec options will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loot-container">
+            <div class="loot-grid" id="lootGrid">
+                <!-- Loot items will be added dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load data from loot-data.json file
+        fetch('loot-data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('loot-data.json dosyası bulunamadı!');
+                }
+                return response.json();
+            })
+            .then(data => {
+                window.lootData = data;
+                console.log('Veri başarıyla yüklendi:', window.lootData);
+                // Veri yüklendikten sonra uygulamayı başlat
+                initializeApp();
+                // Event listener'ları ekle
+                document.getElementById('bossFilter').addEventListener('change', filterLoot);
+                document.getElementById('specSearchInput').addEventListener('input', function() {
+                    filterSpecOptions(this.value);
+                });
+                document.getElementById('specSearchInput').addEventListener('focus', function() {
+                    toggleSpecDropdown();
+                    // Always clear the input when focused
+                    this.value = '';
+                    // Reset filtering to "All Specs"
+                    currentSpec = 'all';
+                    // Update the selected state in dropdown
+                    document.querySelectorAll('.dropdown-item').forEach(item => {
+                        item.classList.remove('selected');
+                        if (item.getAttribute('data-value') === 'all') {
+                            item.classList.add('selected');
+                        }
+                    });
+                    // Reset dropdown filtering to show all specs
+                    filterSpecOptions('');
+                });
+            })
+            .catch(error => {
+                console.error('❌ loot-data.json yüklenemedi:', error);
+                alert('❌ HATA: loot-data.json dosyası yüklenemedi!\n\nLütfen loot-data.json dosyasının proje klasöründe olduğundan emin olun.');
+            });
+    </script>
+</body>
+</html> 

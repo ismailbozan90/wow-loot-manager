@@ -1,0 +1,1227 @@
+{
+  "raidName": "Omega Manaforge 11.2",
+  "bosses": {
+    "boss1": {
+      "name": "Plexus Sentinel",
+      "items": [
+        {
+          "name": "Mounted Manacannons",
+          "slot": "shoulder",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_cloth_raidpriestethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Singed Sievecuffs",
+          "slot": "wrist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_raidmageethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Irradiated Impurity Filter",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_helm_leather_raidmonkethereal_d_01.jpg",
+          "slot": "head",
+          "bisSpecs": [
+            "demon-hunter-vengeance"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Atomic Phasebelt",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_raidmonkethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "rogue-assassination",
+            "druid-balance",
+            "demon-hunter-havoc"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Chambersieve Waistcoat",
+          "slot": "legs",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_mail_raidhunterethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Arcanotech Wrist-Matrix",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_mail_raidevokerethereal_d_01.jpg",
+          "slot": "wrist",
+          "bisSpecs": [
+            "evoker-preservation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Manaforged Displacement Chassis",
+          "slot": "chest",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_plate_raidwarriorethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Sterilized Expulsion Boots",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_plate_raiddeathknightethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Logic Gate: Alpha",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_ring03_etherealtechnomancerstyle_gold.jpg",
+          "slot": "finger",
+          "bisSpecs": [
+            "paladin-protection",
+            "paladin-retribution",
+            "hunter-marksmanship",
+            "rogue-assassination",
+            "rogue-subtlety",
+            "priest-discipline",
+            "priest-holy",
+            "shaman-restoration",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "druid-balance",
+            "demon-hunter-havoc",
+            "death-knight-frost",
+            "evoker-preservation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Overclocked Plexhammer",
+          "slot": "main-hand",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_1h_etherealraid_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Factory-Issue Plexhammer",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_1h_etherealraid_d_02.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [
+            "death-knight-frost"
+          ]
+        },
+        {
+          "name": "Obliteration Beamglaive",
+          "slot": "main-hand",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_polearm_2h_etherealraid_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Eradicating Arcanocore",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_obliterationcannon.jpg",
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [
+            "warrior-fury"
+          ]
+        }
+      ]
+    },
+    "boss2": {
+      "name": "Loom'ithar",
+      "items": [
+        {
+          "name": "Laced Lair-Steppers",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_raidmageethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Deathbound Shoulderpads",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_leather_raidrogueethereal_d_01.jpg",
+          "slot": "shoulder",
+          "bisSpecs": [
+            "rogue-subtlety"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Colossal Lifetether",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_mail_raidhunterethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "shaman-restoration"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Discarded Nutrient Shackles",
+          "slot": "wrist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_plate_raidwarriorethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Prodigious Gene Splicer",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_knife_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "rogue-assassination",
+            "rogue-subtlety"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Piercing Strandbow",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bow_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [
+            "hunter-marksmanship"
+          ]
+        },
+        {
+          "name": "Ward of the Weaving-Beast",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shield_1h_etherealraid_d_01.jpg",
+          "slot": "off-hand",
+          "bisSpecs": [
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-protection"
+          ],
+          "goodsFor": [
+            "shaman-restoration"
+          ]
+        },
+        {
+          "name": "Astral Antenna",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_silkwormsantenna.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "paladin-holy",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "rogue-assassination",
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "priest-discipline",
+            "priest-holy",
+            "shaman-enhancement",
+            "shaman-restoration",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-balance",
+            "demon-hunter-havoc",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-preservation"
+          ],
+          "goodsFor": [
+            "warrior-protection",
+            "paladin-protection",
+            "hunter-survival",
+            "mage-fire",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "druid-guardian",
+            "evoker-augmentation"
+          ]
+        },
+        {
+          "name": "Loom'ithar's Living Silk",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_astralspinneret.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "priest-discipline"
+          ],
+          "goodsFor": [
+            "paladin-holy",
+            "priest-holy",
+            "shaman-restoration",
+            "monk-mistweaver",
+            "druid-restoration",
+            "evoker-preservation"
+          ]
+        },
+        {
+          "name": "Silken Offering (Leg Tier Set)",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_etherealenergystoragebarrel_terra.jpg",
+          "slot": "legs",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-protection",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "rogue-assassination",
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "shaman-restoration",
+            "mage-arcane",
+            "mage-fire",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-destruction",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-feral",
+            "druid-guardian",
+            "demon-hunter-vengeance",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-devastation",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        }
+      ]
+    },
+    "boss3": {
+      "name": "Soulbinder Naazindhri",
+      "items": [
+        {
+          "name": "Frock of Spirit's Reunion",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_robe_cloth_raidwarlockethereal_d_01.jpg",
+          "slot": "chest",
+          "bisSpecs": [
+            "druid-feral"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Bindings of Lost Essence",
+          "slot": "wrist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_raiddruidethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Deathspindle Talons",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_raidevokerethereal_d_01.jpg",
+          "slot": "feet",
+          "bisSpecs": [
+            "shaman-restoration"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Fresh Ethereal Fetters",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_plate_raidwarriorethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "paladin-holy"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Chrysalis of Sundered Souls",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_necklace01_etherealnontechnologicalstyle_gold.jpg",
+          "slot": "neck",
+          "bisSpecs": [
+            "warrior-fury",
+            "rogue-outlaw",
+            "mage-arcane",
+            "monk-mistweaver"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Unbound Training Claws",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_hand_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [
+            "shaman-enhancement",
+            "demon-hunter-havoc"
+          ]
+        },
+        {
+          "name": "Voidglass Spire",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_staff_2h_etherealraid_d_02.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "priest-holy",
+            "druid-balance",
+            "druid-restoration",
+            "evoker-preservation"
+          ],
+          "goodsFor": [
+            "priest-discipline",
+            "priest-shadow",
+            "shaman-elemental",
+            "mage-arcane",
+            "mage-fire",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-mistweaver",
+            "evoker-devastation",
+            "evoker-augmentation"
+          ]
+        },
+        {
+          "name": "Soulbinder's Embrace",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_manaforge_tanktrinket1.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "monk-brewmaster"
+          ],
+          "goodsFor": [
+            "demon-hunter-vengeance"
+          ]
+        },
+        {
+          "name": "Naazindhri's Mystic Lash",
+          "slot": "trinket",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_soulbinderbossinttrinket.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Binding Agent (Hand Tier Set)",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_etherealenergystoragebattery_terra.jpg",
+          "slot": "hand",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "warrior-protection",
+            "paladin-protection",
+            "paladin-retribution",
+            "rogue-assassination",
+            "rogue-subtlety",
+            "priest-shadow",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "shaman-restoration",
+            "mage-fire",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-feral",
+            "druid-guardian",
+            "druid-restoration",
+            "demon-hunter-havoc",
+            "demon-hunter-vengeance",
+            "death-knight-blood",
+            "evoker-devastation",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        }
+      ]
+    },
+    "boss4": {
+      "name": "Forgeweaver Araz",
+      "items": [
+        {
+          "name": "Forgeweaver's Journal Holster",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_cloth_raidwarlockethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "mage-fire",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Laboratory Test Slippers",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_raiddruidethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Harvested Attendant's Uniform",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_mail_raidhunterethereal_d_01.jpg",
+          "slot": "chest",
+          "bisSpecs": [
+            "shaman-enhancement"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Breached Containment Guards",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_plate_raiddeathknightethereal_d_01.jpg",
+          "slot": "hand",
+          "bisSpecs": [
+            "death-knight-unholy"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Logic Gate: Omega",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_ring03_etherealtechnomancerstyle_terra.jpg",
+          "slot": "finger",
+          "bisSpecs": [
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "priest-shadow",
+            "shaman-enhancement",
+            "death-knight-frost",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Marvel of Technomancy",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_staff_2h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "druid-guardian"
+          ],
+          "goodsFor": [
+            "monk-windwalker",
+            "druid-feral"
+          ]
+        },
+        {
+          "name": "Photon Sabre Prime",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "paladin-retribution",
+            "death-knight-frost"
+          ],
+          "goodsFor": [
+            "warrior-arms",
+            "warrior-fury"
+          ]
+        },
+        {
+          "name": "Iris of the Dark Beyond",
+          "slot": "off-hand",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_offhand_1h_etherealraid_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Araz's Ritual Forge",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_trinkettechnomancer_ritualengine.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "paladin-protection",
+            "paladin-retribution",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "rogue-assassination",
+            "rogue-subtlety",
+            "priest-shadow",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "mage-arcane",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-feral",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-devastation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": [
+            "hunter-beast-mastery",
+            "priest-discipline",
+            "priest-holy",
+            "mage-fire",
+            "monk-mistweaver",
+            "druid-guardian",
+            "druid-restoration",
+            "demon-hunter-havoc",
+            "demon-hunter-vengeance",
+            "death-knight-blood"
+          ]
+        },
+        {
+          "name": "Foreboding Beaker (Head Tier Set)",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_etherealenergystoragepyramid_terra.jpg",
+          "slot": "head",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "rogue-assassination",
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "shaman-enhancement",
+            "shaman-restoration",
+            "mage-arcane",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-restoration",
+            "demon-hunter-havoc",
+            "death-knight-blood",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-devastation",
+            "evoker-preservation"
+          ],
+          "goodsFor": []
+        }
+      ]
+    },
+    "boss5": {
+      "name": "The Soul Hunters",
+      "items": [
+        {
+          "name": "Bloodwrath's Gnarled Claws",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_cloth_raidwarlockethereal_d_01.jpg",
+          "slot": "hand",
+          "bisSpecs": [
+            "mage-arcane"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Interloper's Silken Striders",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_raidpriestethereal_d_01.jpg",
+          "slot": "feet",
+          "bisSpecs": [
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "mage-arcane",
+            "mage-fire",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Darksorrow's Corrupted Carapace",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_leather_raiddemonhunterethereal_d_01.jpg",
+          "slot": "chest",
+          "bisSpecs": [
+            "monk-mistweaver"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Interloper's Reinforced Sandals",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_raidmonkethereal_d_01.jpg",
+          "slot": "feet",
+          "bisSpecs": [
+            "rogue-assassination",
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "monk-brewmaster",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-feral",
+            "druid-guardian",
+            "druid-restoration",
+            "demon-hunter-havoc",
+            "demon-hunter-vengeance"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Clasp of Furious Freedom",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_mail_raidshamanethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "hunter-survival",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "evoker-preservation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Interloper's Chain Boots",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_raidshamanethereal_d_01.jpg",
+          "slot": "feet",
+          "bisSpecs": [
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "evoker-devastation",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Yoke of Enveloping Hatred",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_bracer.jpg",
+          "slot": "wrist",
+          "bisSpecs": [
+            "paladin-holy"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Interloper's Plated Sabatons",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_boot.jpg",
+          "slot": "feet",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-protection",
+            "paladin-retribution",
+            "death-knight-blood",
+            "death-knight-frost",
+            "death-knight-unholy"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Collapsing Phaseblades",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glaive_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "demon-hunter-havoc"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Event Horizon",
+          "slot": "off-hand",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shield_1h_etherealraid_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Sigil of the Cosmic Hunt",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_agidpsancientkareshirelic.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "demon-hunter-havoc"
+          ],
+          "goodsFor": [
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "shaman-enhancement",
+            "monk-brewmaster",
+            "monk-windwalker"
+          ]
+        },
+        {
+          "name": "Brand of Ceaseless Ire",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_manaforgetanktrinket3.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "warrior-protection",
+            "paladin-protection",
+            "monk-brewmaster",
+            "druid-guardian",
+            "demon-hunter-vengeance"
+          ],
+          "goodsFor": [
+            "death-knight-blood"
+          ]
+        },
+        {
+          "name": "Yearning Cursemark (Shoulder Tier Set)",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_etherealenergystoragesphere_terra.jpg",
+          "slot": "shoulder",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "warrior-protection",
+            "paladin-holy",
+            "paladin-protection",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "rogue-assassination",
+            "rogue-outlaw",
+            "priest-discipline",
+            "priest-holy",
+            "shaman-elemental",
+            "shaman-enhancement",
+            "mage-arcane",
+            "mage-fire",
+            "mage-frost",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "monk-mistweaver",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-feral",
+            "druid-guardian",
+            "druid-restoration",
+            "demon-hunter-havoc",
+            "demon-hunter-vengeance",
+            "death-knight-blood",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-devastation",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Duskblaze's Desperation",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_necklace03_etherealtechnomancerstyle_gold.jpg",
+          "slot": "neck",
+          "bisSpecs": [
+            "paladin-holy",
+            "mage-fire",
+            "druid-guardian",
+            "death-knight-blood",
+            "evoker-devastation"
+          ],
+          "goodsFor": []
+        }
+      ]
+    },
+    "boss6": {
+      "name": "Fractillus",
+      "items": [
+        {
+          "name": "Conjoined Glass Bracers",
+          "slot": "wrist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_raidpriestethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Kinetic Dunerunners",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_raiddemonhunterethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Bite of the Astral Wastes",
+          "slot": "head",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_helm_mail_raidshamanethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Shrapnel-Fused Legguards",
+          "slot": "legs",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_plate_raiddeathknightethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Voidglass Kris",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_knife_1h_etherealraid_d_02.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "shaman-elemental",
+            "shaman-restoration",
+            "mage-frost",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": [
+            "mage-arcane",
+            "mage-fire",
+            "druid-restoration",
+            "evoker-devastation"
+          ]
+        },
+        {
+          "name": "Lacerated Current Caster",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_crossbow_2h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "hunter-beast-mastery"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Fractillus' Last Breath",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_offhand_1h_etherealraid_d_02.jpg",
+          "slot": "off-hand",
+          "bisSpecs": [],
+          "goodsFor": [
+            "mage-arcane"
+          ]
+        },
+        {
+          "name": "Diamantine Voidcore",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_intdps_ancientkareshirelic.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "paladin-holy",
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "shaman-elemental",
+            "warlock-affliction",
+            "warlock-destruction",
+            "monk-mistweaver",
+            "druid-restoration",
+            "evoker-preservation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": [
+            "mage-arcane",
+            "mage-frost",
+            "druid-balance",
+            "evoker-devastation"
+          ]
+        },
+        {
+          "name": "Unyielding Netherprism",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_voidprism.jpg",
+          "slot": "trinket",
+          "bisSpecs": [
+            "rogue-subtlety",
+            "monk-windwalker"
+          ],
+          "goodsFor": [
+            "warrior-protection",
+            "paladin-protection",
+            "rogue-assassination",
+            "rogue-outlaw",
+            "monk-brewmaster",
+            "demon-hunter-havoc",
+            "death-knight-frost",
+            "death-knight-unholy"
+          ]
+        },
+        {
+          "name": "Voidglass Contaminant (Chest Tier Set)",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_etherealenergystorageurn_terra.jpg",
+          "slot": "chest",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "paladin-holy",
+            "paladin-protection",
+            "paladin-retribution",
+            "hunter-beast-mastery",
+            "hunter-marksmanship",
+            "hunter-survival",
+            "rogue-outlaw",
+            "rogue-subtlety",
+            "priest-discipline",
+            "priest-holy",
+            "priest-shadow",
+            "shaman-elemental",
+            "shaman-restoration",
+            "mage-arcane",
+            "mage-fire",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-brewmaster",
+            "monk-windwalker",
+            "druid-balance",
+            "druid-guardian",
+            "demon-hunter-havoc",
+            "demon-hunter-vengeance",
+            "death-knight-blood",
+            "death-knight-frost",
+            "death-knight-unholy",
+            "evoker-devastation",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        }
+      ]
+    },
+    "boss7": {
+      "name": "Nexus-King Salhadaar",
+      "items": [
+        {
+          "name": "Sandals of Scarred Servitude",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_raidwarlockethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Twilight Tyrant's Veil",
+          "slot": "head",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_helm_cloth_raidpriestethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Reaper's Dreadbelt",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_leather_raidrogueethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "rogue-subtlety"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Elite Shadowguard Legwraps",
+          "slot": "legs",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_raidmonkethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Pactbound Vambraces",
+          "slot": "wrist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_mail_raidshamanethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Royal Voidscale Gauntlets",
+          "slot": "hand",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_mail_raidevokerethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Darkrider Sabatons",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_plate_raidwarriorethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Beacons of False Righteousness",
+          "slot": "shoulder",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_shoulder.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Salhadaar's Folly",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_necklace02_etherealribbonorrunestyle_gold.jpg",
+          "slot": "neck",
+          "bisSpecs": [
+            "warrior-arms",
+            "paladin-retribution",
+            "priest-discipline",
+            "priest-holy",
+            "warlock-affliction",
+            "warlock-destruction",
+            "druid-feral",
+            "demon-hunter-havoc",
+            "death-knight-unholy",
+            "evoker-augmentation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Vengeful Netherspike",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_knife_1h_etherealraid_d_02.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "rogue-assassination",
+            "rogue-subtlety"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Voidglass Sovereign's Blade",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "paladin-holy",
+            "mage-arcane",
+            "mage-fire",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "monk-mistweaver",
+            "evoker-devastation"
+          ],
+          "goodsFor": [
+            "druid-balance",
+            "evoker-augmentation"
+          ]
+        },
+        {
+          "name": "Oath-Breaker's Recompense",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_axe_1h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "warrior-protection",
+            "paladin-protection"
+          ],
+          "goodsFor": [
+            "death-knight-frost"
+          ]
+        },
+        {
+          "name": "Maw of the Void",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_2h_etherealking_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "warrior-arms",
+            "death-knight-blood"
+          ],
+          "goodsFor": [
+            "paladin-retribution",
+            "druid-guardian",
+            "death-knight-unholy"
+          ]
+        },
+        {
+          "name": "Perfidious Projector",
+          "slot": "trinket",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_11_0_etherealraid_communicator_color4.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Nexus-King's Command",
+          "slot": "trinket",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_oathbindersauthority.jpg",
+          "bisSpecs": []
+        }
+      ]
+    },
+    "boss8": {
+      "name": "Dimensius, the All-Devouring",
+      "items": [
+        {
+          "name": "Singularity Cincture",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_cloth_raidpriestethereal_d_01.jpg",
+          "slot": "waist",
+          "bisSpecs": [
+            "priest-shadow",
+            "mage-arcane"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Stellar Navigation Slacks",
+          "slot": "legs",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_cloth_raidmageethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Time-Compressed Wristguards",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_raiddemonhunterethereal_d_01.jpg",
+          "slot": "wrist",
+          "bisSpecs": [
+            "druid-restoration"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Winged Gamma Handlers",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_leather_raiddruidethereal_d_01.jpg",
+          "slot": "hand",
+          "bisSpecs": [
+            "druid-guardian"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Claws of Failed Resistance",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_mail_raidshamanethereal_d_01.jpg",
+          "slot": "shoulder",
+          "bisSpecs": [
+            "shaman-restoration"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Greaves of Shattered Space",
+          "slot": "feet",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_raidhunterethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Artoshion's Abyssal Stare",
+          "slot": "head",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_helm.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Ultradense Fission Girdle",
+          "slot": "waist",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_plate_raiddeathknightethereal_d_01.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Band of the Shattered Soul",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_ring02_etherealribbonorrunestyle_gold.jpg",
+          "slot": "finger",
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-protection",
+            "paladin-holy",
+            "hunter-beast-mastery",
+            "priest-discipline",
+            "priest-holy",
+            "shaman-restoration",
+            "mage-fire",
+            "warlock-affliction",
+            "warlock-demonology",
+            "warlock-destruction",
+            "druid-guardian",
+            "demon-hunter-vengeance",
+            "death-knight-blood",
+            "evoker-devastation",
+            "evoker-preservation"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Ergospheric Cudgel",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_1h_etherealraid_d_02.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [
+            "rogue-outlaw"
+          ],
+          "goodsFor": []
+        },
+        {
+          "name": "Supermassive Starcrusher",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_2h_etherealraid_d_01.jpg",
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [
+            "death-knight-blood",
+            "death-knight-unholy"
+          ]
+        },
+        {
+          "name": "All-Devouring Nucleus",
+          "slot": "trinket",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_omnidpstrinket.jpg",
+          "bisSpecs": []
+        },
+        {
+          "name": "Screams of a Forgotten Sky",
+          "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_terra.jpg",
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [
+            "death-knight-frost"
+          ]
+        }
+      ]
+    }
+  }
+}
