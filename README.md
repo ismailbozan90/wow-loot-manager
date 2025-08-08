@@ -255,5 +255,5 @@ For issues or questions:
 ---
 
 **Version**: 11.2  
-**Last Updated**: 2024  
+**Last Updated**: 2025 
 **Raid**: Omega Manaforge 
