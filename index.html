@@ -22,16 +22,44 @@
                 </select>
             </div>
             <div class="filter-group">
-                <label for="specFilter">Select Spec:</label>
-                <div class="custom-dropdown">
-                    <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
-                    <div id="specDropdown" class="spec-dropdown">
-                        <div class="dropdown-content">
-                            <!-- Spec options will be added dynamically -->
-                        </div>
+                <label for="slotFilter">Select Item Slot:</label>
+                <select id="slotFilter">
+                    <option value="all">All Slots</option>
+                    <option value="head">Head</option>
+                    <option value="neck">Neck</option>
+                    <option value="shoulder">Shoulder</option>
+                    <option value="chest">Chest</option>
+                    <option value="waist">Waist</option>
+                    <option value="legs">Legs</option>
+                    <option value="feet">Feet</option>
+                    <option value="wrist">Wrist</option>
+                    <option value="hand">Hands</option>
+                    <option value="finger">Finger</option>
+                    <option value="trinket">Trinket</option>
+                    <option value="back">Back</option>
+                    <option value="main-hand">Main Hand</option>
+                    <option value="off-hand">Off Hand</option>
+                </select>
+            </div>
+                    <div class="filter-group">
+            <label for="specFilter">Select Spec:</label>
+            <div class="custom-dropdown">
+                <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
+                <div id="specDropdown" class="spec-dropdown">
+                    <div class="dropdown-content">
+                        <!-- Spec options will be added dynamically -->
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="button-group">
+            <button id="resetFiltersButton" class="btn btn-secondary reset-btn" title="Reset Filters">
+                ↺
+            </button>
+            <button id="trinketButton" class="btn btn-primary trinket-btn">
+                Trinkets
+            </button>
+        </div>
         </div>
 
         <div class="loot-container">
@@ -40,6 +68,76 @@
             </div>
         </div>
     </div>
+
+    <!-- Trinket DPS Popup -->
+    <div id="trinketPopup" class="trinket-popup">
+        <div class="trinket-popup-content">
+            <div class="trinket-popup-header">
+                <h2>Trinket DPS Analysis</h2>
+                <button id="closeTrinketPopup" class="close-btn">&times;</button>
+            </div>
+            <div class="trinket-popup-body">
+                <div class="trinket-selector">
+                    <label for="trinketDropdown">Select Trinket:</label>
+                    <div class="custom-trinket-dropdown">
+                        <div id="trinketDropdown" class="trinket-dropdown">
+                            <div class="trinket-dropdown-selected">
+                                <div class="trinket-icon-fallback">🔮</div>
+                                <span>Choose a trinket...</span>
+                            </div>
+                            <div class="trinket-dropdown-content" style="display: none;">
+                                <!-- Trinket options will be added dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="version-radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="version" value="champion" checked>
+                            <span>Champion</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="version" value="heroic">
+                            <span>Heroic</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="version" value="mythic">
+                            <span>Mythic</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="trinketChart" class="trinket-chart-container">
+                    <div class="trinket-chart">
+                        <div class="trinket-chart-header">
+                            <div class="trinket-icon-fallback">🔮</div>
+                            <div class="trinket-name">Select a trinket</div>
+                            <div class="role-filter-buttons">
+                                <label class="role-radio-label">
+                                    <input type="radio" name="role" value="all" checked>
+                                    <span>All</span>
+                                </label>
+                                <label class="role-radio-label">
+                                    <input type="radio" name="role" value="dps">
+                                    <span>DPS</span>
+                                </label>
+                                <label class="role-radio-label">
+                                    <input type="radio" name="role" value="healer">
+                                    <span>Healer</span>
+                                </label>
+                                <label class="role-radio-label">
+                                    <input type="radio" name="role" value="tank">
+                                    <span>Tank</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="trinket-dps-list">
+                            <!-- DPS data will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="trinketPopupBackdrop" class="trinket-popup-backdrop"></div>
 
     <script src="script.js"></script>
     <script>

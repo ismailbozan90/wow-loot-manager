@@ -1,0 +1,487 @@
+{
+  "trinkets": {
+    "trinket1": {
+      "name": "Astral Antenna",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_silkwormsantenna.jpg",
+      "champion": {
+        "dpsValues": {
+          "warrior-arms": 387015,
+          "warrior-fury": 374226,
+          "paladin-holy": 301625,
+          "paladin-protection": 272668,
+          "rogue-assassination": 404869,
+          "rogue-outlaw": 364091,
+          "rogue-subtlety": 349554,
+          "priest-discipline": 275086,
+          "priest-holy": 297240,
+          "priest-shadow": 418536,
+          "shaman-elemental": 453994,
+          "shaman-enhancement": 379525,
+          "shaman-restoration": 302999,
+          "mage-arcane": 407732,
+          "mage-fire": 371622,
+          "mage-frost": 391554,
+          "warlock-affliction": 405188,
+          "warlock-demonology": 469033,
+          "warlock-destruction": 452164,
+          "death-knight-blood": 258916,
+          "death-knight-frost": 513185,
+          "death-knight-unholy": 484170,
+          "demon-hunter-havoc": 391913,
+          "demon-hunter-vengeance": 219288,
+          "druid-restoration": 263163,
+          "evoker-preservation": 309317,
+          "monk-mistweaver": 305618,
+          "monk-windwalker": 394569
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "warrior-arms": 405134,
+          "warrior-fury": 401188,
+          "paladin-holy": 315590,
+          "paladin-protection": 283994,
+          "rogue-assassination": 424694,
+          "rogue-outlaw": 385505,
+          "rogue-subtlety": 369871,
+          "priest-discipline": 288498,
+          "priest-holy": 311116,
+          "priest-shadow": 440251,
+          "shaman-elemental": 473740,
+          "shaman-enhancement": 396557,
+          "shaman-restoration": 316890,
+          "mage-arcane": 428829,
+          "mage-fire": 389455,
+          "mage-frost": 413946,
+          "warlock-affliction": 424449,
+          "warlock-demonology": 490559,
+          "warlock-destruction": 472364,
+          "death-knight-blood": 270510,
+          "death-knight-frost": 535273,
+          "death-knight-unholy": 510119,
+          "demon-hunter-havoc": 410843,
+          "demon-hunter-vengeance": 228784,
+          "druid-restoration": 276323,
+          "evoker-preservation": 323443,
+          "monk-mistweaver": 319495,
+          "monk-windwalker": 402761
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "warrior-arms": 444124,
+          "warrior-fury": 438797,
+          "paladin-holy": 348285,
+          "paladin-protection": 310611,
+          "rogue-assassination": 467407,
+          "rogue-outlaw": 424055,
+          "rogue-subtlety": 401292,
+          "priest-discipline": 319981,
+          "priest-holy": 343605,
+          "priest-shadow": 481793,
+          "shaman-elemental": 518493,
+          "shaman-enhancement": 435428,
+          "shaman-restoration": 349410,
+          "mage-arcane": 466251,
+          "mage-fire": 427989,
+          "mage-frost": 450327,
+          "warlock-affliction": 466161,
+          "warlock-demonology": 539745,
+          "warlock-destruction": 518690,
+          "death-knight-blood": 290097,
+          "death-knight-frost": 587382,
+          "death-knight-unholy": 555171,
+          "demon-hunter-havoc": 453391,
+          "demon-hunter-vengeance": 251949,
+          "druid-restoration": 307270,
+          "evoker-preservation": 356488,
+          "monk-mistweaver": 351983,
+          "monk-windwalker": 441578
+        }
+      }
+    },
+    "trinket2": {
+      "name": "Loom'ithar's Living Silk",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_astralspinneret.jpg",
+      "champion": {
+        "dpsValues": {
+          "paladin-holy": 246109,
+          "priest-discipline": 237571,
+          "priest-holy": 241026,
+          "shaman-restoration": 270029,
+          "druid-restoration": 261961,
+          "evoker-preservation": 249166,
+          "monk-mistweaver": 260841
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "paladin-holy": 258332,
+          "rogue-outlaw": 29835,
+          "priest-discipline": 249698,
+          "priest-holy": 253515,
+          "shaman-restoration": 283818,
+          "druid-restoration": 274967,
+          "evoker-preservation": 261629,
+          "monk-mistweaver": 273911
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "paladin-holy": 287054,
+          "priest-discipline": 278251,
+          "priest-holy": 282949,
+          "shaman-restoration": 316282,
+          "druid-restoration": 305528,
+          "evoker-preservation": 290928,
+          "monk-mistweaver": 304642
+        }
+      }
+    },
+    "trinket3": {
+      "name": "Araz's Ritual Forge",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_trinkettechnomancer_ritualengine.jpg",
+      "champion": {
+        "dpsValues": {
+          "warrior-arms": 313314,
+          "warrior-fury": 299482,
+          "paladin-holy": 233814,
+          "paladin-protection": 249392,
+          "rogue-assassination": 397025,
+          "rogue-outlaw": 282716,
+          "rogue-subtlety": 419108,
+          "priest-discipline": 191884,
+          "priest-holy": 231177,
+          "priest-shadow": 416291,
+          "shaman-elemental": 465021,
+          "shaman-enhancement": 420059,
+          "shaman-restoration": 245332,
+          "mage-arcane": 392411,
+          "mage-fire": 320629,
+          "mage-frost": 380456,
+          "warlock-affliction": 461740,
+          "warlock-demonology": 433899,
+          "warlock-destruction": 452164,
+          "death-knight-blood": 198276,
+          "death-knight-frost": 484349,
+          "death-knight-unholy": 469212,
+          "demon-hunter-havoc": 352642,
+          "demon-hunter-vengeance": 240984,
+          "druid-restoration": 177080,
+          "evoker-preservation": 226172,
+          "monk-mistweaver": 259659,
+          "monk-windwalker": 418307
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "warrior-arms": 320410,
+          "warrior-fury": 313562,
+          "paladin-holy": 244691,
+          "paladin-protection": 256090,
+          "rogue-assassination": 418751,
+          "rogue-outlaw": 298352,
+          "rogue-subtlety": 436388,
+          "priest-discipline": 200885,
+          "priest-holy": 241754,
+          "priest-shadow": 442222,
+          "shaman-elemental": 496303,
+          "shaman-enhancement": 431172,
+          "shaman-restoration": 256701,
+          "mage-arcane": 403069,
+          "mage-fire": 332637,
+          "mage-frost": 406140,
+          "warlock-affliction": 487323,
+          "warlock-demonology": 460979,
+          "warlock-destruction": 472364,
+          "death-knight-blood": 203022,
+          "death-knight-frost": 504976,
+          "death-knight-unholy": 490679,
+          "demon-hunter-havoc": 371856,
+          "demon-hunter-vengeance": 252918,
+          "druid-restoration": 185764,
+          "evoker-preservation": 236397,
+          "monk-mistweaver": 271873,
+          "monk-windwalker": 440548
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "warrior-arms": 355228,
+          "warrior-fury": 341249,
+          "paladin-holy": 270085,
+          "paladin-protection": 287592,
+          "rogue-assassination": 461506,
+          "rogue-outlaw": 326614,
+          "rogue-subtlety": 485082,
+          "priest-discipline": 221912,
+          "priest-holy": 266412,
+          "priest-shadow": 490175,
+          "shaman-elemental": 546257,
+          "shaman-enhancement": 482274,
+          "shaman-restoration": 283233,
+          "mage-arcane": 457361,
+          "mage-fire": 370729,
+          "mage-frost": 444512,
+          "warlock-affliction": 536391,
+          "warlock-demonology": 500505,
+          "warlock-destruction": 518690,
+          "death-knight-blood": 227504,
+          "death-knight-frost": 562692,
+          "death-knight-unholy": 547320,
+          "demon-hunter-havoc": 410803,
+          "demon-hunter-vengeance": 281839,
+          "druid-restoration": 206118,
+          "evoker-preservation": 260212,
+          "monk-mistweaver": 300410,
+          "monk-windwalker": 485091
+        }
+      }
+    },
+    "trinket4": {
+      "name": "Soulbinder's Embrace",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_manaforge_tanktrinket1.jpg",
+      "champion": {
+        "dpsValues": {
+          "paladin-protection": 162408,
+          "death-knight-blood": 163745,
+          "demon-hunter-vengeance": 143742
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "paladin-protection": 172654,
+          "death-knight-blood": 170333,
+          "demon-hunter-vengeance": 151618
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "paladin-protection": 192903,
+          "death-knight-blood": 191803,
+          "demon-hunter-vengeance": 171965
+        }
+      }
+    },
+    "trinket5": {
+      "name": "Sigil of the Cosmic Hunt",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_agidpsancientkareshirelic.jpg",
+      "champion": {
+        "dpsValues": {
+          "rogue-assassination": 328320,
+          "rogue-outlaw": 367768,
+          "rogue-subtlety": 314707,
+          "shaman-enhancement": 307686,
+          "demon-hunter-havoc": 363829,
+          "demon-hunter-vengeance": 206634,
+          "monk-windwalker": 340425
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "rogue-assassination": 360198,
+          "rogue-outlaw": 391690,
+          "rogue-subtlety": 334661,
+          "shaman-enhancement": 334544,
+          "demon-hunter-havoc": 393472,
+          "demon-hunter-vengeance": 217540,
+          "monk-windwalker": 367679
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "rogue-assassination": 402863,
+          "rogue-outlaw": 455398,
+          "rogue-subtlety": 378388,
+          "shaman-enhancement": 376232,
+          "demon-hunter-havoc": 449846,
+          "demon-hunter-vengeance": 253622,
+          "monk-windwalker": 418521
+        }
+      }
+    },
+    "trinket6": {
+      "name": "Brand of Ceaseless Ire",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_manaforgetanktrinket3.jpg",
+      "champion": {
+        "dpsValues": {
+          "paladin-protection": 305303,
+          "death-knight-blood": 291331,
+          "demon-hunter-vengeance": 256264
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "paladin-protection": 316511,
+          "death-knight-blood": 302792,
+          "demon-hunter-vengeance": 269175
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "paladin-protection": 352742,
+          "death-knight-blood": 341054,
+          "demon-hunter-vengeance": 299993
+        }
+      }
+    },
+    "trinket7": {
+      "name": "Diamantine Voidcore",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_intdps_ancientkareshirelic.jpg",
+      "champion": {
+        "dpsValues": {
+          "warrior-arms": 112799,
+          "warrior-fury": 106744,
+          "paladin-protection": 57704,
+          "rogue-assassination": 107487,
+          "rogue-outlaw": 38622,
+          "rogue-subtlety": 70369,
+          "priest-shadow": 360749,
+          "shaman-elemental": 417712,
+          "shaman-enhancement": 89944,
+          "mage-arcane": 372463,
+          "mage-fire": 391831,
+          "mage-frost": 447205,
+          "warlock-affliction": 396296,
+          "warlock-demonology": 429181,
+          "warlock-destruction": 418705,
+          "death-knight-blood": 69715,
+          "death-knight-frost": 126378,
+          "death-knight-unholy": 140170,
+          "demon-hunter-havoc": 107578,
+          "demon-hunter-vengeance": 56703,
+          "monk-windwalker": 92473
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "warrior-arms": 115322,
+          "warrior-fury": 105109,
+          "paladin-protection": 64649,
+          "rogue-assassination": 109934,
+          "rogue-outlaw": 39987,
+          "rogue-subtlety": 76033,
+          "priest-shadow": 379435,
+          "shaman-elemental": 433932,
+          "shaman-enhancement": 89258,
+          "mage-arcane": 393037,
+          "mage-fire": 405092,
+          "mage-frost": 465917,
+          "warlock-affliction": 410454,
+          "warlock-demonology": 450584,
+          "warlock-destruction": 428560,
+          "death-knight-blood": 71048,
+          "death-knight-frost": 125578,
+          "death-knight-unholy": 140188,
+          "demon-hunter-havoc": 103313,
+          "demon-hunter-vengeance": 59586,
+          "monk-windwalker": 106573
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "warrior-arms": 124646,
+          "warrior-fury": 112811,
+          "paladin-protection": 65448,
+          "rogue-assassination": 110645,
+          "rogue-outlaw": 39789,
+          "rogue-subtlety": 78221,
+          "priest-shadow": 416570,
+          "shaman-elemental": 474426,
+          "shaman-enhancement": 92440,
+          "mage-arcane": 430539,
+          "mage-fire": 445864,
+          "mage-frost": 511421,
+          "warlock-affliction": 445756,
+          "warlock-demonology": 494554,
+          "warlock-destruction": 480909,
+          "death-knight-blood": 70007,
+          "death-knight-frost": 134409,
+          "death-knight-unholy": 148284,
+          "demon-hunter-havoc": 114130,
+          "demon-hunter-vengeance": 61827,
+          "monk-windwalker": 101575
+        }
+      }
+    },
+    "trinket8": {
+      "name": "Unyielding Netherprism",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_voidprism.jpg",
+      "champion": {
+        "dpsValues": {
+          "warrior-arms": 304714,
+          "warrior-fury": 248658,
+          "paladin-protection": 222197,
+          "rogue-assassination": 426668,
+          "rogue-outlaw": 319598,
+          "rogue-subtlety": 471900,
+          "priest-shadow": 55192,
+          "shaman-elemental": 70910,
+          "shaman-enhancement": 237280,
+          "mage-arcane": 64305,
+          "mage-fire": 61526,
+          "mage-frost": 57962,
+          "warlock-affliction": 73964,
+          "warlock-demonology": 71924,
+          "warlock-destruction": 69088,
+          "death-knight-blood": 287685,
+          "death-knight-frost": 391586,
+          "death-knight-unholy": 374426,
+          "demon-hunter-havoc": 288502,
+          "demon-hunter-vengeance": 175668,
+          "monk-windwalker": 421647
+        }
+      },
+      "heroic": {
+        "dpsValues": {
+          "warrior-arms": 322550,
+          "warrior-fury": 267068,
+          "paladin-protection": 236037,
+          "rogue-assassination": 453271,
+          "rogue-outlaw": 340896,
+          "rogue-subtlety": 500106,
+          "priest-shadow": 59245,
+          "shaman-elemental": 81967,
+          "shaman-enhancement": 257283,
+          "mage-arcane": 71242,
+          "mage-fire": 62693,
+          "mage-frost": 65811,
+          "warlock-affliction": 79921,
+          "warlock-demonology": 80446,
+          "warlock-destruction": 75970,
+          "death-knight-blood": 304679,
+          "death-knight-frost": 413440,
+          "death-knight-unholy": 394619,
+          "demon-hunter-havoc": 302600,
+          "demon-hunter-vengeance": 189280,
+          "monk-windwalker": 447280
+        }
+      },
+      "mythic": {
+        "dpsValues": {
+          "warrior-arms": 362015,
+          "warrior-fury": 301546,
+          "paladin-protection": 271057,
+          "rogue-assassination": 514034,
+          "rogue-outlaw": 384563,
+          "rogue-subtlety": 566708,
+          "priest-shadow": 74521,
+          "shaman-elemental": 93241,
+          "shaman-enhancement": 296339,
+          "mage-arcane": 85293,
+          "mage-fire": 73231,
+          "mage-frost": 73722,
+          "warlock-affliction": 96226,
+          "warlock-demonology": 88599,
+          "warlock-destruction": 84696,
+          "death-knight-blood": 345815,
+          "death-knight-frost": 469553,
+          "death-knight-unholy": 454191,
+          "demon-hunter-havoc": 349805,
+          "demon-hunter-vengeance": 215478,
+          "monk-windwalker": 504181
+        }
+      }
+    }
+  }
+}

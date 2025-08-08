@@ -1,6 +1,8 @@
 // Global değişkenler
 let currentBoss = 'all';
 let currentSpec = 'all';
+let currentSlot = 'all';
+let trinketData = null;
 
 // DOM elementleri
 const lootGrid = document.getElementById('lootGrid');
@@ -16,7 +18,7 @@ const itemSlots = {
     'back': { name: 'Back', icon: '🧥' },
     'chest': { name: 'Chest', icon: '👕' },
     'wrist': { name: 'Wrist', icon: '⌚' },
-    'hands': { name: 'Hands', icon: '🧤' },
+    'hand': { name: 'Hands', icon: '🧤' },
     'waist': { name: 'Waist', icon: '👖' },
     'legs': { name: 'Legs', icon: '👖' },
     'feet': { name: 'Feet', icon: '👟' },
@@ -58,69 +60,69 @@ const armorTypes = {
 // Spec iconları ve bilgileri (WoW'daki gerçek iconlar - WoWhead CDN)
 const specData = {
     // Warrior
-    'warrior-arms': { name: 'Arms', icon: '⚔️', class: 'Warrior', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg' },
-    'warrior-fury': { name: 'Fury', icon: '⚔️', class: 'Warrior', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_innerrage.jpg' },
-    'warrior-protection': { name: 'Protection', icon: '🛡️', class: 'Warrior', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg' },
+    'warrior-arms': { name: 'Arms', icon: '⚔️', class: 'Warrior', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg' },
+    'warrior-fury': { name: 'Fury', icon: '⚔️', class: 'Warrior', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_innerrage.jpg' },
+    'warrior-protection': { name: 'Protection', icon: '🛡️', class: 'Warrior', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg' },
     
     // Paladin
-    'paladin-holy': { name: 'Holy', icon: '✨', class: 'Paladin', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg' },
-    'paladin-protection': { name: 'Protection', icon: '🛡️', class: 'Paladin', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg' },
-    'paladin-retribution': { name: 'Retribution', icon: '⚔️', class: 'Paladin', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_auraoflight.jpg' },
+    'paladin-holy': { name: 'Holy', icon: '✨', class: 'Paladin', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg' },
+    'paladin-protection': { name: 'Protection', icon: '🛡️', class: 'Paladin', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_devotionaura.jpg' },
+    'paladin-retribution': { name: 'Retribution', icon: '⚔️', class: 'Paladin', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_auraoflight.jpg' },
     
     // Hunter
-    'hunter-beast-mastery': { name: 'Beast Mastery', icon: '🏹', class: 'Hunter', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_bestialdiscipline.jpg' },
-    'hunter-marksmanship': { name: 'Marksmanship', icon: '🏹', class: 'Hunter', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_focusedaim.jpg' },
-    'hunter-survival': { name: 'Survival', icon: '🏹', class: 'Hunter', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_camouflage.jpg' },
+    'hunter-beast-mastery': { name: 'Beast Mastery', icon: '🏹', class: 'Hunter', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_bestialdiscipline.jpg' },
+    'hunter-marksmanship': { name: 'Marksmanship', icon: '🏹', class: 'Hunter', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_focusedaim.jpg' },
+    'hunter-survival': { name: 'Survival', icon: '🏹', class: 'Hunter', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_hunter_camouflage.jpg' },
     
     // Rogue
-    'rogue-assassination': { name: 'Assassination', icon: '🗡️', class: 'Rogue', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_rogue_deadlybrew.jpg' },
-    'rogue-outlaw': { name: 'Outlaw', icon: '🗡️', class: 'Rogue', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_rogue_waylay.jpg' },
-    'rogue-subtlety': { name: 'Subtlety', icon: '🗡️', class: 'Rogue', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_stealth.jpg' },
+    'rogue-assassination': { name: 'Assassination', icon: '🗡️', class: 'Rogue', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_rogue_deadlybrew.jpg' },
+    'rogue-outlaw': { name: 'Outlaw', icon: '🗡️', class: 'Rogue', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_rogue_waylay.jpg' },
+    'rogue-subtlety': { name: 'Subtlety', icon: '🗡️', class: 'Rogue', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_stealth.jpg' },
     
     // Priest
-    'priest-discipline': { name: 'Discipline', icon: '✨', class: 'Priest', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg' },
-    'priest-holy': { name: 'Holy', icon: '✨', class: 'Priest', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_guardianspirit.jpg' },
-    'priest-shadow': { name: 'Shadow', icon: '🌙', class: 'Priest', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowwordpain.jpg' },
+    'priest-discipline': { name: 'Discipline', icon: '✨', class: 'Priest', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg' },
+    'priest-holy': { name: 'Holy', icon: '✨', class: 'Priest', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_guardianspirit.jpg' },
+    'priest-shadow': { name: 'Shadow', icon: '🌙', class: 'Priest', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowwordpain.jpg' },
     
     // Shaman
-    'shaman-elemental': { name: 'Elemental', icon: '⚡', class: 'Shaman', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg' },
-    'shaman-enhancement': { name: 'Enhancement', icon: '⚡', class: 'Shaman', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shaman_improvedstormstrike.jpg' },
-    'shaman-restoration': { name: 'Restoration', icon: '⚡', class: 'Shaman', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_magicimmunity.jpg' },
+    'shaman-elemental': { name: 'Elemental', icon: '⚡', class: 'Shaman', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg' },
+    'shaman-enhancement': { name: 'Enhancement', icon: '⚡', class: 'Shaman', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shaman_improvedstormstrike.jpg' },
+    'shaman-restoration': { name: 'Restoration', icon: '⚡', class: 'Shaman', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_magicimmunity.jpg' },
     
     // Mage
-    'mage-arcane': { name: 'Arcane', icon: '🔮', class: 'Mage', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_magicalsentry.jpg' },
-    'mage-fire': { name: 'Fire', icon: '🔥', class: 'Mage', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg' },
-    'mage-frost': { name: 'Frost', icon: '❄️', class: 'Mage', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg' },
+    'mage-arcane': { name: 'Arcane', icon: '🔮', class: 'Mage', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_holy_magicalsentry.jpg' },
+    'mage-fire': { name: 'Fire', icon: '🔥', class: 'Mage', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg' },
+    'mage-frost': { name: 'Frost', icon: '❄️', class: 'Mage', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg' },
     
     // Warlock
-    'warlock-affliction': { name: 'Affliction', icon: '💀', class: 'Warlock', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathcoil.jpg' },
-    'warlock-demonology': { name: 'Demonology', icon: '👹', class: 'Warlock', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg' },
-    'warlock-destruction': { name: 'Destruction', icon: '🔥', class: 'Warlock', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rainoffire.jpg' },
+    'warlock-affliction': { name: 'Affliction', icon: '💀', class: 'Warlock', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathcoil.jpg' },
+    'warlock-demonology': { name: 'Demonology', icon: '👹', class: 'Warlock', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg' },
+    'warlock-destruction': { name: 'Destruction', icon: '🔥', class: 'Warlock', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rainoffire.jpg' },
     
     // Monk
-    'monk-brewmaster': { name: 'Brewmaster', icon: '🍺', class: 'Monk', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_brewmaster_spec.jpg' },
-    'monk-mistweaver': { name: 'Mistweaver', icon: '☁️', class: 'Monk', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_mistweaver_spec.jpg' },
-    'monk-windwalker': { name: 'Windwalker', icon: '👊', class: 'Monk', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_windwalker_spec.jpg' },
+    'monk-brewmaster': { name: 'Brewmaster', icon: '🍺', class: 'Monk', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_brewmaster_spec.jpg' },
+    'monk-mistweaver': { name: 'Mistweaver', icon: '☁️', class: 'Monk', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_mistweaver_spec.jpg' },
+    'monk-windwalker': { name: 'Windwalker', icon: '👊', class: 'Monk', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_monk_windwalker_spec.jpg' },
     
     // Druid
-    'druid-balance': { name: 'Balance', icon: '🌙', class: 'Druid', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_starfall.jpg' },
-    'druid-feral': { name: 'Feral', icon: '🐾', class: 'Druid', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_druid_catform.jpg' },
-    'druid-guardian': { name: 'Guardian', icon: '🐻', class: 'Druid', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_racial_bearform.jpg' },
-    'druid-restoration': { name: 'Restoration', icon: '🌿', class: 'Druid', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg' },
+    'druid-balance': { name: 'Balance', icon: '🌙', class: 'Druid', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_starfall.jpg' },
+    'druid-feral': { name: 'Feral', icon: '🐾', class: 'Druid', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_druid_catform.jpg' },
+    'druid-guardian': { name: 'Guardian', icon: '🐻', class: 'Druid', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_racial_bearform.jpg' },
+    'druid-restoration': { name: 'Restoration', icon: '🌿', class: 'Druid', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg' },
     
     // Demon Hunter
-    'demon-hunter-havoc': { name: 'Havoc', icon: '⚔️', class: 'Demon Hunter', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_specdps.jpg' },
-    'demon-hunter-vengeance': { name: 'Vengeance', icon: '🛡️', class: 'Demon Hunter', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_spectank.jpg' },
+    'demon-hunter-havoc': { name: 'Havoc', icon: '⚔️', class: 'Demon Hunter', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_specdps.jpg' },
+    'demon-hunter-vengeance': { name: 'Vengeance', icon: '🛡️', class: 'Demon Hunter', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_spectank.jpg' },
     
     // Death Knight
-    'death-knight-blood': { name: 'Blood', icon: '🩸', class: 'Death Knight', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_bloodpresence.jpg' },
-    'death-knight-frost': { name: 'Frost', icon: '❄️', class: 'Death Knight', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_frostpresence.jpg' },
-    'death-knight-unholy': { name: 'Unholy', icon: '💀', class: 'Death Knight', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_unholypresence.jpg' },
+    'death-knight-blood': { name: 'Blood', icon: '🩸', class: 'Death Knight', role: 'tank', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_bloodpresence.jpg' },
+    'death-knight-frost': { name: 'Frost', icon: '❄️', class: 'Death Knight', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_frostpresence.jpg' },
+    'death-knight-unholy': { name: 'Unholy', icon: '💀', class: 'Death Knight', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_unholypresence.jpg' },
     
     // Evoker
-    'evoker-devastation': { name: 'Devastation', icon: '🐉', class: 'Evoker', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_devastation.jpg' },
-    'evoker-preservation': { name: 'Preservation', icon: '🐉', class: 'Evoker', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_preservation.jpg' },
-    'evoker-augmentation': { name: 'Augmentation', icon: '🐉', class: 'Evoker', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_augmentation.jpg' },
+    'evoker-devastation': { name: 'Devastation', icon: '🐉', class: 'Evoker', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_devastation.jpg' },
+    'evoker-preservation': { name: 'Preservation', icon: '🐉', class: 'Evoker', role: 'healer', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_preservation.jpg' },
+    'evoker-augmentation': { name: 'Augmentation', icon: '🐉', class: 'Evoker', role: 'dps', iconUrl: 'https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_augmentation.jpg' },
     
     // Tüm spec'ler
     'all': { name: 'All Specs', icon: '🌟', class: 'All', iconUrl: '' }
@@ -133,6 +135,24 @@ function initializeApp() {
     
     // Spec seçeneklerini doldur
     populateSpecOptions();
+    
+    // Trinket verilerini yükle
+    loadTrinketData();
+    
+    // Trinket popup event listener'larını ekle
+    setupTrinketPopup();
+    
+    // Slot filter event listener'ını ekle
+    const slotFilter = document.getElementById('slotFilter');
+    if (slotFilter) {
+        slotFilter.addEventListener('change', filterLoot);
+    }
+    
+    // Reset filters button event listener'ını ekle
+    const resetFiltersButton = document.getElementById('resetFiltersButton');
+    if (resetFiltersButton) {
+        resetFiltersButton.addEventListener('click', resetAllFilters);
+    }
     
     // İlk yükleme
     displayLoot();
@@ -472,14 +492,50 @@ function getFilteredItems() {
         });
     }
     
+    // Slot filtreleme
+    if (currentSlot !== 'all') {
+        allItems = allItems.filter(item => {
+            return item.slot === currentSlot;
+        });
+    }
+    
     return allItems;
 }
 
 // Loot filtreleme
 function filterLoot() {
     currentBoss = bossFilter.value;
+    currentSlot = document.getElementById('slotFilter').value;
     // currentSpec is already set by selectSpec function
     
+    displayLoot();
+}
+
+// Tüm filtreleri sıfırla
+function resetAllFilters() {
+    // Global değişkenleri sıfırla
+    currentBoss = 'all';
+    currentSpec = 'all';
+    currentSlot = 'all';
+    
+    // HTML elementlerini sıfırla
+    const bossFilter = document.getElementById('bossFilter');
+    const slotFilter = document.getElementById('slotFilter');
+    const specSearchInput = document.getElementById('specSearchInput');
+    
+    if (bossFilter) bossFilter.value = 'all';
+    if (slotFilter) slotFilter.value = 'all';
+    if (specSearchInput) specSearchInput.value = 'All Specs';
+    
+    // Spec dropdown'ını sıfırla
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.classList.remove('selected');
+        if (item.getAttribute('data-value') === 'all') {
+            item.classList.add('selected');
+        }
+    });
+    
+    // Loot'u yeniden göster
     displayLoot();
 }
 
@@ -510,4 +566,410 @@ function getItemTypeDisplayName(type) {
         'trinket': 'Trinket'
     };
     return typeNames[type] || type;
+}
+
+// Trinket verilerini yükle
+function loadTrinketData() {
+    fetch('trinket-dps-data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('trinket-dps-data.json dosyası bulunamadı!');
+            }
+            return response.json();
+        })
+        .then(data => {
+            trinketData = data;
+            console.log('Trinket verileri başarıyla yüklendi:', trinketData);
+        })
+        .catch(error => {
+            console.error('❌ trinket-dps-data.json yüklenemedi:', error);
+            // Hata durumunda varsayılan veri oluştur
+            trinketData = {
+                trinkets: {
+                    "default-trinket": {
+                        "name": "No Trinket Data Available",
+                        "iconUrl": "",
+                        "dpsValues": {}
+                    }
+                }
+            };
+        });
+}
+
+// Trinket popup event listener'larını ayarla
+function setupTrinketPopup() {
+    const trinketButton = document.getElementById('trinketButton');
+    const trinketPopup = document.getElementById('trinketPopup');
+    const closeTrinketPopup = document.getElementById('closeTrinketPopup');
+    const trinketPopupBackdrop = document.getElementById('trinketPopupBackdrop');
+    const trinketDropdown = document.getElementById('trinketDropdown');
+
+    // Trinket butonuna tıklandığında popup'ı aç
+    trinketButton.addEventListener('click', function() {
+        showTrinketPopup();
+    });
+
+    // Close butonuna tıklandığında popup'ı kapat
+    closeTrinketPopup.addEventListener('click', function() {
+        hideTrinketPopup();
+    });
+
+    // Backdrop'a tıklandığında popup'ı kapat
+    trinketPopupBackdrop.addEventListener('click', function() {
+        hideTrinketPopup();
+    });
+
+    // ESC tuşuna basıldığında popup'ı kapat
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            hideTrinketPopup();
+        }
+    });
+
+    // Trinket dropdown değiştiğinde chart'ı güncelle
+    trinketDropdown.addEventListener('change', function() {
+        updateTrinketChart();
+    });
+
+    // Version radio button'ları değiştiğinde chart'ı güncelle ve role filter'ı sıfırla
+    document.querySelectorAll('input[name="version"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Role filter'ı "All" olarak sıfırla
+            const allRoleRadio = document.querySelector('input[name="role"][value="all"]');
+            if (allRoleRadio) {
+                allRoleRadio.checked = true;
+            }
+            updateTrinketChart();
+        });
+    });
+
+    // Role radio button'ları değiştiğinde chart'ı güncelle
+    document.querySelectorAll('input[name="role"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            updateTrinketChart();
+        });
+    });
+
+    // Click outside dropdown to close it
+    document.addEventListener('click', function(event) {
+        const trinketDropdown = document.getElementById('trinketDropdown');
+        const dropdownContent = document.querySelector('.trinket-dropdown-content');
+        
+        if (!trinketDropdown.contains(event.target) && dropdownContent && dropdownContent.style.display === 'block') {
+            trinketDropdown.classList.remove('show');
+            // Move dropdown content back to its original position
+            trinketDropdown.appendChild(dropdownContent);
+            dropdownContent.style.display = 'none';
+            dropdownContent.style.position = '';
+            dropdownContent.style.top = '';
+            dropdownContent.style.left = '';
+            dropdownContent.style.width = '';
+            dropdownContent.style.zIndex = '';
+        }
+    });
+}
+
+// Trinket popup'ını göster
+function showTrinketPopup() {
+    const trinketPopup = document.getElementById('trinketPopup');
+    const trinketPopupBackdrop = document.getElementById('trinketPopupBackdrop');
+    const trinketDropdown = document.getElementById('trinketDropdown');
+    
+    // Popup ve backdrop'ı göster
+    trinketPopup.classList.add('show');
+    trinketPopupBackdrop.style.display = 'block';
+    
+    // Dropdown'ı sıfırla
+    populateTrinketDropdown();
+    
+    // Reset selected display
+    const selectedElement = document.querySelector('.trinket-dropdown-selected');
+    if (selectedElement) {
+        selectedElement.innerHTML = `
+            <span>Choose a trinket...</span>
+        `;
+    }
+    
+    // Champion radio button'ı seç (default)
+    const championRadio = document.querySelector('input[name="version"][value="champion"]');
+    if (championRadio) {
+        championRadio.checked = true;
+    }
+    
+    // All role radio button'ı seç (default)
+    const allRoleRadio = document.querySelector('input[name="role"][value="all"]');
+    if (allRoleRadio) {
+        allRoleRadio.checked = true;
+    }
+    
+    // Chart'ı temizle
+    clearTrinketChart();
+}
+
+// Trinket popup'ını gizle
+function hideTrinketPopup() {
+    const trinketPopup = document.getElementById('trinketPopup');
+    const trinketPopupBackdrop = document.getElementById('trinketPopupBackdrop');
+    
+    // Popup ve backdrop'ı gizle
+    trinketPopup.classList.remove('show');
+    trinketPopupBackdrop.style.display = 'none';
+}
+
+// Trinket dropdown'ını doldur
+function populateTrinketDropdown() {
+    const trinketDropdown = document.getElementById('trinketDropdown');
+    const dropdownContent = trinketDropdown.querySelector('.trinket-dropdown-content');
+    const selectedElement = trinketDropdown.querySelector('.trinket-dropdown-selected');
+    
+    // Mevcut seçenekleri temizle
+    dropdownContent.innerHTML = '';
+    
+    if (!trinketData || !trinketData.trinkets) {
+        return;
+    }
+    
+    // Her trinket için seçenek ekle
+    Object.entries(trinketData.trinkets).forEach(([trinketId, trinket]) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'trinket-dropdown-item';
+        itemDiv.setAttribute('data-value', trinketId);
+        
+        const trinketIcon = trinket.iconUrl ? 
+            `<img src="${trinket.iconUrl}" alt="${trinket.name}" class="trinket-icon" onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex');">` : 
+            `<div class="trinket-icon-fallback">🔮</div>`;
+        
+        itemDiv.innerHTML = `
+            ${trinketIcon}
+            <span>${trinket.name}</span>
+        `;
+        
+        // Click event
+        itemDiv.addEventListener('click', function() {
+            selectTrinket(trinketId, trinket.name, trinket.iconUrl);
+        });
+        
+        dropdownContent.appendChild(itemDiv);
+    });
+    
+    // Dropdown click event
+    trinketDropdown.addEventListener('click', function(e) {
+        if (e.target.closest('.trinket-dropdown-item')) {
+            return; // Item click handled separately
+        }
+        toggleTrinketDropdown();
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!trinketDropdown.contains(e.target)) {
+            trinketDropdown.classList.remove('show');
+            dropdownContent.style.display = 'none';
+        }
+    });
+}
+
+// Trinket seçme fonksiyonu
+function selectTrinket(trinketId, trinketName, trinketIconUrl) {
+    const trinketDropdown = document.getElementById('trinketDropdown');
+    const selectedElement = trinketDropdown.querySelector('.trinket-dropdown-selected');
+    const dropdownContent = document.querySelector('.trinket-dropdown-content');
+    
+    // Update selected display
+    const trinketIcon = trinketIconUrl ? 
+        `<img src="${trinketIconUrl}" alt="${trinketName}" class="trinket-icon" onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex');">` : 
+        `<div class="trinket-icon-fallback">🔮</div>`;
+    
+    selectedElement.innerHTML = `
+        ${trinketIcon}
+        <span>${trinketName}</span>
+    `;
+    
+    // Update dropdown items
+    document.querySelectorAll('.trinket-dropdown-item').forEach(item => {
+        item.classList.remove('selected');
+        if (item.getAttribute('data-value') === trinketId) {
+            item.classList.add('selected');
+        }
+    });
+    
+    // Close dropdown
+    trinketDropdown.classList.remove('show');
+    if (dropdownContent) {
+        // Move dropdown content back to its original position
+        trinketDropdown.appendChild(dropdownContent);
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.position = '';
+        dropdownContent.style.top = '';
+        dropdownContent.style.left = '';
+        dropdownContent.style.width = '';
+        dropdownContent.style.zIndex = '';
+    }
+    
+    // Update chart
+    updateTrinketChart();
+}
+
+// Trinket dropdown toggle fonksiyonu
+function toggleTrinketDropdown() {
+    const trinketDropdown = document.getElementById('trinketDropdown');
+    const dropdownContent = trinketDropdown.querySelector('.trinket-dropdown-content');
+    
+    trinketDropdown.classList.toggle('show');
+    
+    if (trinketDropdown.classList.contains('show')) {
+        // Move dropdown content to body to avoid stacking context issues
+        document.body.appendChild(dropdownContent);
+        
+        // Calculate position for fixed dropdown
+        const rect = trinketDropdown.getBoundingClientRect();
+        dropdownContent.style.position = 'fixed';
+        dropdownContent.style.top = (rect.bottom + 5) + 'px';
+        dropdownContent.style.left = rect.left + 'px';
+        dropdownContent.style.width = rect.width + 'px';
+        dropdownContent.style.display = 'block';
+        dropdownContent.style.zIndex = '10001'; // Ensure it's above everything
+    } else {
+        // Move dropdown content back to its original position
+        trinketDropdown.appendChild(dropdownContent);
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.position = '';
+        dropdownContent.style.top = '';
+        dropdownContent.style.left = '';
+        dropdownContent.style.width = '';
+        dropdownContent.style.zIndex = '';
+    }
+}
+
+// Trinket chart'ını güncelle
+function updateTrinketChart() {
+    const trinketDropdown = document.getElementById('trinketDropdown');
+    const selectedItem = trinketDropdown.querySelector('.trinket-dropdown-item.selected');
+    const selectedTrinketId = selectedItem ? selectedItem.getAttribute('data-value') : null;
+    const selectedVersion = document.querySelector('input[name="version"]:checked')?.value;
+    
+    if (selectedTrinketId && selectedVersion) {
+        createSingleTrinketChart(selectedTrinketId, selectedVersion);
+    } else {
+        clearTrinketChart();
+    }
+}
+
+// Tek trinket grafiği oluştur
+function createSingleTrinketChart(trinketId, version) {
+    const trinketChart = document.getElementById('trinketChart');
+    
+    if (!trinketData || !trinketData.trinkets || !trinketData.trinkets[trinketId]) {
+        trinketChart.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #b8c5d6;">
+                <h3>Trinket not found</h3>
+                <p>Please select a valid trinket from the dropdown</p>
+            </div>
+        `;
+        return;
+    }
+    
+    const trinket = trinketData.trinkets[trinketId];
+    
+    // Version kontrolü
+    if (!trinket[version] || !trinket[version].dpsValues) {
+        trinketChart.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #b8c5d6;">
+                <h3>Version not found</h3>
+                <p>Please select a valid version for this trinket</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Trinket icon'u
+    const trinketIcon = trinket.iconUrl ? 
+        `<img src="${trinket.iconUrl}" alt="${trinket.name}" class="trinket-icon" onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex');" title="${trinket.name}">` : 
+        `<div class="trinket-icon-fallback">🔮</div>`;
+    
+    // Role filter değerini al
+    const selectedRole = document.querySelector('input[name="role"]:checked')?.value || 'all';
+    
+    // DPS değerlerini büyükten küçüğe sırala ve role göre filtrele
+    let sortedDpsEntries = Object.entries(trinket[version].dpsValues || {})
+        .map(([specId, dpsValue]) => ({
+            specId,
+            dpsValue,
+            specInfo: specData[specId] || { name: specId, icon: '❓', iconUrl: '', role: 'unknown' }
+        }))
+        .filter(entry => {
+            if (selectedRole === 'all') return true;
+            return entry.specInfo.role === selectedRole;
+        })
+        .sort((a, b) => b.dpsValue - a.dpsValue);
+    
+    // En yüksek DPS değerini bul (progress bar için)
+    const maxDps = sortedDpsEntries.length > 0 ? sortedDpsEntries[0].dpsValue : 1;
+    
+    // DPS listesi HTML'i
+    const dpsListHTML = sortedDpsEntries.map((entry, index) => {
+        const barWidth = (entry.dpsValue / maxDps) * 100;
+        // Calculate percentage based on the highest DPS value
+        const percentage = ((entry.dpsValue / maxDps) * 100).toFixed(2);
+        const specIcon = entry.specInfo.iconUrl ? 
+            `<img src="${entry.specInfo.iconUrl}" alt="${entry.specInfo.name}" class="spec-icon" onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='inline');" title="${entry.specInfo.class} - ${entry.specInfo.name}">` : 
+            `<span class="spec-icon-fallback">${entry.specInfo.icon}</span>`;
+        
+        return `
+            <div class="dps-entry">
+                <div class="spec-info">
+                    ${specIcon}
+                    <span class="spec-name">${entry.specInfo.name}</span>
+                </div>
+                <div class="dps-bar-container">
+                    <div class="dps-bar">
+                        <div class="dps-bar-fill" style="width: ${barWidth}%"></div>
+                    </div>
+                </div>
+                <span class="dps-value">${entry.dpsValue.toLocaleString()}</span>
+            </div>
+        `;
+    }).join('');
+    
+    // Update the existing chart structure instead of replacing it
+    const trinketIconElement = trinketChart.querySelector('.trinket-icon-fallback, .trinket-icon');
+    const trinketNameElement = trinketChart.querySelector('.trinket-name');
+    const dpsListElement = trinketChart.querySelector('.trinket-dps-list');
+    
+    if (trinketIconElement) {
+        trinketIconElement.outerHTML = trinketIcon;
+    }
+    
+    if (trinketNameElement) {
+        trinketNameElement.textContent = `${trinket.name} (${version.charAt(0).toUpperCase() + version.slice(1)})`;
+    }
+    
+    if (dpsListElement) {
+        dpsListElement.innerHTML = dpsListHTML;
+    }
+}
+
+// Trinket chart'ını temizle
+function clearTrinketChart() {
+    const trinketChart = document.getElementById('trinketChart');
+    const trinketIconElement = trinketChart.querySelector('.trinket-icon-fallback, .trinket-icon');
+    const trinketNameElement = trinketChart.querySelector('.trinket-name');
+    const dpsListElement = trinketChart.querySelector('.trinket-dps-list');
+    
+    if (trinketIconElement) {
+        trinketIconElement.outerHTML = '<div class="trinket-icon-fallback"></div>';
+    }
+    
+    if (trinketNameElement) {
+        trinketNameElement.textContent = 'Select a trinket';
+    }
+    
+    if (dpsListElement) {
+        dpsListElement.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #b8c5d6;">
+                <h3>Select a trinket</h3>
+                <p>Please choose a trinket from the dropdown to view its DPS data</p>
+            </div>
+        `;
+    }
 } 
