@@ -332,13 +332,17 @@
         "dpsValues": {
           "warrior-arms": 112799,
           "warrior-fury": 106744,
+          "paladin-holy": 269191,
           "paladin-protection": 57704,
           "rogue-assassination": 107487,
           "rogue-outlaw": 38622,
           "rogue-subtlety": 70369,
+          "priest-discipline": 256755,
+          "priest-holy": 268598,
           "priest-shadow": 360749,
           "shaman-elemental": 417712,
           "shaman-enhancement": 89944,
+          "shaman-restoration": 241951,
           "mage-arcane": 372463,
           "mage-fire": 391831,
           "mage-frost": 447205,
@@ -350,6 +354,9 @@
           "death-knight-unholy": 140170,
           "demon-hunter-havoc": 107578,
           "demon-hunter-vengeance": 56703,
+          "druid-restoration": 273928,
+          "evoker-preservation": 280442,
+          "monk-mistweaver": 230108,
           "monk-windwalker": 92473
         }
       },
@@ -357,13 +364,17 @@
         "dpsValues": {
           "warrior-arms": 115322,
           "warrior-fury": 105109,
+          "paladin-holy": 281974,
           "paladin-protection": 64649,
           "rogue-assassination": 109934,
           "rogue-outlaw": 39987,
           "rogue-subtlety": 76033,
+          "priest-discipline": 269272,
+          "priest-holy": 281369,
           "priest-shadow": 379435,
           "shaman-elemental": 433932,
           "shaman-enhancement": 89258,
+          "shaman-restoration": 254151,
           "mage-arcane": 393037,
           "mage-fire": 405092,
           "mage-frost": 465917,
@@ -375,6 +386,9 @@
           "death-knight-unholy": 140188,
           "demon-hunter-havoc": 103313,
           "demon-hunter-vengeance": 59586,
+          "druid-restoration": 286812,
+          "evoker-preservation": 293466,
+          "monk-mistweaver": 242055,
           "monk-windwalker": 106573
         }
       },
@@ -382,13 +396,17 @@
         "dpsValues": {
           "warrior-arms": 124646,
           "warrior-fury": 112811,
+          "paladin-holy": 311861,
           "paladin-protection": 65448,
           "rogue-assassination": 110645,
           "rogue-outlaw": 39789,
           "rogue-subtlety": 78221,
+          "priest-discipline": 298595,
+          "priest-holy": 311230,
           "priest-shadow": 416570,
           "shaman-elemental": 474426,
           "shaman-enhancement": 92440,
+          "shaman-restoration": 282801,
           "mage-arcane": 430539,
           "mage-fire": 445864,
           "mage-frost": 511421,
@@ -400,6 +418,9 @@
           "death-knight-unholy": 148284,
           "demon-hunter-havoc": 114130,
           "demon-hunter-vengeance": 61827,
+          "druid-restoration": 316915,
+          "evoker-preservation": 323865,
+          "monk-mistweaver": 270166,
           "monk-windwalker": 101575
         }
       }
