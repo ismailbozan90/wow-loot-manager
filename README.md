@@ -1,6 +1,6 @@
 # WoW Loot Manager - Omega Manaforge 11.2
 
-A comprehensive World of Warcraft mythic raid loot management web application with advanced filtering, trinket DPS analysis, and administrative tools.
+A comprehensive World of Warcraft mythic raid loot management web application with advanced filtering, trinket DPS analysis, spec information system, and administrative tools.
 
 ## 🌟 Features
 
@@ -13,6 +13,7 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
   - Real-time filter reset capability
 - **BIS Spec Tracking**: Visual display of which specs each item is BIS for
 - **Goods For Tracking**: Additional spec assignments for items
+- **Spec Information System**: Comprehensive spec stats and off-set information
 - **Responsive Design**: Mobile and desktop optimized interface
 - **Modern UI**: Gradient backgrounds, smooth animations, and professional styling
 
@@ -26,6 +27,14 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
   - Sorted by DPS value (highest to lowest)
 - **Custom Dropdown**: Trinket selection with icons and search functionality
 - **Real-time Updates**: Dynamic chart updates based on selection
+
+### Spec Information System
+- **Interactive Spec Info Popup**: Modal-based spec information interface
+- **Comprehensive Spec Data**: Secondary stats and off-set information for all specs
+- **Search Functionality**: Real-time filtering of specs by name
+- **Organized Display**: Clean table format with spec icons, stats, and off-set items
+- **Direct JSON Loading**: Loads data directly from JSON file without localStorage
+- **Responsive Layout**: Fixed popup size with scrollable content
 
 ### Administrative Tools
 
@@ -45,6 +54,15 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 - **JSON Import/Export**: Complete trinket data backup and restore
 - **Local Storage**: Persistent trinket data storage
 
+#### Spec Info Admin Panel (`spec-info-admin.html`)
+- **Spec Information Management**: Add, edit, and delete spec stat and off-set data
+- **Secondary Stats Management**: Manage secondary stat priorities for each spec
+- **Off-Set Item Management**: Single off-set item assignment per spec
+- **Icon Management**: Spec icon URL handling with proper class icon format
+- **JSON Import/Export**: Complete spec info data backup and restore
+- **Local Storage**: Persistent spec info data storage
+- **Simplified Interface**: Single-line display for each spec with edit/delete options
+
 ## 📁 File Structure
 
 ```
@@ -52,11 +70,13 @@ wow-loot-manager/
 ├── index.html              # Main application interface
 ├── admin.html              # Main loot management admin panel
 ├── trinket-admin.html      # Trinket DPS management admin panel
+├── spec-info-admin.html    # Spec information management admin panel
 ├── script.js               # Main application JavaScript
 ├── admin.js                # Admin panel JavaScript
 ├── styles.css              # Shared CSS styles
 ├── loot-data.json          # Raid loot data (JSON)
 ├── trinket-dps-data.json   # Trinket DPS data (JSON)
+├── spec-info-data.json     # Spec information data (JSON)
 ├── README.md               # This documentation
 └── .gitattributes         # Git configuration
 ```
@@ -71,7 +91,8 @@ wow-loot-manager/
 
 1. **Access Admin Panel**: Open `admin.html` for loot management
 2. **Access Trinket Admin**: Open `trinket-admin.html` for trinket DPS management
-3. **Import/Export Data**: Use the JSON import/export functionality for data backup
+3. **Access Spec Info Admin**: Open `spec-info-admin.html` for spec information management
+4. **Import/Export Data**: Use the JSON import/export functionality for data backup
 
 ## 🎯 Core Functionality
 
@@ -89,6 +110,12 @@ wow-loot-manager/
 - **Item Information**: Complete item details including slot, icon, and spec assignments
 - **Responsive Grid**: Adaptive layout for different screen sizes
 
+#### Spec Information System
+- **Spec Info Button**: Access spec information via popup modal
+- **Search Interface**: Real-time search through all specs
+- **Table Format**: Organized display with spec, stats, and off-set columns
+- **Fixed Layout**: Consistent popup size with scrollable content
+
 ### Trinket DPS Analysis
 
 #### Popup Interface
@@ -102,6 +129,20 @@ wow-loot-manager/
 - **Spec Icons**: Class and spec icons for each entry
 - **Sorted Display**: Highest to lowest DPS ordering
 - **Real-time Updates**: Dynamic chart updates
+
+### Spec Information System
+
+#### Popup Interface
+- **Modal Design**: Overlay popup with backdrop
+- **Search Input**: Real-time filtering of specs
+- **Table Header**: Fixed header with column labels
+- **Scrollable Content**: Fixed popup size with scrollable list
+
+#### Data Display
+- **Spec Icons**: Class and spec icons for visual identification
+- **Secondary Stats**: Priority order of secondary stats (Crit, Haste, Mastery, Versatility)
+- **Off-Set Items**: Single off-set item or "None" indication
+- **Responsive Layout**: Proper column alignment and spacing
 
 ### Administrative Features
 
@@ -160,6 +201,26 @@ wow-loot-manager/
 }
 ```
 
+### Spec Information Data (`spec-info-data.json`)
+```json
+{
+  "specs": {
+    "evoker-devastation": {
+      "name": "Devastation",
+      "class": "Evoker",
+      "role": "dps",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_devastation.jpg",
+      "stats": {
+        "secondary": ["Haste", "Mastery", "Critical Strike", "Versatility"]
+      },
+      "offSet": {
+        "item": "Meta Gem"
+      }
+    }
+  }
+}
+```
+
 ## 🎨 Supported Specs
 
 ### All 36 Specializations
@@ -180,6 +241,9 @@ wow-loot-manager/
 ### Item Slots
 - Head, Neck, Shoulder, Back, Chest, Wrist, Hands, Waist, Legs, Feet, Finger, Trinket, Main Hand, Off Hand
 
+### Secondary Stats
+- Critical Strike, Haste, Mastery, Versatility
+
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup and modern structure
@@ -188,12 +252,14 @@ wow-loot-manager/
   - CSS gradients and animations
   - Responsive design principles
   - Custom scrollbars and UI elements
+  - Fixed positioning and backdrop filters
 - **Vanilla JavaScript (ES6+)**:
   - Modern JavaScript features
   - DOM manipulation
   - Event handling
   - Local Storage API
   - File API for JSON import/export
+  - Fetch API for JSON data loading
 - **JSON**: Data storage and exchange format
 - **Google Fonts**: Inter font family for modern typography
 
@@ -209,13 +275,21 @@ wow-loot-manager/
 2. Add trinket with DPS values for all specs
 3. Include Champion, Heroic, and Mythic versions
 
+### Adding New Spec Information
+1. Use `spec-info-admin.html`
+2. Add spec with secondary stat priorities
+3. Assign off-set item or mark as "None"
+4. Ensure proper class icon URL format
+
 ### Styling Changes
 - Modify `styles.css` for visual customizations
 - Update color schemes, layouts, and animations
+- Adjust popup sizes and positioning
 
 ### Functionality Extensions
 - Add new features in `script.js`
 - Extend admin functionality in `admin.js`
+- Implement new data sources and displays
 
 ## 📱 Browser Compatibility
 
@@ -227,10 +301,11 @@ wow-loot-manager/
 ## 🚨 Important Notes
 
 - **Client-Side Only**: No server required, runs entirely in browser
-- **Local Storage**: Data persists in browser localStorage
+- **Local Storage**: Data persists in browser localStorage (except Spec Info which loads from JSON)
 - **No Internet Required**: Works offline after initial load
 - **Modern Browsers**: Requires ES6+ support
 - **File Size**: Large JSON files may take time to load initially
+- **Spec Info Data**: Loads directly from `spec-info-data.json` file
 
 ## 🤝 Contributing
 
@@ -251,6 +326,7 @@ For issues or questions:
 2. Verify JSON file syntax
 3. Ensure modern browser compatibility
 4. Clear browser cache if needed
+5. Verify spec icon URLs are in correct format
 
 ---
 

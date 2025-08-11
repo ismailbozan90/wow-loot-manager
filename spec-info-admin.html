@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spec Info Admin - WoW Loot Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .spec-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .spec-row .spec-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+        
+        .spec-row .spec-name {
+            font-weight: 600;
+            color: #e6e6e6;
+            min-width: 120px;
+            margin-right: 16px;
+        }
+        
+        .spec-row .spec-stats {
+            color: #d4af37;
+            flex: 1;
+            margin-right: 16px;
+            text-align: center;
+        }
+        
+        .spec-row .spec-offset {
+            color: #e6e6e6;
+            min-width: 60px;
+            margin-right: 100px;
+            text-align: left;
+        }
+        
+        .spec-row .spec-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .spec-row .spec-actions .btn {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Spec Info Admin Panel</h1>
+        </div>
+
+        <div class="admin-controls">
+            <button id="exportBtn" class="btn btn-success">Export to JSON</button>
+            <button id="importBtn" class="btn btn-secondary">Import from JSON</button>
+            <button onclick="window.location.href='index.html'" class="btn btn-secondary">Back to Main</button>
+        </div>
+
+        <div id="specList" class="boss-list">
+            <!-- Spec list will be populated here -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Spec Form -->
+    <div id="editFormBackdrop" class="edit-form-backdrop" style="display: none;"></div>
+    <div id="editForm" class="edit-form" style="display: none;">
+        <h2 id="formTitle">Add New Spec</h2>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="specId">Spec ID:</label>
+                <input type="text" id="specId" placeholder="e.g., warrior-arms">
+            </div>
+            <div class="form-group">
+                <label for="specName">Spec Name:</label>
+                <input type="text" id="specName" placeholder="e.g., Arms">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="className">Class Name:</label>
+                <input type="text" id="className" placeholder="e.g., Warrior">
+            </div>
+            <div class="form-group">
+                <label for="specIcon">Spec Icon URL:</label>
+                <input type="text" id="specIcon" placeholder="https://wow.zamimg.com/images/wow/icons/large/...">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Secondary Stats:</label>
+            <div class="spec-checkboxes" id="secondaryStatsContainer">
+                <label class="spec-checkbox">
+                    <input type="checkbox" value="Crit">
+                    <span>Crit</span>
+                </label>
+                <label class="spec-checkbox">
+                    <input type="checkbox" value="Haste">
+                    <span>Haste</span>
+                </label>
+                <label class="spec-checkbox">
+                    <input type="checkbox" value="Mastery">
+                    <span>Mastery</span>
+                </label>
+                <label class="spec-checkbox">
+                    <input type="checkbox" value="Versa">
+                    <span>Versa</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Item:</label>
+            <input type="text" id="itemName" placeholder="Item name (or leave empty for none)">
+        </div>
+
+        <div class="btn-group">
+            <button id="saveSpecBtn" class="btn btn-success btn-small">Save Spec</button>
+            <button id="cancelSpecBtn" class="btn btn-secondary btn-small">Cancel</button>
+            <button id="deleteSpecBtn" class="btn btn-danger btn-small" style="display: none;">Delete Spec</button>
+        </div>
+    </div>
+
+    <!-- Hidden file input for import -->
+    <input type="file" id="importFileInput" accept=".json" style="display: none;">
+
+    <script>
+        let specInfoData = { specs: [] };
+        let editingSpecId = null;
+
+        // Load existing data
+        async function loadSpecInfoData() {
+            try {
+                const response = await fetch('spec-info-data.json');
+                if (response.ok) {
+                    const rawData = await response.json();
+                    // Convert object structure to array structure for admin panel
+                    if (rawData.specs && typeof rawData.specs === 'object' && !Array.isArray(rawData.specs)) {
+                        // Convert object to array format
+                        specInfoData = {
+                            specs: Object.entries(rawData.specs).map(([id, spec]) => ({
+                                id: id,
+                                ...spec
+                            }))
+                        };
+                    } else {
+                        specInfoData = rawData;
+                    }
+                    console.log('Spec Info data loaded:', specInfoData);
+                } else {
+                    console.log('No existing spec-info-data.json found, starting with empty data');
+                    specInfoData = { specs: [] };
+                }
+            } catch (error) {
+                console.log('Error loading spec info data:', error);
+                specInfoData = { specs: [] };
+            }
+            renderSpecList();
+        }
+
+        // Render spec list
+        function renderSpecList() {
+            const specList = document.getElementById('specList');
+            specList.innerHTML = '';
+
+            specInfoData.specs.forEach(spec => {
+                const specCard = document.createElement('div');
+                specCard.className = 'spec-row';
+                specCard.innerHTML = `
+                    <img src="${spec.iconUrl}" alt="${spec.name}" class="spec-icon" onerror="this.style.display='none'">
+                    <span class="spec-name">${spec.name}</span>
+                    <span class="spec-stats">${Array.isArray(spec.stats.secondary) ? spec.stats.secondary.join(', ') : spec.stats.secondary || 'None'}</span>
+                    <span class="spec-offset">${Object.values(spec.offSet || {}).length > 0 ? Object.values(spec.offSet)[0] : 'None'}</span>
+                    <div class="spec-actions">
+                        <button class="btn btn-primary btn-small edit-spec-btn" data-spec-id="${spec.id}">Edit</button>
+                        <button class="btn btn-danger btn-small delete-spec-btn" data-spec-id="${spec.id}">Delete</button>
+                    </div>
+                `;
+                specList.appendChild(specCard);
+            });
+
+            // Add event listeners for edit and delete buttons
+            document.querySelectorAll('.edit-spec-btn').forEach(btn => {
+                btn.addEventListener('click', () => editSpec(btn.dataset.specId));
+            });
+            
+            document.querySelectorAll('.delete-spec-btn').forEach(btn => {
+                btn.addEventListener('click', () => deleteSpec(btn.dataset.specId));
+            });
+        }
+
+        // Show form
+        function showForm(title = 'Add New Spec') {
+            document.getElementById('formTitle').textContent = title;
+            document.getElementById('editForm').style.display = 'block';
+            document.getElementById('editFormBackdrop').style.display = 'block';
+        }
+
+        // Hide form
+        function hideForm() {
+            document.getElementById('editForm').style.display = 'none';
+            document.getElementById('editFormBackdrop').style.display = 'none';
+            clearForm();
+        }
+
+        // Clear form
+        function clearForm() {
+            document.getElementById('specId').value = '';
+            document.getElementById('specName').value = '';
+            document.getElementById('className').value = '';
+            document.getElementById('specIcon').value = '';
+            
+            // Clear checkboxes
+            document.querySelectorAll('#secondaryStatsContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
+            
+            // Clear item
+            document.getElementById('itemName').value = '';
+            
+            editingSpecId = null;
+            document.getElementById('deleteSpecBtn').style.display = 'none';
+        }
+
+        // Edit spec
+        function editSpec(specId) {
+            const spec = specInfoData.specs.find(s => s.id === specId);
+            if (!spec) return;
+
+            editingSpecId = specId;
+            document.getElementById('specId').value = spec.id;
+            document.getElementById('specName').value = spec.name;
+            document.getElementById('className').value = spec.class;
+            document.getElementById('specIcon').value = spec.iconUrl;
+
+            // Set secondary stats
+            document.querySelectorAll('#secondaryStatsContainer input[type="checkbox"]').forEach(cb => {
+                const secondaryStats = Array.isArray(spec.stats.secondary) ? spec.stats.secondary : [spec.stats.secondary];
+                cb.checked = secondaryStats.includes(cb.value);
+            });
+
+            // Set item (get first item from offSet or empty string)
+            const itemName = Object.values(spec.offSet || {}).length > 0 ? Object.values(spec.offSet)[0] : '';
+            document.getElementById('itemName').value = itemName;
+
+            document.getElementById('deleteSpecBtn').style.display = 'inline-block';
+            showForm('Edit Spec');
+        }
+
+
+
+        // Save spec
+        function saveSpec() {
+            const specId = document.getElementById('specId').value.trim();
+            const specName = document.getElementById('specName').value.trim();
+            const className = document.getElementById('className').value.trim();
+            const specIcon = document.getElementById('specIcon').value.trim();
+
+            if (!specId || !specName || !className) {
+                alert('Please fill in all required fields (ID, Name, Class)');
+                return;
+            }
+
+            // Get selected secondary stats
+            const secondaryStats = Array.from(document.querySelectorAll('#secondaryStatsContainer input[type="checkbox"]:checked'))
+                .map(cb => cb.value);
+
+            // Get item
+            const itemName = document.getElementById('itemName').value.trim();
+
+            const specData = {
+                id: specId,
+                name: specName,
+                class: className,
+                iconUrl: specIcon || 'https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg',
+                stats: {
+                    secondary: secondaryStats
+                },
+                offSet: itemName ? { item: itemName } : {}
+            };
+
+            if (editingSpecId) {
+                // Update existing spec
+                const index = specInfoData.specs.findIndex(s => s.id === editingSpecId);
+                if (index !== -1) {
+                    specInfoData.specs[index] = specData;
+                }
+            } else {
+                // Add new spec
+                specInfoData.specs.push(specData);
+            }
+
+            renderSpecList();
+            hideForm();
+        }
+
+        // Delete spec
+        function deleteSpec() {
+            if (!editingSpecId) return;
+            
+            if (confirm('Are you sure you want to delete this spec?')) {
+                specInfoData.specs = specInfoData.specs.filter(s => s.id !== editingSpecId);
+                renderSpecList();
+                hideForm();
+            }
+        }
+
+        // Export to JSON
+        function exportToJSON() {
+            // Convert array structure back to object structure for main application
+            const exportData = {
+                specs: {}
+            };
+            
+            specInfoData.specs.forEach(spec => {
+                const { id, ...specData } = spec;
+                exportData.specs[id] = specData;
+            });
+            
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'spec-info-data.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Import from JSON
+        function importFromJSON() {
+            document.getElementById('importFileInput').click();
+        }
+
+        // Handle file import
+        function handleFileImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    if (importedData.specs) {
+                        // Handle both array and object structures
+                        if (Array.isArray(importedData.specs)) {
+                            specInfoData = importedData;
+                        } else if (typeof importedData.specs === 'object') {
+                            // Convert object structure to array structure
+                            specInfoData = {
+                                specs: Object.entries(importedData.specs).map(([id, spec]) => ({
+                                    id: id,
+                                    ...spec
+                                }))
+                            };
+                        } else {
+                            throw new Error('Invalid specs structure');
+                        }
+                        renderSpecList();
+                        alert('Data imported successfully!');
+                    } else {
+                        alert('Invalid file format. Please select a valid spec info JSON file.');
+                    }
+                } catch (error) {
+                    alert('Error parsing JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSpecInfoData();
+
+            // Save spec button
+            document.getElementById('saveSpecBtn').addEventListener('click', saveSpec);
+
+            // Cancel button
+            document.getElementById('cancelSpecBtn').addEventListener('click', hideForm);
+
+            // Delete spec button
+            document.getElementById('deleteSpecBtn').addEventListener('click', deleteSpec);
+
+            // Export button
+            document.getElementById('exportBtn').addEventListener('click', exportToJSON);
+
+            // Import button
+            document.getElementById('importBtn').addEventListener('click', importFromJSON);
+
+            // File input
+            document.getElementById('importFileInput').addEventListener('change', handleFileImport);
+
+
+
+            // Backdrop click to close form
+            document.getElementById('editFormBackdrop').addEventListener('click', hideForm);
+        });
+    </script>
+</body>
+</html>

@@ -59,6 +59,9 @@
             <button id="trinketButton" class="btn btn-primary trinket-btn">
                 Trinkets
             </button>
+            <button id="specInfoButton" class="btn btn-primary spec-info-btn">
+                Specs
+            </button>
         </div>
         </div>
 
@@ -139,6 +142,35 @@
     </div>
     <div id="trinketPopupBackdrop" class="trinket-popup-backdrop"></div>
 
+    <!-- Spec Info Popup -->
+    <div id="specInfoPopup" class="spec-info-popup">
+        <div class="spec-info-popup-content">
+            <div class="spec-info-popup-header">
+                <h2>Spec Information</h2>
+                <button id="closeSpecInfoPopup" class="close-btn">&times;</button>
+            </div>
+                            <div class="spec-info-popup-body">
+                    <div class="spec-selector">
+                        <label for="specInfoSearchInput">Search Specs:</label>
+                        <div class="spec-search-container">
+                            <input type="text" id="specInfoSearchInput" class="spec-info-search-input" placeholder="Search specs...">
+                        </div>
+                    </div>
+                    <div class="spec-info-header-row">
+                        <span class="spec-header-spec">Spec</span>
+                        <span class="spec-header-stats">Stats</span>
+                        <span class="spec-header-offset">Off-Set</span>
+                    </div>
+                <div class="spec-info-list-container">
+                    <div id="specInfoList" class="spec-info-list">
+                        <!-- Spec list will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="specInfoPopupBackdrop" class="spec-info-popup-backdrop"></div>
+
     <script src="script.js"></script>
     <script>
         // Load data from loot-data.json file
@@ -174,6 +206,15 @@
                     });
                     // Reset dropdown filtering to show all specs
                     filterSpecOptions('');
+                });
+                
+                // Spec Info filter event listeners
+                document.getElementById('specInfoSearchInput').addEventListener('input', function() {
+                    filterSpecInfoList(this.value);
+                });
+                document.getElementById('specInfoSearchInput').addEventListener('focus', function() {
+                    // Show all specs when focused
+                    filterSpecInfoList('');
                 });
             })
             .catch(error => {

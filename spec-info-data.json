@@ -1,0 +1,553 @@
+{
+  "specs": {
+    "warrior-arms": {
+      "name": "Arms",
+      "class": "Warrior",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_savageblow.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "warrior-fury": {
+      "name": "Fury",
+      "class": "Warrior",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_innerrage.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    },
+    "warrior-protection": {
+      "name": "Protection",
+      "class": "Warrior",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_warrior_defensivestance.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "paladin-holy": {
+      "name": "Holy",
+      "class": "Paladin",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_holybolt.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "paladin-protection": {
+      "name": "Protection",
+      "class": "Paladin",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_paladin_shieldofthetemplar.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    },
+    "paladin-retribution": {
+      "name": "Retribution",
+      "class": "Paladin",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_auraoflight.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "hunter-beast-mastery": {
+      "name": "Beast Mastery",
+      "class": "Hunter",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_bestialdiscipline.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "hunter-marksmanship": {
+      "name": "Marksmanship",
+      "class": "Hunter",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_focusedaim.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "hunter-survival": {
+      "name": "Survival",
+      "class": "Hunter",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_hunter_camouflage.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "rogue-assassination": {
+      "name": "Assassination",
+      "class": "Rogue",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_deadlybrew.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "rogue-outlaw": {
+      "name": "Outlaw",
+      "class": "Rogue",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_rogue_waylay.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "rogue-subtlety": {
+      "name": "Subtlety",
+      "class": "Rogue",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_stealth.jpg",
+      "stats": {
+        "secondary": [
+          "Mastery",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Shoulder"
+      }
+    },
+    "priest-discipline": {
+      "name": "Discipline",
+      "class": "Priest",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_powerwordshield.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "priest-holy": {
+      "name": "Holy",
+      "class": "Priest",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_guardianspirit.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "priest-shadow": {
+      "name": "Shadow",
+      "class": "Priest",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_shadowwordpain.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Shoulder"
+      }
+    },
+    "shaman-elemental": {
+      "name": "Elemental",
+      "class": "Shaman",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_lightning.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    },
+    "shaman-enhancement": {
+      "name": "Enhancement",
+      "class": "Shaman",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shaman_improvedstormstrike.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "shaman-restoration": {
+      "name": "Restoration",
+      "class": "Shaman",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_magicimmunity.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Shoulder"
+      }
+    },
+    "mage-arcane": {
+      "name": "Arcane",
+      "class": "Mage",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_holy_magicalsentry.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "mage-fire": {
+      "name": "Fire",
+      "class": "Mage",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_fire_firebolt02.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    },
+    "mage-frost": {
+      "name": "Frost",
+      "class": "Mage",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_frost_frostbolt02.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "warlock-affliction": {
+      "name": "Affliction",
+      "class": "Warlock",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_deathcoil.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "warlock-demonology": {
+      "name": "Demonology",
+      "class": "Warlock",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_metamorphosis.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "warlock-destruction": {
+      "name": "Destruction",
+      "class": "Warlock",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_shadow_rainoffire.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "monk-brewmaster": {
+      "name": "Brewmaster",
+      "class": "Monk",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_monk_brewmaster_spec.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Leg"
+      }
+    },
+    "monk-mistweaver": {
+      "name": "Mistweaver",
+      "class": "Monk",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_monk_mistweaver_spec.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "monk-windwalker": {
+      "name": "Windwalker",
+      "class": "Monk",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_monk_windwalker_spec.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "druid-balance": {
+      "name": "Balance",
+      "class": "Druid",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_starfall.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Leg"
+      }
+    },
+    "druid-feral": {
+      "name": "Feral",
+      "class": "Druid",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_druid_catform.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "druid-guardian": {
+      "name": "Guardian",
+      "class": "Druid",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_racial_bearform.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "druid-restoration": {
+      "name": "Restoration",
+      "class": "Druid",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Leg"
+      }
+    },
+    "demon-hunter-havoc": {
+      "name": "Havoc",
+      "class": "Demon Hunter",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_specdps.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "demon-hunter-vengeance": {
+      "name": "Vengeance",
+      "class": "Demon Hunter",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/ability_demonhunter_spectank.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste",
+          "Versa"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    },
+    "death-knight-blood": {
+      "name": "Blood",
+      "class": "Death Knight",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_bloodpresence.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Leg"
+      }
+    },
+    "death-knight-frost": {
+      "name": "Frost",
+      "class": "Death Knight",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_frostpresence.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "death-knight-unholy": {
+      "name": "Unholy",
+      "class": "Death Knight",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_unholypresence.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Hand"
+      }
+    },
+    "evoker-devastation": {
+      "name": "Devastation",
+      "class": "Evoker",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_devastation.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Haste"
+        ]
+      },
+      "offSet": {
+        "item": "-"
+      }
+    },
+    "evoker-preservation": {
+      "name": "Preservation",
+      "class": "Evoker",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_preservation.jpg",
+      "stats": {
+        "secondary": [
+          "Haste",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Chest"
+      }
+    },
+    "evoker-augmentation": {
+      "name": "Augmentation",
+      "class": "Evoker",
+      "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/classicon_evoker_augmentation.jpg",
+      "stats": {
+        "secondary": [
+          "Crit",
+          "Mastery"
+        ]
+      },
+      "offSet": {
+        "item": "Head"
+      }
+    }
+  }
+}
