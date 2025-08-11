@@ -12,7 +12,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5390496
     },
     "warrior-fury": {
       "name": "Fury",
@@ -26,7 +27,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 5953981
     },
     "warrior-protection": {
       "name": "Protection",
@@ -40,7 +42,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 4163360
     },
     "paladin-holy": {
       "name": "Holy",
@@ -54,7 +57,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 0
     },
     "paladin-protection": {
       "name": "Protection",
@@ -68,7 +72,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 3298498
     },
     "paladin-retribution": {
       "name": "Retribution",
@@ -82,7 +87,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 0
     },
     "hunter-beast-mastery": {
       "name": "Beast Mastery",
@@ -96,7 +102,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 5555298
     },
     "hunter-marksmanship": {
       "name": "Marksmanship",
@@ -110,7 +117,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 5731186
     },
     "hunter-survival": {
       "name": "Survival",
@@ -124,7 +132,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 5832935
     },
     "rogue-assassination": {
       "name": "Assassination",
@@ -138,7 +147,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5508431
     },
     "rogue-outlaw": {
       "name": "Outlaw",
@@ -152,7 +162,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5704247
     },
     "rogue-subtlety": {
       "name": "Subtlety",
@@ -166,7 +177,8 @@
       },
       "offSet": {
         "item": "Shoulder"
-      }
+      },
+      "sim": 5201938
     },
     "priest-discipline": {
       "name": "Discipline",
@@ -180,7 +192,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 0
     },
     "priest-holy": {
       "name": "Holy",
@@ -194,7 +207,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 0
     },
     "priest-shadow": {
       "name": "Shadow",
@@ -208,7 +222,8 @@
       },
       "offSet": {
         "item": "Shoulder"
-      }
+      },
+      "sim": 5821348
     },
     "shaman-elemental": {
       "name": "Elemental",
@@ -222,7 +237,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 6390060
     },
     "shaman-enhancement": {
       "name": "Enhancement",
@@ -236,7 +252,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 5215147
     },
     "shaman-restoration": {
       "name": "Restoration",
@@ -250,7 +267,8 @@
       },
       "offSet": {
         "item": "Shoulder"
-      }
+      },
+      "sim": 0
     },
     "mage-arcane": {
       "name": "Arcane",
@@ -265,7 +283,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 5821727
     },
     "mage-fire": {
       "name": "Fire",
@@ -279,7 +298,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 5557645
     },
     "mage-frost": {
       "name": "Frost",
@@ -293,7 +313,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 6160435
     },
     "warlock-affliction": {
       "name": "Affliction",
@@ -307,7 +328,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5819599
     },
     "warlock-demonology": {
       "name": "Demonology",
@@ -321,7 +343,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 6540290
     },
     "warlock-destruction": {
       "name": "Destruction",
@@ -335,7 +358,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 6459313
     },
     "monk-brewmaster": {
       "name": "Brewmaster",
@@ -350,7 +374,8 @@
       },
       "offSet": {
         "item": "Leg"
-      }
+      },
+      "sim": 0
     },
     "monk-mistweaver": {
       "name": "Mistweaver",
@@ -364,7 +389,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 0
     },
     "monk-windwalker": {
       "name": "Windwalker",
@@ -378,7 +404,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5667125
     },
     "druid-balance": {
       "name": "Balance",
@@ -392,7 +419,8 @@
       },
       "offSet": {
         "item": "Leg"
-      }
+      },
+      "sim": 0
     },
     "druid-feral": {
       "name": "Feral",
@@ -406,7 +434,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 5726503
     },
     "druid-guardian": {
       "name": "Guardian",
@@ -420,7 +449,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 3725958
     },
     "druid-restoration": {
       "name": "Restoration",
@@ -434,7 +464,8 @@
       },
       "offSet": {
         "item": "Leg"
-      }
+      },
+      "sim": 0
     },
     "demon-hunter-havoc": {
       "name": "Havoc",
@@ -448,7 +479,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 5428034
     },
     "demon-hunter-vengeance": {
       "name": "Vengeance",
@@ -463,7 +495,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 3079905
     },
     "death-knight-blood": {
       "name": "Blood",
@@ -477,7 +510,8 @@
       },
       "offSet": {
         "item": "Leg"
-      }
+      },
+      "sim": 3738834
     },
     "death-knight-frost": {
       "name": "Frost",
@@ -491,7 +525,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 6412598
     },
     "death-knight-unholy": {
       "name": "Unholy",
@@ -505,7 +540,8 @@
       },
       "offSet": {
         "item": "Hand"
-      }
+      },
+      "sim": 6107469
     },
     "evoker-devastation": {
       "name": "Devastation",
@@ -519,7 +555,8 @@
       },
       "offSet": {
         "item": "-"
-      }
+      },
+      "sim": 0
     },
     "evoker-preservation": {
       "name": "Preservation",
@@ -533,7 +570,8 @@
       },
       "offSet": {
         "item": "Chest"
-      }
+      },
+      "sim": 0
     },
     "evoker-augmentation": {
       "name": "Augmentation",
@@ -547,7 +585,8 @@
       },
       "offSet": {
         "item": "Head"
-      }
+      },
+      "sim": 0
     }
   }
 }

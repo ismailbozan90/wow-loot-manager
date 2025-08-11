@@ -1071,8 +1071,15 @@ function populateSpecInfoList() {
     // Clear existing content
     specInfoList.innerHTML = '';
 
-    // Tüm spec'leri doğrudan ekle (class gruplandırması olmadan)
-    Object.entries(specInfoData.specs).forEach(([specId, specInfo]) => {
+    // Spec'leri sim değerine göre büyükten küçüğe sırala
+    const sortedSpecs = Object.entries(specInfoData.specs).sort(([, specA], [, specB]) => {
+        const simA = specA.sim || 0;
+        const simB = specB.sim || 0;
+        return simB - simA; // Büyükten küçüğe sıralama
+    });
+
+    // Sıralanmış spec'leri ekle
+    sortedSpecs.forEach(([specId, specInfo]) => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'spec-info-list-item';
         itemDiv.setAttribute('data-value', specId);
@@ -1108,10 +1115,17 @@ function populateSpecInfoList() {
         offSetInfo.className = 'spec-offset-info';
         offSetInfo.textContent = offSetText;
         
+        // Sim değeri
+        const simValue = specInfo.sim || 0;
+        const simInfo = document.createElement('span');
+        simInfo.className = 'spec-sim-info';
+        simInfo.textContent = simValue.toLocaleString();
+        
         itemDiv.appendChild(iconImg);
         itemDiv.appendChild(specName);
         itemDiv.appendChild(statsInfo);
         itemDiv.appendChild(offSetInfo);
+        itemDiv.appendChild(simInfo);
         
         specInfoList.appendChild(itemDiv);
     });

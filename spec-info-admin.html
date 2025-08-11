@@ -42,8 +42,15 @@
         .spec-row .spec-offset {
             color: #e6e6e6;
             min-width: 60px;
-            margin-right: 100px;
+            margin-right: 16px;
             text-align: left;
+        }
+        
+        .spec-row .spec-sim {
+            color: #48bb78;
+            min-width: 80px;
+            margin-right: 100px;
+            text-align: center;
         }
         
         .spec-row .spec-actions {
@@ -64,6 +71,7 @@
         </div>
 
         <div class="admin-controls">
+            <button id="addSpecBtn" class="btn btn-primary">Add New Spec</button>
             <button id="exportBtn" class="btn btn-success">Export to JSON</button>
             <button id="importBtn" class="btn btn-secondary">Import from JSON</button>
             <button onclick="window.location.href='index.html'" class="btn btn-secondary">Back to Main</button>
@@ -128,6 +136,11 @@
             <input type="text" id="itemName" placeholder="Item name (or leave empty for none)">
         </div>
 
+        <div class="form-group">
+            <label for="simValue">Sim Value:</label>
+            <input type="number" id="simValue" placeholder="0" min="0" max="9999999" step="1">
+        </div>
+
         <div class="btn-group">
             <button id="saveSpecBtn" class="btn btn-success btn-small">Save Spec</button>
             <button id="cancelSpecBtn" class="btn btn-secondary btn-small">Cancel</button>
@@ -185,6 +198,7 @@
                     <span class="spec-name">${spec.name}</span>
                     <span class="spec-stats">${Array.isArray(spec.stats.secondary) ? spec.stats.secondary.join(', ') : spec.stats.secondary || 'None'}</span>
                     <span class="spec-offset">${Object.values(spec.offSet || {}).length > 0 ? Object.values(spec.offSet)[0] : 'None'}</span>
+                    <span class="spec-sim">${spec.sim || 0}</span>
                     <div class="spec-actions">
                         <button class="btn btn-primary btn-small edit-spec-btn" data-spec-id="${spec.id}">Edit</button>
                         <button class="btn btn-danger btn-small delete-spec-btn" data-spec-id="${spec.id}">Delete</button>
@@ -230,6 +244,9 @@
             // Clear item
             document.getElementById('itemName').value = '';
             
+            // Clear sim value
+            document.getElementById('simValue').value = '0';
+            
             editingSpecId = null;
             document.getElementById('deleteSpecBtn').style.display = 'none';
         }
@@ -254,6 +271,9 @@
             // Set item (get first item from offSet or empty string)
             const itemName = Object.values(spec.offSet || {}).length > 0 ? Object.values(spec.offSet)[0] : '';
             document.getElementById('itemName').value = itemName;
+
+            // Set sim value
+            document.getElementById('simValue').value = spec.sim || 0;
 
             document.getElementById('deleteSpecBtn').style.display = 'inline-block';
             showForm('Edit Spec');
@@ -280,6 +300,9 @@
             // Get item
             const itemName = document.getElementById('itemName').value.trim();
 
+            // Get sim value
+            const simValue = parseInt(document.getElementById('simValue').value) || 0;
+
             const specData = {
                 id: specId,
                 name: specName,
@@ -288,7 +311,8 @@
                 stats: {
                     secondary: secondaryStats
                 },
-                offSet: itemName ? { item: itemName } : {}
+                offSet: itemName ? { item: itemName } : {},
+                sim: simValue
             };
 
             if (editingSpecId) {
@@ -401,6 +425,9 @@
 
             // File input
             document.getElementById('importFileInput').addEventListener('change', handleFileImport);
+
+            // Add new spec button
+            document.getElementById('addSpecBtn').addEventListener('click', () => showForm('Add New Spec'));
 
 
 

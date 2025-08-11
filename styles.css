@@ -1591,13 +1591,22 @@ body {
 }
 
 .spec-header-stats {
-    width: 400px; /* Wider fixed width for stats column */
+    width: 280px; /* Reduced width for stats column to prevent horizontal scroll */
     text-align: center;
     flex-shrink: 0;
 }
 
 .spec-header-offset {
     width: 120px; /* Fixed width for offset column */
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.spec-header-sim {
+    width: 100px; /* Fixed width for sim column */
     text-align: right;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1691,7 +1700,7 @@ body {
     color: #b8c5d6;
     font-size: 0.8rem;
     font-weight: 400;
-    width: 400px; /* Fixed width to match header */
+    width: 280px; /* Fixed width to match header */
     text-align: center;
     flex-shrink: 0;
 }
@@ -1702,6 +1711,18 @@ body {
     font-weight: 400;
     text-align: right;
     width: 120px; /* Fixed width to match header */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.spec-info-list-item .spec-sim-info {
+    color: #48bb78;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: right;
+    width: 100px; /* Fixed width to match header */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
