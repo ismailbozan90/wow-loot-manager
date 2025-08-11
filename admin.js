@@ -209,6 +209,12 @@ function displayBosses() {
                         <button class="btn btn-danger btn-small" onclick="deleteItem('${bossId}', ${index})" title="Delete Item">🗑️</button>
                     </div>
                 </div>
+                ${item.secondaryStats ? `
+                <div class="secondary-stats-display">
+                    <div class="specs-header">Stats:</div>
+                    <span class="secondary-stats-value">${item.secondaryStats}</span>
+                </div>
+                ` : ''}
                 <div class="bis-specs-display">
                     <div class="specs-header">BIS Specs:</div>
                     ${item.bisSpecs && item.bisSpecs.length > 0 ? item.bisSpecs.map(spec => {
@@ -389,6 +395,7 @@ function editItem(bossId, itemIndex) {
     document.getElementById('editItemName').value = item.name;
     document.getElementById('editItemIconUrl').value = item.iconUrl || '';
     document.getElementById('editItemSlot').value = item.slot || '';
+    document.getElementById('editSecondaryStats').value = item.secondaryStats || '';
     
     // Hide boss fields, show item fields
     document.getElementById('bossFields').style.display = 'none';
@@ -462,6 +469,7 @@ function addItem(bossId) {
     document.getElementById('editItemName').value = '';
     document.getElementById('editItemIconUrl').value = '';
     document.getElementById('editItemSlot').value = '';
+    document.getElementById('editSecondaryStats').value = '';
     
     // Hide boss fields, show item fields
     document.getElementById('bossFields').style.display = 'none';
@@ -549,13 +557,15 @@ function saveEdit() {
         // Get selected specs
         const selectedBisSpecs = Array.from(document.querySelectorAll('#editBisSpecs input:checked')).map(cb => cb.value);
         const selectedGoodsFor = Array.from(document.querySelectorAll('#editGoodsFor input:checked')).map(cb => cb.value);
+        const secondaryStats = document.getElementById('editSecondaryStats').value.trim();
         
         const item = {
             name: itemName,
             iconUrl: convertedIconUrl,
             slot: itemSlot,
             bisSpecs: selectedBisSpecs,
-            goodsFor: selectedGoodsFor
+            goodsFor: selectedGoodsFor,
+            secondaryStats: secondaryStats || undefined
         };
         
         if (currentEditItemIndex === -1) {
@@ -593,6 +603,7 @@ function cancelEdit() {
     document.getElementById('editItemName').value = '';
     document.getElementById('editItemIconUrl').value = '';
     document.getElementById('editItemSlot').value = '';
+    document.getElementById('editSecondaryStats').value = '';
     
     // Clear filter inputs
     document.getElementById('bisSpecsFilter').value = '';
@@ -675,21 +686,7 @@ function exportToFile() {
         console.log('📁 İndirilen dosya: loot-data.json');
         console.log('📊 Dosya içeriği:', dataString);
         
-        const instructions = `
-✅ loot-data.json dosyası başarıyla oluşturuldu!
-
-📁 İndirilen dosya: loot-data.json
-📊 Dosya boyutu: ${dataString.length} karakter
-
-📋 YAPILMASI GEREKENLER:
-1. İndirilen loot-data.json dosyasını bulun
-2. Bu dosyayı proje klasöründeki (C:\\wow-loot-manager\\) mevcut loot-data.json dosyası ile değiştirin
-3. index.html sayfasını yenileyin (F5)
-
-💡 NOT: Admin paneldeki değişiklikler localStorage'da saklanıyor ve export ile JSON dosyası olarak alınıyor.
-        `;
-        
-        alert(instructions);
+        alert('✅ İşlem tamamlandı!');
     }, 2000); // 2 second delay to show loading animation
 }
 
@@ -859,4 +856,21 @@ function clearItemSearch() {
     clearSearchHighlights();
     displayBosses(); // Refresh display to show all items normally
     console.log('🔍 Item search cleared');
+}
+
+// Set secondary stats from preset buttons
+function setSecondaryStats(stats) {
+    const inputField = document.getElementById('editSecondaryStats');
+    if (inputField) {
+        // Format the stats: capitalize first letter of each stat and add spaces around /
+        const formattedStats = stats
+            .split('/')
+            .map(stat => stat.charAt(0).toUpperCase() + stat.slice(1).toLowerCase())
+            .join(' / ');
+        
+        inputField.value = formattedStats;
+        console.log(`✅ Secondary stats set to: ${formattedStats}`);
+    } else {
+        console.error('❌ editSecondaryStats input field not found');
+    }
 } 

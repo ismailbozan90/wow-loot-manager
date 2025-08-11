@@ -504,8 +504,8 @@
       "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_bloodpresence.jpg",
       "stats": {
         "secondary": [
-          "Haste",
-          "Mastery"
+          "Crit",
+          "Haste"
         ]
       },
       "offSet": {

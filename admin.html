@@ -346,6 +346,28 @@
             font-size: 0.75rem;
             color: #2ed573;
         }
+        
+        .secondary-stats-display {
+            margin-top: 8px;
+        }
+        
+        .secondary-stats-display .specs-header {
+            font-weight: 600;
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .secondary-stats-value {
+            display: inline-block;
+            padding: 3px 6px;
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: #ff6b6b;
+            font-weight: 500;
+        }
 
         /* New styles for popup */
         .edit-form-backdrop {
@@ -415,6 +437,21 @@
             background: rgba(255, 215, 0, 0.05);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
+        
+        /* Preset buttons for secondary stats */
+        .preset-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        
+        .preset-buttons .btn-small {
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            min-width: auto;
+            height: 32px;
+        }
     </style>
 </head>
 <body>
@@ -471,13 +508,13 @@
                     <label>Item Name:</label>
                     <input type="text" id="editItemName">
                 </div>
+            </div>
+
+            <div class="form-row">
                 <div class="form-group">
                     <label>Item Icon URL:</label>
                     <input type="text" id="editItemIconUrl" placeholder="https://wow.zamimg.com/images/wow/icons/tiny/...">
                 </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
                     <label>Item Slot:</label>
                     <select id="editItemSlot">
@@ -508,15 +545,42 @@
                         <!-- Spec checkboxes will be added here -->
                     </div>
                 </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
                     <label>Goods For:</label>
                     <input type="text" id="goodsForFilter" placeholder="Search specs..." class="spec-filter">
                     <div class="spec-checkboxes" id="editGoodsFor">
                         <!-- Spec checkboxes will be added here -->
                     </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Stats:</label>
+                    <input type="text" id="editSecondaryStats" placeholder="e.g., haste/mastery, crit/mastery">
+                                            <div class="preset-buttons">
+                            <!-- Primary Stat (All Classes) -->
+                            <button type="button" class="btn btn-warning btn-small" onclick="console.log('Button clicked: primary stat'); setSecondaryStats('agility/intellect/strength')">Primary Stat</button>
+                            
+                            <!-- Primary Stats -->
+                            <button type="button" class="btn btn-primary btn-small" onclick="console.log('Button clicked: agility'); setSecondaryStats('agility')">Agility</button>
+                            <button type="button" class="btn btn-primary btn-small" onclick="console.log('Button clicked: intellect'); setSecondaryStats('intellect')">Intellect</button>
+                            <button type="button" class="btn btn-primary btn-small" onclick="console.log('Button clicked: strength'); setSecondaryStats('strength')">Strength</button>
+                            
+                            <!-- Individual Secondary Stats -->
+                            <button type="button" class="btn btn-info btn-small" onclick="console.log('Button clicked: haste'); setSecondaryStats('haste')">Haste</button>
+                            <button type="button" class="btn btn-info btn-small" onclick="console.log('Button clicked: crit'); setSecondaryStats('crit')">Crit</button>
+                            <button type="button" class="btn btn-info btn-small" onclick="console.log('Button clicked: mastery'); setSecondaryStats('mastery')">Mastery</button>
+                            <button type="button" class="btn btn-info btn-small" onclick="console.log('Button clicked: versatility'); setSecondaryStats('versatility')">Versatility</button>
+                            
+                            <!-- Combined Secondary Stats -->
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: haste/mastery'); setSecondaryStats('haste/mastery')">Haste/Mastery</button>
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: crit/mastery'); setSecondaryStats('crit/mastery')">Crit/Mastery</button>
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: haste/crit'); setSecondaryStats('haste/crit')">Haste/Crit</button>
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: mastery/versatility'); setSecondaryStats('mastery/versatility')">Mastery/Vers</button>
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: haste/versatility'); setSecondaryStats('haste/versatility')">Haste/Vers</button>
+                            <button type="button" class="btn btn-secondary btn-small" onclick="console.log('Button clicked: crit/versatility'); setSecondaryStats('crit/versatility')">Crit/Vers</button>
+                        </div>
                 </div>
             </div>
 

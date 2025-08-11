@@ -13,9 +13,11 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
   - Real-time filter reset capability
 - **BIS Spec Tracking**: Visual display of which specs each item is BIS for
 - **Goods For Tracking**: Additional spec assignments for items
-- **Spec Information System**: Comprehensive spec stats and off-set information
+- **Secondary Stats Display**: Item secondary stats (e.g., "Haste / Mastery", "Crit / Versatility")
+- **Spec Information System**: Comprehensive spec stats, off-set information, and sim data
 - **Responsive Design**: Mobile and desktop optimized interface
 - **Modern UI**: Gradient backgrounds, smooth animations, and professional styling
+- **Clean Interface**: Admin buttons removed from main page for cleaner user experience
 
 ### Trinket DPS Analysis System
 - **Interactive Trinket Popup**: Modal-based trinket analysis interface
@@ -30,9 +32,11 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 
 ### Spec Information System
 - **Interactive Spec Info Popup**: Modal-based spec information interface
-- **Comprehensive Spec Data**: Secondary stats and off-set information for all specs
+- **Comprehensive Spec Data**: Secondary stats, off-set information, and sim data for all specs
 - **Search Functionality**: Real-time filtering of specs by name
-- **Organized Display**: Clean table format with spec icons, stats, and off-set items
+- **Organized Display**: Clean table format with spec icons, stats, off-set items, and sim values
+- **Sim Data Integration**: 7-digit single-target simulation data for each spec
+- **Sorted Display**: Specs sorted by sim value (highest to lowest)
 - **Direct JSON Loading**: Loads data directly from JSON file without localStorage
 - **Responsive Layout**: Fixed popup size with scrollable content
 
@@ -42,9 +46,16 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 - **Complete Loot Management**: Add, edit, and delete raid bosses and items
 - **BIS Spec Management**: Assign and manage BIS specs for each item
 - **Goods For Management**: Additional spec assignments
+- **Secondary Stats Management**: Add and manage item secondary stats with preset buttons
+- **Preset Secondary Stats**: Quick selection buttons for common stat combinations
+  - Primary Stats: Agility, Intellect, Strength
+  - Individual Secondary Stats: Haste, Crit, Mastery, Versatility
+  - Combined Stats: Haste/Mastery, Crit/Mastery, Haste/Crit, etc.
+  - Primary Stat (All Classes): Agility / Intellect / Strength
 - **JSON Import/Export**: Full data backup and restore functionality
 - **Icon URL Management**: Automatic conversion of WoWhead icon URLs
 - **Local Storage**: Persistent data storage in browser
+- **Simplified Export**: Clean export success message
 
 #### Trinket Admin Panel (`trinket-admin.html`)
 - **Trinket DPS Management**: Add, edit, and delete trinket DPS data
@@ -55,9 +66,10 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 - **Local Storage**: Persistent trinket data storage
 
 #### Spec Info Admin Panel (`spec-info-admin.html`)
-- **Spec Information Management**: Add, edit, and delete spec stat and off-set data
+- **Spec Information Management**: Add, edit, and delete spec stat, off-set, and sim data
 - **Secondary Stats Management**: Manage secondary stat priorities for each spec
 - **Off-Set Item Management**: Single off-set item assignment per spec
+- **Sim Data Management**: 7-digit single-target simulation values for each spec
 - **Icon Management**: Spec icon URL handling with proper class icon format
 - **JSON Import/Export**: Complete spec info data backup and restore
 - **Local Storage**: Persistent spec info data storage
@@ -107,13 +119,17 @@ wow-loot-manager/
 #### Loot Display
 - **Boss Grouping**: When "All Bosses" is selected, items are grouped by boss
 - **BIS Spec Icons**: Visual representation of BIS specs with class icons
-- **Item Information**: Complete item details including slot, icon, and spec assignments
+- **Secondary Stats**: Display of item secondary stats (e.g., "Haste / Mastery")
+- **Item Information**: Complete item details including slot, icon, stats, and spec assignments
 - **Responsive Grid**: Adaptive layout for different screen sizes
+- **Color-coded Labels**: Stats (red), BIS Specs (gold), Goods For (green)
 
 #### Spec Information System
 - **Spec Info Button**: Access spec information via popup modal
 - **Search Interface**: Real-time search through all specs
-- **Table Format**: Organized display with spec, stats, and off-set columns
+- **Table Format**: Organized display with spec, stats, off-set, and sim columns
+- **Sim Data**: 7-digit simulation values for each spec
+- **Sorted Display**: Specs sorted by sim value (highest to lowest)
 - **Fixed Layout**: Consistent popup size with scrollable content
 
 ### Trinket DPS Analysis
@@ -135,13 +151,14 @@ wow-loot-manager/
 #### Popup Interface
 - **Modal Design**: Overlay popup with backdrop
 - **Search Input**: Real-time filtering of specs
-- **Table Header**: Fixed header with column labels
+- **Table Header**: Fixed header with column labels (Spec, Stats, Off-Set, Sim)
 - **Scrollable Content**: Fixed popup size with scrollable list
 
 #### Data Display
 - **Spec Icons**: Class and spec icons for visual identification
 - **Secondary Stats**: Priority order of secondary stats (Crit, Haste, Mastery, Versatility)
 - **Off-Set Items**: Single off-set item or "None" indication
+- **Sim Values**: 7-digit single-target simulation data
 - **Responsive Layout**: Proper column alignment and spacing
 
 ### Administrative Features
@@ -151,12 +168,14 @@ wow-loot-manager/
 - **Local Storage**: Persistent data storage in browser
 - **JSON Import/Export**: Complete data backup and restore
 - **Icon URL Conversion**: Automatic WoWhead URL processing
+- **Secondary Stats**: Comprehensive secondary stats management with presets
 
 #### User Interface
 - **Modern Design**: Gradient backgrounds and smooth animations
 - **Responsive Layout**: Works on all device sizes
 - **Intuitive Controls**: Easy-to-use forms and buttons
 - **Error Handling**: Graceful error management
+- **Preset Buttons**: Quick selection for common secondary stat combinations
 
 ## 📊 Data Structure
 
@@ -172,6 +191,7 @@ wow-loot-manager/
           "name": "Item Name",
           "slot": "head",
           "iconUrl": "https://wow.zamimg.com/...",
+          "secondaryStats": "Haste / Mastery",
           "bisSpecs": ["warrior-arms", "paladin-retribution"],
           "goodsFor": ["warrior-fury"]
         }
@@ -215,7 +235,8 @@ wow-loot-manager/
       },
       "offSet": {
         "item": "Meta Gem"
-      }
+      },
+      "sim": 1234567
     }
   }
 }
@@ -242,7 +263,9 @@ wow-loot-manager/
 - Head, Neck, Shoulder, Back, Chest, Wrist, Hands, Waist, Legs, Feet, Finger, Trinket, Main Hand, Off Hand
 
 ### Secondary Stats
-- Critical Strike, Haste, Mastery, Versatility
+- **Primary Stats**: Agility, Intellect, Strength
+- **Secondary Stats**: Critical Strike, Haste, Mastery, Versatility
+- **Combined Formats**: Haste / Mastery, Crit / Versatility, etc.
 
 ## 🛠️ Technologies Used
 
@@ -268,7 +291,7 @@ wow-loot-manager/
 ### Adding New Bosses
 1. Edit `loot-data.json`
 2. Add new boss entry with items
-3. Assign BIS specs and goods for specs
+3. Assign BIS specs, goods for specs, and secondary stats
 
 ### Adding New Trinkets
 1. Use `trinket-admin.html`
@@ -279,7 +302,14 @@ wow-loot-manager/
 1. Use `spec-info-admin.html`
 2. Add spec with secondary stat priorities
 3. Assign off-set item or mark as "None"
-4. Ensure proper class icon URL format
+4. Add sim data (7-digit number)
+5. Ensure proper class icon URL format
+
+### Managing Secondary Stats
+1. Use `admin.html` for item management
+2. Use preset buttons for common stat combinations
+3. Manually enter custom stat combinations
+4. Format: "Stat1 / Stat2" (capitalized with spaces around /)
 
 ### Styling Changes
 - Modify `styles.css` for visual customizations
@@ -306,6 +336,8 @@ wow-loot-manager/
 - **Modern Browsers**: Requires ES6+ support
 - **File Size**: Large JSON files may take time to load initially
 - **Spec Info Data**: Loads directly from `spec-info-data.json` file
+- **Secondary Stats**: Formatted as "Stat1 / Stat2" with proper capitalization
+- **Sim Data**: 7-digit numbers representing single-target simulation values
 
 ## 🤝 Contributing
 
@@ -327,6 +359,7 @@ For issues or questions:
 3. Ensure modern browser compatibility
 4. Clear browser cache if needed
 5. Verify spec icon URLs are in correct format
+6. Check secondary stats formatting (capitalized with spaces around /)
 
 ---
 

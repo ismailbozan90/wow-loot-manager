@@ -433,24 +433,36 @@ function displayLootItem(item) {
         `<img src="${item.iconUrl}" alt="${item.name}" class="item-icon" onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='inline');" title="${item.name}">` : 
         `<div class="item-icon-fallback">⚔️</div>`;
     
-    // BIS Specs ve Goods For mesajları
+    // Stats section
+    const statsSection = item.secondaryStats ? 
+        `<div class="secondary-stats">
+            <strong style="color: #ff6b6b; font-weight: 600; font-size: 0.85rem;">Stats:</strong><br>
+            <span style="color: #ff6b6b; font-weight: 500;">${item.secondaryStats}</span>
+        </div>` : 
+        `<div class="secondary-stats">
+            <strong style="color: #ff6b6b; font-weight: 600; font-size: 0.85rem;">Stats:</strong><br>
+            <span style="color: #888; font-style: italic;">Not specified</span>
+        </div>`;
+    
+    // BIS Specs section with updated styling
     const bisSpecsSection = item.bisSpecs && item.bisSpecs.length > 0 ? 
         `<div class="bis-specs">
-            <strong>BIS Specs:</strong><br>
+            <strong style="color: #ffd700; font-weight: 600; font-size: 0.85rem;">BIS Specs:</strong><br>
             ${bisSpecsHTML}
         </div>` : 
         `<div class="bis-specs">
-            <strong>BIS Specs:</strong><br>
+            <strong style="color: #ffd700; font-weight: 600; font-size: 0.85rem;">BIS Specs:</strong><br>
             <span style="color: #888; font-style: italic;">No BIS specs assigned</span>
         </div>`;
     
+    // Goods For section with updated styling
     const goodsForSection = item.goodsFor && item.goodsFor.length > 0 ? 
         `<div class="goods-for">
-            <strong>Goods For:</strong><br>
+            <strong style="color: #2ed573; font-weight: 600; font-size: 0.85rem;">Goods For:</strong><br>
             ${goodsForHTML}
         </div>` : 
         `<div class="goods-for">
-            <strong>Goods For:</strong><br>
+            <strong style="color: #2ed573; font-weight: 600; font-size: 0.85rem;">Goods For:</strong><br>
             <span style="color: #888; font-style: italic;">No specs assigned</span>
         </div>`;
     
@@ -464,6 +476,7 @@ function displayLootItem(item) {
                 </div>
             </div>
         </div>
+        ${statsSection}
         ${bisSpecsSection}
         ${goodsForSection}
     `;

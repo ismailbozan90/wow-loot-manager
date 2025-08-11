@@ -6,15 +6,19 @@
       "items": [
         {
           "name": "Mounted Manacannons",
-          "slot": "shoulder",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shoulder_cloth_raidpriestethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "shoulder",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Singed Sievecuffs",
-          "slot": "wrist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_raidmageethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "wrist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Irradiated Impurity Filter",
@@ -23,7 +27,8 @@
           "bisSpecs": [
             "demon-hunter-vengeance"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Atomic Phasebelt",
@@ -34,13 +39,16 @@
             "druid-balance",
             "demon-hunter-havoc"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Chambersieve Waistcoat",
-          "slot": "legs",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_mail_raidhunterethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "legs",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Arcanotech Wrist-Matrix",
@@ -49,19 +57,24 @@
           "bisSpecs": [
             "evoker-preservation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Manaforged Displacement Chassis",
-          "slot": "chest",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_chest_plate_raidwarriorethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "chest",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Sterilized Expulsion Boots",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_plate_raiddeathknightethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Logic Gate: Alpha",
@@ -75,23 +88,24 @@
             "rogue-subtlety",
             "priest-discipline",
             "priest-holy",
-            "shaman-restoration",
             "warlock-affliction",
             "warlock-demonology",
             "warlock-destruction",
             "monk-brewmaster",
-            "druid-balance",
             "demon-hunter-havoc",
             "death-knight-frost",
             "evoker-preservation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Overclocked Plexhammer",
-          "slot": "main-hand",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_mace_1h_etherealraid_d_01.jpg",
-          "bisSpecs": []
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Factory-Issue Plexhammer",
@@ -100,22 +114,27 @@
           "bisSpecs": [],
           "goodsFor": [
             "death-knight-frost"
-          ]
+          ],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Obliteration Beamglaive",
-          "slot": "main-hand",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_polearm_2h_etherealraid_d_01.jpg",
-          "bisSpecs": []
+          "slot": "main-hand",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Eradicating Arcanocore",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_obliterationcannon.jpg",
           "slot": "trinket",
-          "bisSpecs": [],
-          "goodsFor": [
+          "bisSpecs": [
+            "warrior-arms",
             "warrior-fury"
-          ]
+          ],
+          "goodsFor": [],
+          "secondaryStats": "Strength"
         }
       ]
     },
@@ -124,9 +143,11 @@
       "items": [
         {
           "name": "Laced Lair-Steppers",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_raidmageethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Deathbound Shoulderpads",
@@ -135,7 +156,8 @@
           "bisSpecs": [
             "rogue-subtlety"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Mastery / Versatility"
         },
         {
           "name": "Colossal Lifetether",
@@ -144,13 +166,16 @@
           "bisSpecs": [
             "shaman-restoration"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Discarded Nutrient Shackles",
-          "slot": "wrist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_plate_raidwarriorethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "wrist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Prodigious Gene Splicer",
@@ -160,7 +185,8 @@
             "rogue-assassination",
             "rogue-subtlety"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Mastery / Versatility"
         },
         {
           "name": "Piercing Strandbow",
@@ -169,7 +195,8 @@
           "bisSpecs": [],
           "goodsFor": [
             "hunter-marksmanship"
-          ]
+          ],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Ward of the Weaving-Beast",
@@ -182,7 +209,8 @@
           ],
           "goodsFor": [
             "shaman-restoration"
-          ]
+          ],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Astral Antenna",
@@ -197,9 +225,9 @@
             "hunter-marksmanship",
             "rogue-assassination",
             "rogue-outlaw",
-            "rogue-subtlety",
             "priest-discipline",
             "priest-holy",
+            "priest-shadow",
             "shaman-enhancement",
             "shaman-restoration",
             "monk-mistweaver",
@@ -222,7 +250,8 @@
             "monk-brewmaster",
             "druid-guardian",
             "evoker-augmentation"
-          ]
+          ],
+          "secondaryStats": "Agility / Intellect / Strength"
         },
         {
           "name": "Loom'ithar's Living Silk",
@@ -238,7 +267,8 @@
             "monk-mistweaver",
             "druid-restoration",
             "evoker-preservation"
-          ]
+          ],
+          "secondaryStats": "Haste"
         },
         {
           "name": "Silken Offering (Leg Tier Set)",
@@ -293,22 +323,24 @@
           "bisSpecs": [
             "druid-feral"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Bindings of Lost Essence",
-          "slot": "wrist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_leather_raiddruidethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "wrist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Deathspindle Talons",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_raidevokerethereal_d_01.jpg",
           "slot": "feet",
-          "bisSpecs": [
-            "shaman-restoration"
-          ],
-          "goodsFor": []
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Fresh Ethereal Fetters",
@@ -317,7 +349,8 @@
           "bisSpecs": [
             "paladin-holy"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Chrysalis of Sundered Souls",
@@ -329,7 +362,8 @@
             "mage-arcane",
             "monk-mistweaver"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Unbound Training Claws",
@@ -339,7 +373,8 @@
           "goodsFor": [
             "shaman-enhancement",
             "demon-hunter-havoc"
-          ]
+          ],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Voidglass Spire",
@@ -361,9 +396,11 @@
             "warlock-demonology",
             "warlock-destruction",
             "monk-mistweaver",
+            "druid-balance",
             "evoker-devastation",
             "evoker-augmentation"
-          ]
+          ],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Soulbinder's Embrace",
@@ -374,13 +411,16 @@
           ],
           "goodsFor": [
             "demon-hunter-vengeance"
-          ]
+          ],
+          "secondaryStats": "Agility / Intellect / Strength"
         },
         {
           "name": "Naazindhri's Mystic Lash",
-          "slot": "trinket",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_soulbinderbossinttrinket.jpg",
-          "bisSpecs": []
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Intellect"
         },
         {
           "name": "Binding Agent (Hand Tier Set)",
@@ -434,13 +474,16 @@
             "warlock-demonology",
             "warlock-destruction"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Laboratory Test Slippers",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_raiddruidethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Harvested Attendant's Uniform",
@@ -449,7 +492,8 @@
           "bisSpecs": [
             "shaman-enhancement"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Breached Containment Guards",
@@ -458,7 +502,8 @@
           "bisSpecs": [
             "death-knight-unholy"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Logic Gate: Omega",
@@ -469,14 +514,15 @@
             "paladin-holy",
             "paladin-retribution",
             "hunter-beast-mastery",
-            "hunter-marksmanship",
             "hunter-survival",
             "priest-shadow",
             "shaman-enhancement",
+            "druid-balance",
             "death-knight-frost",
             "evoker-augmentation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Marvel of Technomancy",
@@ -488,26 +534,30 @@
           "goodsFor": [
             "monk-windwalker",
             "druid-feral"
-          ]
+          ],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Photon Sabre Prime",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_sword_2h_etherealraid_d_01.jpg",
           "slot": "main-hand",
           "bisSpecs": [
-            "paladin-retribution",
-            "death-knight-frost"
+            "paladin-retribution"
           ],
           "goodsFor": [
             "warrior-arms",
-            "warrior-fury"
-          ]
+            "warrior-fury",
+            "death-knight-frost"
+          ],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Iris of the Dark Beyond",
-          "slot": "off-hand",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_offhand_1h_etherealraid_d_01.jpg",
-          "bisSpecs": []
+          "slot": "off-hand",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Araz's Ritual Forge",
@@ -516,7 +566,6 @@
           "bisSpecs": [
             "paladin-protection",
             "paladin-retribution",
-            "hunter-marksmanship",
             "hunter-survival",
             "rogue-assassination",
             "rogue-subtlety",
@@ -533,8 +582,7 @@
             "druid-feral",
             "death-knight-frost",
             "death-knight-unholy",
-            "evoker-devastation",
-            "evoker-augmentation"
+            "evoker-devastation"
           ],
           "goodsFor": [
             "hunter-beast-mastery",
@@ -546,8 +594,10 @@
             "druid-restoration",
             "demon-hunter-havoc",
             "demon-hunter-vengeance",
-            "death-knight-blood"
-          ]
+            "death-knight-blood",
+            "evoker-augmentation"
+          ],
+          "secondaryStats": "Crit"
         },
         {
           "name": "Foreboding Beaker (Head Tier Set)",
@@ -598,9 +648,11 @@
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_cloth_raidwarlockethereal_d_01.jpg",
           "slot": "hand",
           "bisSpecs": [
+            "priest-holy",
             "mage-arcane"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Interloper's Silken Striders",
@@ -617,7 +669,8 @@
             "warlock-demonology",
             "warlock-destruction"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Darksorrow's Corrupted Carapace",
@@ -626,7 +679,8 @@
           "bisSpecs": [
             "monk-mistweaver"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Interloper's Reinforced Sandals",
@@ -646,7 +700,8 @@
             "demon-hunter-havoc",
             "demon-hunter-vengeance"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Mastery / Versatility"
         },
         {
           "name": "Clasp of Furious Freedom",
@@ -658,7 +713,8 @@
             "shaman-enhancement",
             "evoker-preservation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Interloper's Chain Boots",
@@ -670,11 +726,13 @@
             "hunter-survival",
             "shaman-elemental",
             "shaman-enhancement",
+            "shaman-restoration",
             "evoker-devastation",
             "evoker-preservation",
             "evoker-augmentation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Yoke of Enveloping Hatred",
@@ -683,7 +741,8 @@
           "bisSpecs": [
             "paladin-holy"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Interloper's Plated Sabatons",
@@ -700,7 +759,8 @@
             "death-knight-frost",
             "death-knight-unholy"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Collapsing Phaseblades",
@@ -709,13 +769,16 @@
           "bisSpecs": [
             "demon-hunter-havoc"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Event Horizon",
-          "slot": "off-hand",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_shield_1h_etherealraid_d_01.jpg",
-          "bisSpecs": []
+          "slot": "off-hand",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Mastery / Versatility"
         },
         {
           "name": "Sigil of the Cosmic Hunt",
@@ -728,11 +791,11 @@
           ],
           "goodsFor": [
             "hunter-beast-mastery",
-            "hunter-marksmanship",
             "shaman-enhancement",
             "monk-brewmaster",
             "monk-windwalker"
-          ]
+          ],
+          "secondaryStats": "Agility"
         },
         {
           "name": "Brand of Ceaseless Ire",
@@ -747,7 +810,8 @@
           ],
           "goodsFor": [
             "death-knight-blood"
-          ]
+          ],
+          "secondaryStats": "Crit"
         },
         {
           "name": "Yearning Cursemark (Shoulder Tier Set)",
@@ -799,12 +863,14 @@
           "slot": "neck",
           "bisSpecs": [
             "paladin-holy",
+            "hunter-survival",
             "mage-fire",
             "druid-guardian",
             "death-knight-blood",
             "evoker-devastation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         }
       ]
     },
@@ -813,27 +879,35 @@
       "items": [
         {
           "name": "Conjoined Glass Bracers",
-          "slot": "wrist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_cloth_raidpriestethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "wrist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Kinetic Dunerunners",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_leather_raiddemonhunterethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Mastery / Versatility"
         },
         {
           "name": "Bite of the Astral Wastes",
-          "slot": "head",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_helm_mail_raidshamanethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "head",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Shrapnel-Fused Legguards",
-          "slot": "legs",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_plate_raiddeathknightethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "legs",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Voidglass Kris",
@@ -846,15 +920,16 @@
             "shaman-elemental",
             "shaman-restoration",
             "mage-frost",
-            "evoker-preservation",
             "evoker-augmentation"
           ],
           "goodsFor": [
             "mage-arcane",
             "mage-fire",
             "druid-restoration",
-            "evoker-devastation"
-          ]
+            "evoker-devastation",
+            "evoker-preservation"
+          ],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Lacerated Current Caster",
@@ -863,7 +938,8 @@
           "bisSpecs": [
             "hunter-beast-mastery"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Fractillus' Last Breath",
@@ -872,7 +948,8 @@
           "bisSpecs": [],
           "goodsFor": [
             "mage-arcane"
-          ]
+          ],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Diamantine Voidcore",
@@ -882,9 +959,7 @@
             "paladin-holy",
             "priest-discipline",
             "priest-holy",
-            "priest-shadow",
             "shaman-elemental",
-            "warlock-affliction",
             "warlock-destruction",
             "monk-mistweaver",
             "druid-restoration",
@@ -892,11 +967,14 @@
             "evoker-augmentation"
           ],
           "goodsFor": [
+            "priest-shadow",
             "mage-arcane",
             "mage-frost",
+            "warlock-affliction",
             "druid-balance",
             "evoker-devastation"
-          ]
+          ],
+          "secondaryStats": "Mastery"
         },
         {
           "name": "Unyielding Netherprism",
@@ -963,15 +1041,19 @@
       "items": [
         {
           "name": "Sandals of Scarred Servitude",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_cloth_raidwarlockethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Twilight Tyrant's Veil",
-          "slot": "head",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_helm_cloth_raidpriestethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "head",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Reaper's Dreadbelt",
@@ -980,37 +1062,48 @@
           "bisSpecs": [
             "rogue-subtlety"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Elite Shadowguard Legwraps",
-          "slot": "legs",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_leather_raidmonkethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "legs",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Pactbound Vambraces",
-          "slot": "wrist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_bracer_mail_raidshamanethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "wrist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Royal Voidscale Gauntlets",
-          "slot": "hand",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_glove_mail_raidevokerethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "hand",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Darkrider Sabatons",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_plate_raidwarriorethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Beacons of False Righteousness",
-          "slot": "shoulder",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_shoulder.jpg",
-          "bisSpecs": []
+          "slot": "shoulder",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Salhadaar's Folly",
@@ -1028,7 +1121,8 @@
             "death-knight-unholy",
             "evoker-augmentation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Vengeful Netherspike",
@@ -1038,7 +1132,8 @@
             "rogue-assassination",
             "rogue-subtlety"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Voidglass Sovereign's Blade",
@@ -1057,7 +1152,8 @@
           "goodsFor": [
             "druid-balance",
             "evoker-augmentation"
-          ]
+          ],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Oath-Breaker's Recompense",
@@ -1069,7 +1165,8 @@
           ],
           "goodsFor": [
             "death-knight-frost"
-          ]
+          ],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Maw of the Void",
@@ -1083,19 +1180,24 @@
             "paladin-retribution",
             "druid-guardian",
             "death-knight-unholy"
-          ]
+          ],
+          "secondaryStats": "Crit"
         },
         {
           "name": "Perfidious Projector",
-          "slot": "trinket",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_11_0_etherealraid_communicator_color4.jpg",
-          "bisSpecs": []
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste"
         },
         {
           "name": "Nexus-King's Command",
-          "slot": "trinket",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_oathbindersauthority.jpg",
-          "bisSpecs": []
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Mastery"
         }
       ]
     },
@@ -1107,16 +1209,18 @@
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_cloth_raidpriestethereal_d_01.jpg",
           "slot": "waist",
           "bisSpecs": [
-            "priest-shadow",
-            "mage-arcane"
+            "priest-shadow"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Stellar Navigation Slacks",
-          "slot": "legs",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_pant_cloth_raidmageethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "legs",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Time-Compressed Wristguards",
@@ -1125,7 +1229,8 @@
           "bisSpecs": [
             "druid-restoration"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Winged Gamma Handlers",
@@ -1134,7 +1239,8 @@
           "bisSpecs": [
             "druid-guardian"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Claws of Failed Resistance",
@@ -1143,25 +1249,32 @@
           "bisSpecs": [
             "shaman-restoration"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Greaves of Shattered Space",
-          "slot": "feet",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_boot_mail_raidhunterethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "feet",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Haste / Mastery"
         },
         {
           "name": "Artoshion's Abyssal Stare",
-          "slot": "head",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_plate_raidpaladinethereal_d_01_helm.jpg",
-          "bisSpecs": []
+          "slot": "head",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Mastery"
         },
         {
           "name": "Ultradense Fission Girdle",
-          "slot": "waist",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_belt_plate_raiddeathknightethereal_d_01.jpg",
-          "bisSpecs": []
+          "slot": "waist",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Crit / Versatility"
         },
         {
           "name": "Band of the Shattered Soul",
@@ -1185,7 +1298,8 @@
             "evoker-devastation",
             "evoker-preservation"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "Ergospheric Cudgel",
@@ -1194,7 +1308,8 @@
           "bisSpecs": [
             "rogue-outlaw"
           ],
-          "goodsFor": []
+          "goodsFor": [],
+          "secondaryStats": "Haste / Versatility"
         },
         {
           "name": "Supermassive Starcrusher",
@@ -1204,13 +1319,16 @@
           "goodsFor": [
             "death-knight-blood",
             "death-knight-unholy"
-          ]
+          ],
+          "secondaryStats": "Haste / Crit"
         },
         {
           "name": "All-Devouring Nucleus",
-          "slot": "trinket",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_omnidpstrinket.jpg",
-          "bisSpecs": []
+          "slot": "trinket",
+          "bisSpecs": [],
+          "goodsFor": [],
+          "secondaryStats": "Versatility"
         },
         {
           "name": "Screams of a Forgotten Sky",
@@ -1219,7 +1337,8 @@
           "bisSpecs": [],
           "goodsFor": [
             "death-knight-frost"
-          ]
+          ],
+          "secondaryStats": "Crit"
         }
       ]
     }
