@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loot Analysis - WoW Loot Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Loot Analysis System</h1>
+        </header>
+
+        <div class="analysis-controls">
+            <div class="filter-group">
+                <label for="bossFilter">Boss Filter:</label>
+                <select id="bossFilter" class="filter-select">
+                    <option value="all">All Bosses</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="slotFilter">Slot Filter:</label>
+                <select id="slotFilter" class="filter-select">
+                    <option value="all">All Slots</option>
+                    <option value="head">Head</option>
+                    <option value="neck">Neck</option>
+                    <option value="shoulder">Shoulder</option>
+                    <option value="back">Back</option>
+                    <option value="chest">Chest</option>
+                    <option value="wrist">Wrist</option>
+                    <option value="hands">Hands</option>
+                    <option value="waist">Waist</option>
+                    <option value="legs">Legs</option>
+                    <option value="feet">Feet</option>
+                    <option value="finger">Finger</option>
+                    <option value="trinket">Trinket</option>
+                    <option value="main-hand">Main Hand</option>
+                    <option value="off-hand">Off Hand</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="specSearchInput">Spec Filter:</label>
+                <div class="custom-dropdown">
+                    <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
+                    <div id="specDropdown" class="spec-dropdown">
+                        <div class="dropdown-content">
+                            <!-- Spec options will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button id="resetFilters" class="reset-btn" title="Reset Filters">↺</button>
+            </div>
+        </div>
+
+        <div class="analysis-settings">
+            <h3>Analysis Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="simWeight">Sim Weight:</label>
+                    <input type="range" id="simWeight" min="0" max="100" value="40" class="weight-slider">
+                    <span id="simWeightValue">40%</span>
+                </div>
+                
+                <div class="setting-item">
+                    <label for="statsWeight">Secondary Stats Weight:</label>
+                    <input type="range" id="statsWeight" min="0" max="100" value="25" class="weight-slider">
+                    <span id="statsWeightValue">25%</span>
+                </div>
+                
+                <div class="setting-item">
+                    <label for="offsetWeight">Off-Set Weight:</label>
+                    <input type="range" id="offsetWeight" min="0" max="100" value="20" class="weight-slider">
+                    <span id="offsetWeightValue">20%</span>
+                </div>
+                
+                <div class="setting-item">
+                    <label for="setBonusWeight">Set Bonus Weight:</label>
+                    <input type="range" id="setBonusWeight" min="0" max="100" value="15" class="weight-slider">
+                    <span id="setBonusWeightValue">15%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-results">
+            <div class="results-header">
+                <h2>Loot Priority Analysis</h2>
+                <div class="results-controls">
+                    <button id="exportAnalysis" class="export-btn">Export Analysis</button>
+                    <button id="refreshAnalysis" class="refresh-btn">Refresh Analysis</button>
+                </div>
+            </div>
+            
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading data and performing analysis...</p>
+            </div>
+
+            <div class="analysis-table-container">
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Slot</th>
+                            <th>Secondary Stats</th>
+                            <th>Top Priority Spec</th>
+                            <th>Priority Score</th>
+                            <th>Sim Value</th>
+                            <th>Stats Match</th>
+                            <th>Off-Set Need</th>
+                            <th>Set Bonus</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="analysisTableBody">
+                        <!-- Analysis results will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spec Details Sidebar -->
+    <div id="specDetailsSidebar" class="spec-details-sidebar">
+        <div class="sidebar-header">
+            <h3 id="specDetailsTitle">Spec Details</h3>
+            <button onclick="hideSpecDetailsPanel()" class="close-sidebar-btn">&times;</button>
+        </div>
+        <div id="specDetails" class="spec-details-content">
+            <!-- Spec details will be shown here when clicking on a spec -->
+        </div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <script src="loot-analysis.js"></script>
+</body>
+</html>

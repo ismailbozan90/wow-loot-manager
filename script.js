@@ -1049,6 +1049,12 @@ function setupSpecInfoPopup() {
     // Backdrop'a tıklandığında popup'ı kapat
     setBonusPopupBackdrop.addEventListener('click', hideSetBonusPopup);
 
+    // Analysis butonuna tıklandığında analiz sayfasına yönlendir
+    const analysisButton = document.getElementById('analysisButton');
+    analysisButton.addEventListener('click', function() {
+        window.location.href = 'loot-analysis.html';
+    });
+
     // Search input event listeners are now set up in HTML script section
 
     // Spec Info listesini doldur (data yüklendikten sonra çağrılacak)
