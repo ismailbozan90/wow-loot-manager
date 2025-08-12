@@ -1,6 +1,6 @@
 # WoW Loot Manager - Omega Manaforge 11.2
 
-A comprehensive World of Warcraft mythic raid loot management web application with advanced filtering, trinket DPS analysis, spec information system, and administrative tools.
+A comprehensive World of Warcraft mythic raid loot management web application with advanced filtering, trinket DPS analysis, spec information system, 2p-4p set bonus tracking, and administrative tools.
 
 ## 🌟 Features
 
@@ -15,9 +15,11 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 - **Goods For Tracking**: Additional spec assignments for items
 - **Secondary Stats Display**: Item secondary stats (e.g., "Haste / Mastery", "Crit / Versatility")
 - **Spec Information System**: Comprehensive spec stats, off-set information, and sim data
+- **2p-4p Set Bonus System**: Dedicated popup for set bonus tracking with percentage values
 - **Responsive Design**: Mobile and desktop optimized interface
 - **Modern UI**: Gradient backgrounds, smooth animations, and professional styling
 - **Clean Interface**: Admin buttons removed from main page for cleaner user experience
+- **Organized Button Layout**: Separate action buttons (Trinkets, Specs, 2p-4p) with background area
 
 ### Trinket DPS Analysis System
 - **Interactive Trinket Popup**: Modal-based trinket analysis interface
@@ -39,6 +41,17 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 - **Sorted Display**: Specs sorted by sim value (highest to lowest)
 - **Direct JSON Loading**: Loads data directly from JSON file without localStorage
 - **Responsive Layout**: Fixed popup size with scrollable content
+
+### 2p-4p Set Bonus System
+- **Dedicated Set Bonus Popup**: Separate modal interface for set bonus tracking
+- **Percentage-based Values**: 2-piece and 4-piece set bonus percentages for each spec
+- **Search Functionality**: Real-time filtering of specs by name
+- **Organized Display**: Clean table format with spec icons, sim values, and set bonus percentages
+- **Sim Data Integration**: 7-digit single-target simulation data for each spec
+- **Sorted Display**: Specs sorted by sim value (highest to lowest)
+- **Direct JSON Loading**: Loads data directly from JSON file without localStorage
+- **Responsive Layout**: Fixed popup size with scrollable content
+- **Proper Column Alignment**: Sim values centered, set bonus values right-aligned
 
 ### Administrative Tools
 
@@ -67,6 +80,7 @@ A comprehensive World of Warcraft mythic raid loot management web application wi
 
 #### Spec Info Admin Panel (`spec-info-admin.html`)
 - **Spec Information Management**: Add, edit, and delete spec stat, off-set, and sim data
+- **2p-4p Set Bonus Management**: Add, edit, and delete 2-piece and 4-piece set bonus percentages
 - **Secondary Stats Management**: Manage secondary stat priorities for each spec
 - **Off-Set Item Management**: Single off-set item assignment per spec
 - **Sim Data Management**: 7-digit single-target simulation values for each spec
@@ -103,7 +117,7 @@ wow-loot-manager/
 
 1. **Access Admin Panel**: Open `admin.html` for loot management
 2. **Access Trinket Admin**: Open `trinket-admin.html` for trinket DPS management
-3. **Access Spec Info Admin**: Open `spec-info-admin.html` for spec information management
+3. **Access Spec Info Admin**: Open `spec-info-admin.html` for spec information and set bonus management
 4. **Import/Export Data**: Use the JSON import/export functionality for data backup
 
 ## 🎯 Core Functionality
@@ -114,7 +128,13 @@ wow-loot-manager/
 - **Boss Filter**: Select specific bosses or view all bosses
 - **Slot Filter**: Filter by item slot (Head, Neck, Shoulder, etc.)
 - **Spec Filter**: Advanced dropdown with search functionality for all 36 specs
-- **Reset Button**: One-click filter reset
+- **Reset Button**: One-click filter reset (positioned next to filters)
+
+#### Action Button Layout
+- **Organized Button Group**: Trinkets, Specs, and 2p-4p buttons grouped together
+- **Background Area**: Buttons centered within a dedicated background container
+- **Consistent Styling**: All action buttons use the same color scheme
+- **Proper Alignment**: Reset button aligned with filter inputs
 
 #### Loot Display
 - **Boss Grouping**: When "All Bosses" is selected, items are grouped by boss
@@ -131,6 +151,16 @@ wow-loot-manager/
 - **Sim Data**: 7-digit simulation values for each spec
 - **Sorted Display**: Specs sorted by sim value (highest to lowest)
 - **Fixed Layout**: Consistent popup size with scrollable content
+
+#### 2p-4p Set Bonus System
+- **2p-4p Button**: Access set bonus information via dedicated popup modal
+- **Search Interface**: Real-time search through all specs
+- **Table Format**: Organized display with spec, sim, and 2P/4P columns
+- **Sim Data**: 7-digit simulation values for each spec
+- **Set Bonus Data**: 2-piece and 4-piece percentage values
+- **Sorted Display**: Specs sorted by sim value (highest to lowest)
+- **Fixed Layout**: Consistent popup size with scrollable content
+- **Proper Alignment**: Sim values centered, set bonus values right-aligned
 
 ### Trinket DPS Analysis
 
@@ -161,6 +191,22 @@ wow-loot-manager/
 - **Sim Values**: 7-digit single-target simulation data
 - **Responsive Layout**: Proper column alignment and spacing
 
+### 2p-4p Set Bonus System
+
+#### Popup Interface
+- **Modal Design**: Overlay popup with backdrop
+- **Search Input**: Real-time filtering of specs
+- **Table Header**: Fixed header with column labels (Spec, Sim, 2P/4P)
+- **Scrollable Content**: Fixed popup size with scrollable list
+- **Independent Styling**: Separate CSS classes to prevent conflicts with spec info popup
+
+#### Data Display
+- **Spec Icons**: Class and spec icons for visual identification
+- **Sim Values**: 7-digit single-target simulation data (centered)
+- **Set Bonus Values**: 2-piece and 4-piece percentage values (right-aligned)
+- **Responsive Layout**: Proper column alignment and spacing
+- **Custom Spacing**: Optimized column spacing using margin properties
+
 ### Administrative Features
 
 #### Data Management
@@ -169,6 +215,7 @@ wow-loot-manager/
 - **JSON Import/Export**: Complete data backup and restore
 - **Icon URL Conversion**: Automatic WoWhead URL processing
 - **Secondary Stats**: Comprehensive secondary stats management with presets
+- **Set Bonus Data**: 2-piece and 4-piece percentage management
 
 #### User Interface
 - **Modern Design**: Gradient backgrounds and smooth animations
@@ -236,7 +283,9 @@ wow-loot-manager/
       "offSet": {
         "item": "Meta Gem"
       },
-      "sim": 1234567
+      "sim": 1234567,
+      "setBonus2p": 0,
+      "setBonus4p": 0
     }
   }
 }
@@ -267,6 +316,11 @@ wow-loot-manager/
 - **Secondary Stats**: Critical Strike, Haste, Mastery, Versatility
 - **Combined Formats**: Haste / Mastery, Crit / Versatility, etc.
 
+### Set Bonus Data
+- **2-piece Set Bonus**: Percentage values for 2-piece set bonus effects
+- **4-piece Set Bonus**: Percentage values for 4-piece set bonus effects
+- **Data Format**: Numeric percentage values (e.g., 0, 5, 10, 15)
+
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup and modern structure
@@ -276,6 +330,7 @@ wow-loot-manager/
   - Responsive design principles
   - Custom scrollbars and UI elements
   - Fixed positioning and backdrop filters
+  - Independent styling for multiple popups
 - **Vanilla JavaScript (ES6+)**:
   - Modern JavaScript features
   - DOM manipulation
@@ -283,6 +338,7 @@ wow-loot-manager/
   - Local Storage API
   - File API for JSON import/export
   - Fetch API for JSON data loading
+  - ClassList management for popup visibility
 - **JSON**: Data storage and exchange format
 - **Google Fonts**: Inter font family for modern typography
 
@@ -303,7 +359,8 @@ wow-loot-manager/
 2. Add spec with secondary stat priorities
 3. Assign off-set item or mark as "None"
 4. Add sim data (7-digit number)
-5. Ensure proper class icon URL format
+5. Add 2-piece and 4-piece set bonus percentages
+6. Ensure proper class icon URL format
 
 ### Managing Secondary Stats
 1. Use `admin.html` for item management
@@ -311,15 +368,23 @@ wow-loot-manager/
 3. Manually enter custom stat combinations
 4. Format: "Stat1 / Stat2" (capitalized with spaces around /)
 
+### Managing Set Bonus Data
+1. Use `spec-info-admin.html` for set bonus management
+2. Add percentage values for 2-piece and 4-piece set bonuses
+3. Values can range from 0 to any positive number
+4. Format: Numeric values (e.g., 0, 5, 10, 15)
+
 ### Styling Changes
 - Modify `styles.css` for visual customizations
 - Update color schemes, layouts, and animations
 - Adjust popup sizes and positioning
+- Use independent CSS classes for different popups
 
 ### Functionality Extensions
 - Add new features in `script.js`
 - Extend admin functionality in `admin.js`
 - Implement new data sources and displays
+- Create new popup systems with independent styling
 
 ## 📱 Browser Compatibility
 
@@ -338,6 +403,9 @@ wow-loot-manager/
 - **Spec Info Data**: Loads directly from `spec-info-data.json` file
 - **Secondary Stats**: Formatted as "Stat1 / Stat2" with proper capitalization
 - **Sim Data**: 7-digit numbers representing single-target simulation values
+- **Set Bonus Data**: Percentage values for 2-piece and 4-piece set bonuses
+- **Independent Popups**: Spec Info and 2p-4p popups use separate CSS classes to prevent conflicts
+- **Button Layout**: Action buttons (Trinkets, Specs, 2p-4p) are grouped together with background area
 
 ## 🤝 Contributing
 
@@ -360,6 +428,8 @@ For issues or questions:
 4. Clear browser cache if needed
 5. Verify spec icon URLs are in correct format
 6. Check secondary stats formatting (capitalized with spaces around /)
+7. Verify set bonus data is numeric
+8. Check for CSS conflicts between popups
 
 ---
 

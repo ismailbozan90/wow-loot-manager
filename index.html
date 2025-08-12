@@ -41,28 +41,36 @@
                     <option value="off-hand">Off Hand</option>
                 </select>
             </div>
-                    <div class="filter-group">
-            <label for="specFilter">Select Spec:</label>
-            <div class="custom-dropdown">
-                <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
-                <div id="specDropdown" class="spec-dropdown">
-                    <div class="dropdown-content">
-                        <!-- Spec options will be added dynamically -->
+            <div class="filter-group">
+                <label for="specFilter">Select Spec:</label>
+                <div class="custom-dropdown">
+                    <input type="text" id="specSearchInput" placeholder="Search specs..." class="spec-filter">
+                    <div id="specDropdown" class="spec-dropdown">
+                        <div class="dropdown-content">
+                            <!-- Spec options will be added dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="filter-group">
+                <button id="resetFiltersButton" class="btn btn-secondary reset-btn" title="Reset Filters">
+                    ↺
+                </button>
+            </div>
         </div>
-        <div class="button-group">
-            <button id="resetFiltersButton" class="btn btn-secondary reset-btn" title="Reset Filters">
-                ↺
-            </button>
-            <button id="trinketButton" class="btn btn-primary trinket-btn">
-                Trinkets
-            </button>
-            <button id="specInfoButton" class="btn btn-primary spec-info-btn">
-                Specs
-            </button>
-        </div>
+        
+        <div class="action-buttons-container">
+            <div class="action-button-group">
+                <button id="trinketButton" class="btn btn-primary trinket-btn">
+                    Trinkets
+                </button>
+                <button id="specInfoButton" class="btn btn-primary spec-info-btn">
+                    Specs
+                </button>
+                <button id="setBonusButton" class="btn btn-primary set-bonus-btn">
+                    2p-4p
+                </button>
+            </div>
         </div>
 
         <div class="loot-container">
@@ -172,6 +180,35 @@
     </div>
     <div id="specInfoPopupBackdrop" class="spec-info-popup-backdrop"></div>
 
+    <!-- 2p-4p Popup -->
+    <div id="setBonusPopup" class="set-bonus-popup">
+        <div class="set-bonus-popup-content">
+            <div class="set-bonus-popup-header">
+                <h2>2p-4p Set Bonus Information</h2>
+                <button id="closeSetBonusPopup" class="close-btn">&times;</button>
+            </div>
+            <div class="set-bonus-popup-body">
+                <div class="set-bonus-selector">
+                    <label for="setBonusSearchInput">Search Specs:</label>
+                    <div class="set-bonus-search-container">
+                        <input type="text" id="setBonusSearchInput" class="set-bonus-search-input" placeholder="Search specs...">
+                    </div>
+                </div>
+                <div class="set-bonus-header-row">
+                    <span class="set-bonus-header-spec">Spec</span>
+                    <span class="set-bonus-header-sim">Sim</span>
+                    <span class="set-bonus-header-set-bonus">2P / 4P</span>
+                </div>
+                <div class="set-bonus-list-container">
+                    <div id="setBonusList" class="set-bonus-list">
+                        <!-- Set bonus list will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="setBonusPopupBackdrop" class="set-bonus-popup-backdrop"></div>
+
     <script src="script.js"></script>
     <script>
         // Load data from loot-data.json file
@@ -216,6 +253,15 @@
                 document.getElementById('specInfoSearchInput').addEventListener('focus', function() {
                     // Show all specs when focused
                     filterSpecInfoList('');
+                });
+                
+                // Set Bonus filter event listeners
+                document.getElementById('setBonusSearchInput').addEventListener('input', function() {
+                    filterSetBonusList(this.value);
+                });
+                document.getElementById('setBonusSearchInput').addEventListener('focus', function() {
+                    // Show all specs when focused
+                    filterSetBonusList('');
                 });
             })
             .catch(error => {

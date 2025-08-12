@@ -1035,11 +1035,26 @@ function setupSpecInfoPopup() {
     // Backdrop'a tıklandığında popup'ı kapat
     specInfoPopupBackdrop.addEventListener('click', hideSpecInfoPopup);
 
+    // Set Bonus popup event listeners
+    const setBonusButton = document.getElementById('setBonusButton');
+    const closeSetBonusPopup = document.getElementById('closeSetBonusPopup');
+    const setBonusPopupBackdrop = document.getElementById('setBonusPopupBackdrop');
+
+    // Set Bonus butonuna tıklandığında popup'ı aç
+    setBonusButton.addEventListener('click', showSetBonusPopup);
+
+    // Close butonuna tıklandığında popup'ı kapat
+    closeSetBonusPopup.addEventListener('click', hideSetBonusPopup);
+
+    // Backdrop'a tıklandığında popup'ı kapat
+    setBonusPopupBackdrop.addEventListener('click', hideSetBonusPopup);
+
     // Search input event listeners are now set up in HTML script section
 
     // Spec Info listesini doldur (data yüklendikten sonra çağrılacak)
     if (specInfoData && specInfoData.specs) {
         populateSpecInfoList();
+        populateSetBonusList();
     }
 }
 
@@ -1176,4 +1191,112 @@ function clearSpecInfoSelection() {
     
     // Show all specs
     filterSpecInfoList('');
+}
+
+// Set Bonus popup'ını göster
+function showSetBonusPopup() {
+    const setBonusPopup = document.getElementById('setBonusPopup');
+    const setBonusPopupBackdrop = document.getElementById('setBonusPopupBackdrop');
+    
+    setBonusPopup.classList.add('show');
+    setBonusPopupBackdrop.style.display = 'block';
+    
+    // Popup açıldığında tüm spec'leri göster
+    if (specInfoData && specInfoData.specs) {
+        // Clear input
+        document.getElementById('setBonusSearchInput').value = '';
+        
+        // Populate and show all specs in list
+        populateSetBonusList();
+    }
+}
+
+// Set Bonus popup'ını gizle
+function hideSetBonusPopup() {
+    const setBonusPopup = document.getElementById('setBonusPopup');
+    const setBonusPopupBackdrop = document.getElementById('setBonusPopupBackdrop');
+    
+    setBonusPopup.classList.remove('show');
+    setBonusPopupBackdrop.style.display = 'none';
+}
+
+// Set Bonus listesini doldur
+function populateSetBonusList() {
+    const setBonusList = document.getElementById('setBonusList');
+    
+    if (!specInfoData || !specInfoData.specs) {
+        console.error('Spec Info data not loaded');
+        return;
+    }
+
+    // Clear existing content
+    setBonusList.innerHTML = '';
+
+    // Spec'leri sim değerine göre büyükten küçüğe sırala
+    const sortedSpecs = Object.entries(specInfoData.specs).sort(([, specA], [, specB]) => {
+        const simA = specA.sim || 0;
+        const simB = specB.sim || 0;
+        return simB - simA; // Büyükten küçüğe sıralama
+    });
+
+    // Sıralanmış spec'leri ekle
+    sortedSpecs.forEach(([specId, specInfo]) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'set-bonus-list-item';
+        itemDiv.setAttribute('data-value', specId);
+        itemDiv.setAttribute('data-spec-name', specInfo.name.toLowerCase());
+        itemDiv.setAttribute('data-class-name', specInfo.class.toLowerCase());
+        
+        // Spec icon'u
+        const iconImg = document.createElement('img');
+        iconImg.className = 'spec-icon';
+        iconImg.src = specInfo.iconUrl;
+        iconImg.alt = specInfo.name;
+        iconImg.onerror = function() {
+            this.style.display = 'none';
+        };
+        
+        // Spec adı
+        const specName = document.createElement('span');
+        specName.className = 'spec-name';
+        specName.textContent = specInfo.name;
+        
+        // Sim değeri
+        const simValue = specInfo.sim || 0;
+        const simInfo = document.createElement('span');
+        simInfo.className = 'spec-sim-info';
+        simInfo.textContent = simValue.toLocaleString();
+        
+        // Set bonus bilgisi
+        const setBonus2p = specInfo.setBonus2p || 0;
+        const setBonus4p = specInfo.setBonus4p || 0;
+        const setBonusText = setBonus2p > 0 || setBonus4p > 0 ? `${setBonus2p}% / ${setBonus4p}%` : '0% / 0%';
+        const setBonusInfo = document.createElement('span');
+        setBonusInfo.className = 'spec-set-bonus-info';
+        setBonusInfo.textContent = setBonusText;
+        
+        itemDiv.appendChild(iconImg);
+        itemDiv.appendChild(specName);
+        itemDiv.appendChild(simInfo);
+        itemDiv.appendChild(setBonusInfo);
+        
+        setBonusList.appendChild(itemDiv);
+    });
+}
+
+// Set Bonus listesini filtrele
+function filterSetBonusList(searchTerm) {
+    const listItems = document.querySelectorAll('#setBonusList .set-bonus-list-item');
+    
+    searchTerm = searchTerm.toLowerCase();
+    
+    // Tüm list item'larını göster/gizle
+    listItems.forEach(item => {
+        const specName = item.getAttribute('data-spec-name') || item.textContent.toLowerCase();
+        if (specName.includes(searchTerm)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 } 

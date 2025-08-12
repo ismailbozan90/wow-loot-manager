@@ -938,6 +938,24 @@ body {
             margin-top: 25px;
         }
 
+        /* Action Buttons Container Styles */
+        .action-buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .action-button-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
 /* Trinket Button Styles */
         .reset-btn {
             background: linear-gradient(45deg, #e74c3c, #c0392b);
@@ -1501,6 +1519,24 @@ body {
     background: linear-gradient(45deg, #9b59b6, #8e44ad);
 }
 
+.set-bonus-btn {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(142, 68, 173, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.set-bonus-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+}
+
 .spec-info-popup {
     position: fixed;
     top: 0;
@@ -1635,11 +1671,29 @@ body {
 
 .spec-header-sim {
     width: 100px; /* Fixed width for sim column */
-    text-align: right;
+    text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+.spec-header-set-bonus {
+    width: 120px; /* Fixed width for set bonus column */
+    text-align: right !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Additional specific rules for 2p-4p alignment */
+#setBonusPopup .spec-header-set-bonus {
+    text-align: right !important;
+}
+
+.spec-info-popup .spec-header-set-bonus {
+    text-align: right !important;
 }
 
 .spec-info-list-container {
@@ -1749,7 +1803,7 @@ body {
     color: #48bb78;
     font-size: 0.75rem;
     font-weight: 400;
-    text-align: right;
+    text-align: center;
     width: 100px; /* Fixed width to match header */
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1757,9 +1811,290 @@ body {
     flex-shrink: 0;
 }
 
+.spec-info-list-item .spec-set-bonus-info {
+    color: #ff6b6b;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: right !important;
+    width: 120px; /* Fixed width to match header */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
 
+/* Additional specific rules for 2p-4p data alignment */
+#setBonusPopup .spec-info-list-item .spec-set-bonus-info {
+    text-align: right !important;
+}
 
-.spec-info-content {
+.spec-info-popup .spec-info-list-item .spec-set-bonus-info {
+    text-align: right !important;
+}
+
+/* Force alignment with maximum specificity */
+#setBonusPopup .spec-info-popup-content .spec-info-popup-body .spec-info-header-row .spec-header-set-bonus {
+    text-align: right !important;
+}
+
+#setBonusPopup .spec-info-popup-content .spec-info-popup-body .spec-info-list-container .spec-info-list .spec-info-list-item .spec-set-bonus-info {
+    text-align: right !important;
+}
+
+/* 2p-4p Popup Specific Styles - Copied and renamed to prevent conflicts */
+.set-bonus-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.set-bonus-popup.show {
+    display: flex;
+}
+
+.set-bonus-popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    display: none;
+}
+
+.set-bonus-popup-content {
+    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+    border-radius: 12px;
+    border: 2px solid rgba(142, 68, 173, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    max-width: 90vw;
+    height: 600px;
+    width: 800px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1001;
+}
+
+.set-bonus-popup-header {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(142, 68, 173, 0.3);
+}
+
+.set-bonus-popup-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.set-bonus-popup-body {
+    padding: 20px;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.set-bonus-selector {
+    margin-bottom: 20px;
+}
+
+.set-bonus-search-container {
+    margin-bottom: 15px;
+}
+
+.set-bonus-search-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #e6e6e6;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.set-bonus-search-input:focus {
+    outline: none;
+    border-color: #8e44ad;
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+}
+
+.set-bonus-search-input::placeholder {
+    color: #718096;
+}
+
+.set-bonus-header-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #d4af37;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.set-bonus-header-spec {
+    width: 145px;
+    text-align: left;
+    flex-shrink: 0;
+    padding-left: 36px;
+}
+
+.set-bonus-header-sim {
+    width: 100px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 120px;
+}
+
+.set-bonus-header-set-bonus {
+    width: 120px;
+    text-align: right !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 120px;
+}
+
+.set-bonus-list-container {
+    flex: 1;
+    overflow-y: auto;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 8px 8px;
+    background: rgba(42, 42, 42, 0.95);
+    backdrop-filter: blur(10px);
+    min-height: 0;
+}
+
+.set-bonus-list {
+    padding: 0;
+}
+
+.set-bonus-list-group {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.set-bonus-list-group:last-child {
+    border-bottom: none;
+}
+
+.set-bonus-list-group-header {
+    padding: 10px 16px;
+    background: rgba(142, 68, 173, 0.2);
+    color: #d4af37;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.set-bonus-list-group-items {
+    padding: 8px 0;
+}
+
+.set-bonus-list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    color: #e6e6e6;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
+.set-bonus-list-item .spec-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.set-bonus-list-item:hover {
+    background: rgba(142, 68, 173, 0.15);
+    border-left-color: #8e44ad;
+    color: #ffffff;
+}
+
+.set-bonus-list-item.selected {
+    background: rgba(142, 68, 173, 0.25);
+    border-left-color: #ffffff;
+    color: #ffffff;
+}
+
+.set-bonus-list-item .spec-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.set-bonus-list-item .spec-name {
+    color: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 104px;
+    flex-shrink: 0;
+}
+
+.set-bonus-list-item.selected .spec-name {
+    font-weight: 600;
+}
+
+.set-bonus-list-item .spec-sim-info {
+    color: #48bb78;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: center;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 120px;
+}
+
+.set-bonus-list-item .spec-set-bonus-info {
+    color: #ff6b6b;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: right !important;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 120px;
+}
+
+.set-bonus-content {
     margin-top: 20px;
 }
 

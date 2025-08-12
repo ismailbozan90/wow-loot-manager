@@ -49,7 +49,14 @@
         .spec-row .spec-sim {
             color: #48bb78;
             min-width: 80px;
-            margin-right: 100px;
+            margin-right: 16px;
+            text-align: center;
+        }
+        
+        .spec-row .spec-set-bonus {
+            color: #ff6b6b;
+            min-width: 120px;
+            margin-right: 16px;
             text-align: center;
         }
         
@@ -141,6 +148,17 @@
             <input type="number" id="simValue" placeholder="0" min="0" max="9999999" step="1">
         </div>
 
+        <div class="form-row">
+            <div class="form-group">
+                <label for="setBonus2p">2-Piece Set Bonus (%):</label>
+                <input type="number" id="setBonus2p" placeholder="0" min="0" max="100" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="setBonus4p">4-Piece Set Bonus (%):</label>
+                <input type="number" id="setBonus4p" placeholder="0" min="0" max="100" step="0.1">
+            </div>
+        </div>
+
         <div class="btn-group">
             <button id="saveSpecBtn" class="btn btn-success btn-small">Save Spec</button>
             <button id="cancelSpecBtn" class="btn btn-secondary btn-small">Cancel</button>
@@ -193,12 +211,17 @@
             specInfoData.specs.forEach(spec => {
                 const specCard = document.createElement('div');
                 specCard.className = 'spec-row';
+                const setBonus2p = spec.setBonus2p || 0;
+                const setBonus4p = spec.setBonus4p || 0;
+                const setBonusText = setBonus2p > 0 || setBonus4p > 0 ? `${setBonus2p}% / ${setBonus4p}%` : '0% / 0%';
+                
                 specCard.innerHTML = `
                     <img src="${spec.iconUrl}" alt="${spec.name}" class="spec-icon" onerror="this.style.display='none'">
                     <span class="spec-name">${spec.name}</span>
                     <span class="spec-stats">${Array.isArray(spec.stats.secondary) ? spec.stats.secondary.join(', ') : spec.stats.secondary || 'None'}</span>
                     <span class="spec-offset">${Object.values(spec.offSet || {}).length > 0 ? Object.values(spec.offSet)[0] : 'None'}</span>
                     <span class="spec-sim">${spec.sim || 0}</span>
+                    <span class="spec-set-bonus">${setBonusText}</span>
                     <div class="spec-actions">
                         <button class="btn btn-primary btn-small edit-spec-btn" data-spec-id="${spec.id}">Edit</button>
                         <button class="btn btn-danger btn-small delete-spec-btn" data-spec-id="${spec.id}">Delete</button>
@@ -247,6 +270,10 @@
             // Clear sim value
             document.getElementById('simValue').value = '0';
             
+            // Clear set bonus values
+            document.getElementById('setBonus2p').value = '0';
+            document.getElementById('setBonus4p').value = '0';
+            
             editingSpecId = null;
             document.getElementById('deleteSpecBtn').style.display = 'none';
         }
@@ -274,6 +301,10 @@
 
             // Set sim value
             document.getElementById('simValue').value = spec.sim || 0;
+
+            // Set set bonus values
+            document.getElementById('setBonus2p').value = spec.setBonus2p || 0;
+            document.getElementById('setBonus4p').value = spec.setBonus4p || 0;
 
             document.getElementById('deleteSpecBtn').style.display = 'inline-block';
             showForm('Edit Spec');
@@ -303,6 +334,10 @@
             // Get sim value
             const simValue = parseInt(document.getElementById('simValue').value) || 0;
 
+            // Get set bonus values
+            const setBonus2p = parseFloat(document.getElementById('setBonus2p').value) || 0;
+            const setBonus4p = parseFloat(document.getElementById('setBonus4p').value) || 0;
+
             const specData = {
                 id: specId,
                 name: specName,
@@ -312,7 +347,9 @@
                     secondary: secondaryStats
                 },
                 offSet: itemName ? { item: itemName } : {},
-                sim: simValue
+                sim: simValue,
+                setBonus2p: setBonus2p,
+                setBonus4p: setBonus4p
             };
 
             if (editingSpecId) {

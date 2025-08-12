@@ -9,6 +9,9 @@
           "warrior-fury": 374226,
           "paladin-holy": 301625,
           "paladin-protection": 272668,
+          "hunter-beast-mastery": 449576,
+          "hunter-marksmanship": 441811,
+          "hunter-survival": 456544,
           "rogue-assassination": 404869,
           "rogue-outlaw": 364091,
           "rogue-subtlety": 349554,
@@ -29,8 +32,11 @@
           "death-knight-unholy": 484170,
           "demon-hunter-havoc": 391913,
           "demon-hunter-vengeance": 219288,
+          "druid-balance": 365288,
+          "druid-feral": 418242,
           "druid-restoration": 263163,
           "evoker-preservation": 309317,
+          "monk-brewmaster": 254261,
           "monk-mistweaver": 305618,
           "monk-windwalker": 394569
         }
@@ -41,6 +47,9 @@
           "warrior-fury": 401188,
           "paladin-holy": 315590,
           "paladin-protection": 283994,
+          "hunter-beast-mastery": 470227,
+          "hunter-marksmanship": 459510,
+          "hunter-survival": 473296,
           "rogue-assassination": 424694,
           "rogue-outlaw": 385505,
           "rogue-subtlety": 369871,
@@ -61,8 +70,11 @@
           "death-knight-unholy": 510119,
           "demon-hunter-havoc": 410843,
           "demon-hunter-vengeance": 228784,
+          "druid-balance": 376859,
+          "druid-feral": 438738,
           "druid-restoration": 276323,
           "evoker-preservation": 323443,
+          "monk-brewmaster": 261939,
           "monk-mistweaver": 319495,
           "monk-windwalker": 402761
         }
@@ -73,6 +85,9 @@
           "warrior-fury": 438797,
           "paladin-holy": 348285,
           "paladin-protection": 310611,
+          "hunter-beast-mastery": 509506,
+          "hunter-marksmanship": 503283,
+          "hunter-survival": 518462,
           "rogue-assassination": 467407,
           "rogue-outlaw": 424055,
           "rogue-subtlety": 401292,
@@ -93,8 +108,11 @@
           "death-knight-unholy": 555171,
           "demon-hunter-havoc": 453391,
           "demon-hunter-vengeance": 251949,
+          "druid-balance": 414721,
+          "druid-feral": 484667,
           "druid-restoration": 307270,
           "evoker-preservation": 356488,
+          "monk-brewmaster": 289795,
           "monk-mistweaver": 351983,
           "monk-windwalker": 441578
         }
@@ -147,6 +165,9 @@
           "warrior-fury": 299482,
           "paladin-holy": 233814,
           "paladin-protection": 249392,
+          "hunter-beast-mastery": 334845,
+          "hunter-marksmanship": 437453,
+          "hunter-survival": 472813,
           "rogue-assassination": 397025,
           "rogue-outlaw": 282716,
           "rogue-subtlety": 419108,
@@ -167,8 +188,11 @@
           "death-knight-unholy": 469212,
           "demon-hunter-havoc": 352642,
           "demon-hunter-vengeance": 240984,
+          "druid-balance": 479844,
+          "druid-feral": 534207,
           "druid-restoration": 177080,
           "evoker-preservation": 226172,
+          "monk-brewmaster": 240361,
           "monk-mistweaver": 259659,
           "monk-windwalker": 418307
         }
@@ -179,6 +203,9 @@
           "warrior-fury": 313562,
           "paladin-holy": 244691,
           "paladin-protection": 256090,
+          "hunter-beast-mastery": 348013,
+          "hunter-marksmanship": 460021,
+          "hunter-survival": 495583,
           "rogue-assassination": 418751,
           "rogue-outlaw": 298352,
           "rogue-subtlety": 436388,
@@ -199,8 +226,11 @@
           "death-knight-unholy": 490679,
           "demon-hunter-havoc": 371856,
           "demon-hunter-vengeance": 252918,
+          "druid-balance": 500749,
+          "druid-feral": 564598,
           "druid-restoration": 185764,
           "evoker-preservation": 236397,
+          "monk-brewmaster": 249839,
           "monk-mistweaver": 271873,
           "monk-windwalker": 440548
         }
@@ -211,6 +241,9 @@
           "warrior-fury": 341249,
           "paladin-holy": 270085,
           "paladin-protection": 287592,
+          "hunter-beast-mastery": 380929,
+          "hunter-marksmanship": 507874,
+          "hunter-survival": 545896,
           "rogue-assassination": 461506,
           "rogue-outlaw": 326614,
           "rogue-subtlety": 485082,
@@ -231,8 +264,11 @@
           "death-knight-unholy": 547320,
           "demon-hunter-havoc": 410803,
           "demon-hunter-vengeance": 281839,
+          "druid-balance": 558924,
+          "druid-feral": 627401,
           "druid-restoration": 206118,
           "evoker-preservation": 260212,
+          "monk-brewmaster": 280118,
           "monk-mistweaver": 300410,
           "monk-windwalker": 485091
         }
@@ -245,21 +281,24 @@
         "dpsValues": {
           "paladin-protection": 162408,
           "death-knight-blood": 163745,
-          "demon-hunter-vengeance": 143742
+          "demon-hunter-vengeance": 143742,
+          "monk-brewmaster": 167592
         }
       },
       "heroic": {
         "dpsValues": {
           "paladin-protection": 172654,
           "death-knight-blood": 170333,
-          "demon-hunter-vengeance": 151618
+          "demon-hunter-vengeance": 151618,
+          "monk-brewmaster": 172866
         }
       },
       "mythic": {
         "dpsValues": {
           "paladin-protection": 192903,
           "death-knight-blood": 191803,
-          "demon-hunter-vengeance": 171965
+          "demon-hunter-vengeance": 171965,
+          "monk-brewmaster": 198012
         }
       }
     },
@@ -268,34 +307,46 @@
       "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_agidpsancientkareshirelic.jpg",
       "champion": {
         "dpsValues": {
+          "hunter-beast-mastery": 326689,
+          "hunter-marksmanship": 360065,
+          "hunter-survival": 338223,
           "rogue-assassination": 328320,
           "rogue-outlaw": 367768,
           "rogue-subtlety": 314707,
           "shaman-enhancement": 307686,
           "demon-hunter-havoc": 363829,
           "demon-hunter-vengeance": 206634,
+          "druid-feral": 334387,
           "monk-windwalker": 340425
         }
       },
       "heroic": {
         "dpsValues": {
+          "hunter-beast-mastery": 345558,
+          "hunter-marksmanship": 384283,
+          "hunter-survival": 357382,
           "rogue-assassination": 360198,
           "rogue-outlaw": 391690,
           "rogue-subtlety": 334661,
           "shaman-enhancement": 334544,
           "demon-hunter-havoc": 393472,
           "demon-hunter-vengeance": 217540,
+          "druid-feral": 354890,
           "monk-windwalker": 367679
         }
       },
       "mythic": {
         "dpsValues": {
+          "hunter-beast-mastery": 395826,
+          "hunter-marksmanship": 439561,
+          "hunter-survival": 411980,
           "rogue-assassination": 402863,
           "rogue-outlaw": 455398,
           "rogue-subtlety": 378388,
           "shaman-enhancement": 376232,
           "demon-hunter-havoc": 449846,
           "demon-hunter-vengeance": 253622,
+          "druid-feral": 408270,
           "monk-windwalker": 418521
         }
       }
@@ -307,21 +358,24 @@
         "dpsValues": {
           "paladin-protection": 305303,
           "death-knight-blood": 291331,
-          "demon-hunter-vengeance": 256264
+          "demon-hunter-vengeance": 256264,
+          "monk-brewmaster": 332843
         }
       },
       "heroic": {
         "dpsValues": {
           "paladin-protection": 316511,
           "death-knight-blood": 302792,
-          "demon-hunter-vengeance": 269175
+          "demon-hunter-vengeance": 269175,
+          "monk-brewmaster": 353686
         }
       },
       "mythic": {
         "dpsValues": {
           "paladin-protection": 352742,
           "death-knight-blood": 341054,
-          "demon-hunter-vengeance": 299993
+          "demon-hunter-vengeance": 299993,
+          "monk-brewmaster": 394169
         }
       }
     },
@@ -334,6 +388,9 @@
           "warrior-fury": 106744,
           "paladin-holy": 269191,
           "paladin-protection": 57704,
+          "hunter-beast-mastery": 125784,
+          "hunter-marksmanship": 110205,
+          "hunter-survival": 108158,
           "rogue-assassination": 107487,
           "rogue-outlaw": 38622,
           "rogue-subtlety": 70369,
@@ -354,8 +411,11 @@
           "death-knight-unholy": 140170,
           "demon-hunter-havoc": 107578,
           "demon-hunter-vengeance": 56703,
+          "druid-balance": 293543,
+          "druid-feral": 96790,
           "druid-restoration": 273928,
           "evoker-preservation": 280442,
+          "monk-brewmaster": 62212,
           "monk-mistweaver": 230108,
           "monk-windwalker": 92473
         }
@@ -366,6 +426,9 @@
           "warrior-fury": 105109,
           "paladin-holy": 281974,
           "paladin-protection": 64649,
+          "hunter-beast-mastery": 119443,
+          "hunter-marksmanship": 110627,
+          "hunter-survival": 108468,
           "rogue-assassination": 109934,
           "rogue-outlaw": 39987,
           "rogue-subtlety": 76033,
@@ -386,8 +449,11 @@
           "death-knight-unholy": 140188,
           "demon-hunter-havoc": 103313,
           "demon-hunter-vengeance": 59586,
+          "druid-balance": 303451,
+          "druid-feral": 99864,
           "druid-restoration": 286812,
           "evoker-preservation": 293466,
+          "monk-brewmaster": 62728,
           "monk-mistweaver": 242055,
           "monk-windwalker": 106573
         }
@@ -398,6 +464,9 @@
           "warrior-fury": 112811,
           "paladin-holy": 311861,
           "paladin-protection": 65448,
+          "hunter-beast-mastery": 127004,
+          "hunter-marksmanship": 114020,
+          "hunter-survival": 113058,
           "rogue-assassination": 110645,
           "rogue-outlaw": 39789,
           "rogue-subtlety": 78221,
@@ -418,8 +487,11 @@
           "death-knight-unholy": 148284,
           "demon-hunter-havoc": 114130,
           "demon-hunter-vengeance": 61827,
+          "druid-balance": 341743,
+          "druid-feral": 106792,
           "druid-restoration": 316915,
           "evoker-preservation": 323865,
+          "monk-brewmaster": 66340,
           "monk-mistweaver": 270166,
           "monk-windwalker": 101575
         }
@@ -433,6 +505,9 @@
           "warrior-arms": 304714,
           "warrior-fury": 248658,
           "paladin-protection": 222197,
+          "hunter-beast-mastery": 262842,
+          "hunter-marksmanship": 479159,
+          "hunter-survival": 312683,
           "rogue-assassination": 426668,
           "rogue-outlaw": 319598,
           "rogue-subtlety": 471900,
@@ -450,6 +525,9 @@
           "death-knight-unholy": 374426,
           "demon-hunter-havoc": 288502,
           "demon-hunter-vengeance": 175668,
+          "druid-balance": 53480,
+          "druid-feral": 423437,
+          "monk-brewmaster": 241290,
           "monk-windwalker": 421647
         }
       },
@@ -458,6 +536,9 @@
           "warrior-arms": 322550,
           "warrior-fury": 267068,
           "paladin-protection": 236037,
+          "hunter-beast-mastery": 275305,
+          "hunter-marksmanship": 508603,
+          "hunter-survival": 336297,
           "rogue-assassination": 453271,
           "rogue-outlaw": 340896,
           "rogue-subtlety": 500106,
@@ -475,6 +556,9 @@
           "death-knight-unholy": 394619,
           "demon-hunter-havoc": 302600,
           "demon-hunter-vengeance": 189280,
+          "druid-balance": 66263,
+          "druid-feral": 457964,
+          "monk-brewmaster": 260258,
           "monk-windwalker": 447280
         }
       },
@@ -483,6 +567,9 @@
           "warrior-arms": 362015,
           "warrior-fury": 301546,
           "paladin-protection": 271057,
+          "hunter-beast-mastery": 318053,
+          "hunter-marksmanship": 578774,
+          "hunter-survival": 384015,
           "rogue-assassination": 514034,
           "rogue-outlaw": 384563,
           "rogue-subtlety": 566708,
@@ -500,6 +587,9 @@
           "death-knight-unholy": 454191,
           "demon-hunter-havoc": 349805,
           "demon-hunter-vengeance": 215478,
+          "druid-balance": 72565,
+          "druid-feral": 516209,
+          "monk-brewmaster": 297651,
           "monk-windwalker": 504181
         }
       }
