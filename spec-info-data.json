@@ -13,9 +13,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5401731,
-      "setBonus2p": 12.35,
-      "setBonus4p": 4
+      "sim": 5397491,
+      "setBonus2p": 12.4,
+      "setBonus4p": 4.19
     },
     "warrior-fury": {
       "name": "Fury",
@@ -30,9 +30,9 @@
       "offSet": {
         "item": "Head"
       },
-      "sim": 5965631,
-      "setBonus2p": 14.4,
-      "setBonus4p": 7.62
+      "sim": 5961351,
+      "setBonus2p": 14.25,
+      "setBonus4p": 7.79
     },
     "warrior-protection": {
       "name": "Protection",
@@ -47,9 +47,9 @@
       "offSet": {
         "item": "Chest"
       },
-      "sim": 3886018,
-      "setBonus2p": 5.77,
-      "setBonus4p": 23.53
+      "sim": 4075849,
+      "setBonus2p": 9.23,
+      "setBonus4p": 28.91
     },
     "paladin-holy": {
       "name": "Holy",
@@ -81,9 +81,9 @@
       "offSet": {
         "item": "Head"
       },
-      "sim": 3298504,
-      "setBonus2p": -7.37,
-      "setBonus4p": 26.26
+      "sim": 3288218,
+      "setBonus2p": -7.35,
+      "setBonus4p": 26.16
     },
     "paladin-retribution": {
       "name": "Retribution",
@@ -98,9 +98,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5398067,
-      "setBonus2p": -1.64,
-      "setBonus4p": 14.49
+      "sim": 5453455,
+      "setBonus2p": -1.68,
+      "setBonus4p": 14.47
     },
     "hunter-beast-mastery": {
       "name": "Beast Mastery",
@@ -115,9 +115,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 5538512,
+      "sim": 5548770,
       "setBonus2p": 11.83,
-      "setBonus4p": 0.64
+      "setBonus4p": 1.18
     },
     "hunter-marksmanship": {
       "name": "Marksmanship",
@@ -132,9 +132,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 5932583,
-      "setBonus2p": 15.37,
-      "setBonus4p": 12.04
+      "sim": 5804953,
+      "setBonus2p": 15.29,
+      "setBonus4p": 11.78
     },
     "hunter-survival": {
       "name": "Survival",
@@ -149,7 +149,7 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 5832473,
+      "sim": 5815840,
       "setBonus2p": 3.13,
       "setBonus4p": 13.26
     },
@@ -166,9 +166,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5517694,
-      "setBonus2p": 16.52,
-      "setBonus4p": 5.52
+      "sim": 5684807,
+      "setBonus2p": 19.51,
+      "setBonus4p": 6.19
     },
     "rogue-outlaw": {
       "name": "Outlaw",
@@ -183,9 +183,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5713737,
-      "setBonus2p": 16.84,
-      "setBonus4p": 4.48
+      "sim": 5693680,
+      "setBonus2p": 16.63,
+      "setBonus4p": 4.39
     },
     "rogue-subtlety": {
       "name": "Subtlety",
@@ -200,9 +200,9 @@
       "offSet": {
         "item": "Shoulder"
       },
-      "sim": 5207479,
-      "setBonus2p": 5.64,
-      "setBonus4p": 13.64
+      "sim": 5204927,
+      "setBonus2p": 5.58,
+      "setBonus4p": 13.68
     },
     "priest-discipline": {
       "name": "Discipline",
@@ -251,9 +251,9 @@
       "offSet": {
         "item": "Shoulder"
       },
-      "sim": 5751973,
-      "setBonus2p": 11.33,
-      "setBonus4p": 12.35
+      "sim": 5728802,
+      "setBonus2p": 11.35,
+      "setBonus4p": 12.42
     },
     "shaman-elemental": {
       "name": "Elemental",
@@ -269,8 +269,8 @@
         "item": "Head"
       },
       "sim": 6392762,
-      "setBonus2p": 10.83,
-      "setBonus4p": 4.51
+      "setBonus2p": 10.85,
+      "setBonus4p": 4.55
     },
     "shaman-enhancement": {
       "name": "Enhancement",
@@ -285,9 +285,9 @@
       "offSet": {
         "item": "Chest"
       },
-      "sim": 5321220,
-      "setBonus2p": 13.83,
-      "setBonus4p": 3.07
+      "sim": 5506932,
+      "setBonus2p": 13.6,
+      "setBonus4p": 3.01
     },
     "shaman-restoration": {
       "name": "Restoration",
@@ -320,9 +320,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 5833044,
-      "setBonus2p": 7.61,
-      "setBonus4p": 6.55
+      "sim": 5819349,
+      "setBonus2p": 7.6,
+      "setBonus4p": 6.51
     },
     "mage-fire": {
       "name": "Fire",
@@ -337,9 +337,9 @@
       "offSet": {
         "item": "Head"
       },
-      "sim": 5558059,
-      "setBonus2p": 7.29,
-      "setBonus4p": 18.78
+      "sim": 5550572,
+      "setBonus2p": 7.53,
+      "setBonus4p": 18.64
     },
     "mage-frost": {
       "name": "Frost",
@@ -354,9 +354,9 @@
       "offSet": {
         "item": "Chest"
       },
-      "sim": 6160500,
-      "setBonus2p": 6.66,
-      "setBonus4p": 9.75
+      "sim": 5890027,
+      "setBonus2p": 6.56,
+      "setBonus4p": 9.73
     },
     "warlock-affliction": {
       "name": "Affliction",
@@ -371,9 +371,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5817805,
-      "setBonus2p": 3.94,
-      "setBonus4p": 6.06
+      "sim": 5799344,
+      "setBonus2p": 4.47,
+      "setBonus4p": 6.59
     },
     "warlock-demonology": {
       "name": "Demonology",
@@ -388,9 +388,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 6542648,
-      "setBonus2p": 10.45,
-      "setBonus4p": 3.83
+      "sim": 5933055,
+      "setBonus2p": 6.49,
+      "setBonus4p": 3.78
     },
     "warlock-destruction": {
       "name": "Destruction",
@@ -405,9 +405,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 6461718,
-      "setBonus2p": 21.85,
-      "setBonus4p": 5.42
+      "sim": 6051867,
+      "setBonus2p": 13.27,
+      "setBonus4p": 5.02
     },
     "monk-brewmaster": {
       "name": "Brewmaster",
@@ -423,9 +423,9 @@
       "offSet": {
         "item": "Leg"
       },
-      "sim": 3838268,
-      "setBonus2p": 13.15,
-      "setBonus4p": 22.57
+      "sim": 3738952,
+      "setBonus2p": 14.69,
+      "setBonus4p": 22.55
     },
     "monk-mistweaver": {
       "name": "Mistweaver",
@@ -457,9 +457,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5680391,
-      "setBonus2p": 6.47,
-      "setBonus4p": 9.41
+      "sim": 5721226,
+      "setBonus2p": 2.61,
+      "setBonus4p": 14.56
     },
     "druid-balance": {
       "name": "Balance",
@@ -474,9 +474,9 @@
       "offSet": {
         "item": "Leg"
       },
-      "sim": 5545461,
-      "setBonus2p": 3.91,
-      "setBonus4p": 2.52
+      "sim": 5683036,
+      "setBonus2p": 3.96,
+      "setBonus4p": 2.46
     },
     "druid-feral": {
       "name": "Feral",
@@ -491,9 +491,9 @@
       "offSet": {
         "item": "Chest"
       },
-      "sim": 5723280,
-      "setBonus2p": 15.69,
-      "setBonus4p": 8.04
+      "sim": 5928178,
+      "setBonus2p": 15.99,
+      "setBonus4p": 8.14
     },
     "druid-guardian": {
       "name": "Guardian",
@@ -508,7 +508,7 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 3722969,
+      "sim": 3635854,
       "setBonus2p": 7.17,
       "setBonus4p": 7.55
     },
@@ -542,9 +542,9 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5430198,
-      "setBonus2p": 6.89,
-      "setBonus4p": 6.01
+      "sim": 5715395,
+      "setBonus2p": 7.2,
+      "setBonus4p": 5.97
     },
     "demon-hunter-vengeance": {
       "name": "Vengeance",
@@ -560,9 +560,9 @@
       "offSet": {
         "item": "Head"
       },
-      "sim": 3032324,
-      "setBonus2p": 7.57,
-      "setBonus4p": 18.58
+      "sim": 3031867,
+      "setBonus2p": 7.43,
+      "setBonus4p": 18.6
     },
     "death-knight-blood": {
       "name": "Blood",
@@ -577,8 +577,8 @@
       "offSet": {
         "item": "Leg"
       },
-      "sim": 3738827,
-      "setBonus2p": 11.3,
+      "sim": 3633767,
+      "setBonus2p": 11.34,
       "setBonus4p": 9.4
     },
     "death-knight-frost": {
@@ -594,9 +594,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 6413971,
-      "setBonus2p": 4.64,
-      "setBonus4p": 9.55
+      "sim": 6115631,
+      "setBonus2p": 4.89,
+      "setBonus4p": 9.7
     },
     "death-knight-unholy": {
       "name": "Unholy",
@@ -611,9 +611,9 @@
       "offSet": {
         "item": "Hand"
       },
-      "sim": 6109385,
-      "setBonus2p": 9.07,
-      "setBonus4p": 12.32
+      "sim": 6209795,
+      "setBonus2p": 9.63,
+      "setBonus4p": 12.56
     },
     "evoker-devastation": {
       "name": "Devastation",
@@ -628,8 +628,8 @@
       "offSet": {
         "item": "-"
       },
-      "sim": 5927990,
-      "setBonus2p": 10.61,
+      "sim": 5910631,
+      "setBonus2p": 10.64,
       "setBonus4p": 4.93
     },
     "evoker-preservation": {
