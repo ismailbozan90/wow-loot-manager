@@ -129,11 +129,11 @@
           "name": "Eradicating Arcanocore",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_obliterationcannon.jpg",
           "slot": "trinket",
-          "bisSpecs": [
+          "bisSpecs": [],
+          "goodsFor": [
             "warrior-arms",
             "warrior-fury"
           ],
-          "goodsFor": [],
           "secondaryStats": "Strength"
         }
       ]
@@ -219,7 +219,6 @@
           "bisSpecs": [
             "warrior-arms",
             "warrior-fury",
-            "paladin-holy",
             "paladin-retribution",
             "hunter-beast-mastery",
             "hunter-marksmanship",
@@ -230,6 +229,7 @@
             "priest-shadow",
             "shaman-enhancement",
             "shaman-restoration",
+            "mage-arcane",
             "monk-mistweaver",
             "monk-windwalker",
             "druid-balance",
@@ -257,11 +257,10 @@
           "name": "Loom'ithar's Living Silk",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_astralspinneret.jpg",
           "slot": "trinket",
-          "bisSpecs": [
-            "priest-discipline"
-          ],
+          "bisSpecs": [],
           "goodsFor": [
             "paladin-holy",
+            "priest-discipline",
             "priest-holy",
             "shaman-restoration",
             "monk-mistweaver",
@@ -569,6 +568,7 @@
             "hunter-survival",
             "rogue-assassination",
             "rogue-subtlety",
+            "priest-holy",
             "priest-shadow",
             "shaman-elemental",
             "shaman-enhancement",
@@ -581,13 +581,11 @@
             "druid-balance",
             "druid-feral",
             "death-knight-frost",
-            "death-knight-unholy",
             "evoker-devastation"
           ],
           "goodsFor": [
             "hunter-beast-mastery",
             "priest-discipline",
-            "priest-holy",
             "mage-fire",
             "monk-mistweaver",
             "druid-guardian",
@@ -595,6 +593,7 @@
             "demon-hunter-havoc",
             "demon-hunter-vengeance",
             "death-knight-blood",
+            "death-knight-unholy",
             "evoker-augmentation"
           ],
           "secondaryStats": "Crit"
@@ -963,16 +962,17 @@
             "warlock-destruction",
             "monk-mistweaver",
             "druid-restoration",
-            "evoker-preservation",
             "evoker-augmentation"
           ],
           "goodsFor": [
             "priest-shadow",
             "mage-arcane",
+            "mage-fire",
             "mage-frost",
             "warlock-affliction",
             "druid-balance",
-            "evoker-devastation"
+            "evoker-devastation",
+            "evoker-preservation"
           ],
           "secondaryStats": "Mastery"
         },
@@ -1195,7 +1195,10 @@
           "name": "Nexus-King's Command",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_oathbindersauthority.jpg",
           "slot": "trinket",
-          "bisSpecs": [],
+          "bisSpecs": [
+            "paladin-holy",
+            "evoker-preservation"
+          ],
           "goodsFor": [],
           "secondaryStats": "Mastery"
         }
@@ -1334,8 +1337,13 @@
           "name": "Screams of a Forgotten Sky",
           "iconUrl": "https://wow.zamimg.com/images/wow/icons/large/inv_112_raidtrinkets_blobofswirlingvoid_terra.jpg",
           "slot": "trinket",
-          "bisSpecs": [],
+          "bisSpecs": [
+            "warrior-arms",
+            "warrior-fury",
+            "evoker-augmentation"
+          ],
           "goodsFor": [
+            "mage-frost",
             "death-knight-frost"
           ],
           "secondaryStats": "Crit"
